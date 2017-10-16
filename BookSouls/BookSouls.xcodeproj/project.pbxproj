@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615C48451C48697FC28AD5EE /* libPods-BookSouls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8709803AC4C5C551F640285C /* libPods-BookSouls.a */; };
 		B823AE8E1F94AE7300568820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B823AE8D1F94AE7300568820 /* AppDelegate.m */; };
 		B823AE911F94AE7300568820 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B823AE901F94AE7300568820 /* ViewController.m */; };
 		B823AE941F94AE7300568820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B823AE921F94AE7300568820 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D70C349DA8D344838F026FB /* Pods-BookSouls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSouls.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls.release.xcconfig"; sourceTree = "<group>"; };
+		8709803AC4C5C551F640285C /* libPods-BookSouls.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookSouls.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DFCE7AB326CA8858C429DC3 /* Pods-BookSouls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSouls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls.debug.xcconfig"; sourceTree = "<group>"; };
 		B823AE891F94AE7300568820 /* BookSouls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSouls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B823AE8C1F94AE7300568820 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B823AE8D1F94AE7300568820 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615C48451C48697FC28AD5EE /* libPods-BookSouls.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A5B6F019E6C1B97321A4697 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCE7AB326CA8858C429DC3 /* Pods-BookSouls.debug.xcconfig */,
+				5D70C349DA8D344838F026FB /* Pods-BookSouls.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C55085190E11B7E4A092B99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8709803AC4C5C551F640285C /* libPods-BookSouls.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B823AE801F94AE7300568820 = {
 			isa = PBXGroup;
 			children = (
 				B823AE8B1F94AE7300568820 /* BookSouls */,
 				B823AE8A1F94AE7300568820 /* Products */,
+				7A5B6F019E6C1B97321A4697 /* Pods */,
+				9C55085190E11B7E4A092B99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B823AE9F1F94AE7300568820 /* Build configuration list for PBXNativeTarget "BookSouls" */;
 			buildPhases = (
+				1D3BCD538964B67D2C8FA816 /* [CP] Check Pods Manifest.lock */,
 				B823AE851F94AE7300568820 /* Sources */,
 				B823AE861F94AE7300568820 /* Frameworks */,
 				B823AE871F94AE7300568820 /* Resources */,
+				F73DF832ADE7AF5FCC41E9B7 /* [CP] Embed Pods Frameworks */,
+				148FD9B44604533ED9844AA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		148FD9B44604533ED9844AA4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D3BCD538964B67D2C8FA816 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookSouls-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F73DF832ADE7AF5FCC41E9B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B823AE851F94AE7300568820 /* Sources */ = {
@@ -218,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -267,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -276,10 +357,12 @@
 		};
 		B823AEA01F94AE7300568820 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DFCE7AB326CA8858C429DC3 /* Pods-BookSouls.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BookSouls/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dongvo.dragdrop.BookSouls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,10 +372,12 @@
 		};
 		B823AEA11F94AE7300568820 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D70C349DA8D344838F026FB /* Pods-BookSouls.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BookSouls/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dongvo.dragdrop.BookSouls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
