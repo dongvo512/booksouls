@@ -14,6 +14,15 @@
 		B823AE961F94AE7300568820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B823AE951F94AE7300568820 /* Assets.xcassets */; };
 		B823AE991F94AE7300568820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B823AE971F94AE7300568820 /* LaunchScreen.storyboard */; };
 		B823AE9C1F94AE7300568820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B823AE9B1F94AE7300568820 /* main.m */; };
+		B83CFF611F99AAF300149E39 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5C1F99AAF300149E39 /* MenuCell.m */; };
+		B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF5D1F99AAF300149E39 /* MenuCell.xib */; };
+		B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */; };
+		B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF601F99AAF300149E39 /* MenuLeftView.xib */; };
+		B8E89DDB1F985BB1009AF99B /* ListSalonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */; };
+		B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */; };
+		B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DEA1F985E0C009AF99B /* ItemMenu.m */; };
+		B8E89DEF1F985E3E009AF99B /* UIColor+Method.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DEE1F985E37009AF99B /* UIColor+Method.m */; };
+		B8E89DF31F985E8B009AF99B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DF21F985E8B009AF99B /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,25 @@
 		B823AE981F94AE7300568820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B823AE9A1F94AE7300568820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B823AE9B1F94AE7300568820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B83CFF5B1F99AAF300149E39 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		B83CFF5C1F99AAF300149E39 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		B83CFF5D1F99AAF300149E39 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		B83CFF5E1F99AAF300149E39 /* MenuLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLeftView.h; sourceTree = "<group>"; };
+		B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLeftView.m; sourceTree = "<group>"; };
+		B83CFF601F99AAF300149E39 /* MenuLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuLeftView.xib; sourceTree = "<group>"; };
+		B8E89DD41F985AFC009AF99B /* CommonEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonEnum.h; sourceTree = "<group>"; };
+		B8E89DD61F985B83009AF99B /* SlideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
+		B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
+		B8E89DD91F985BB1009AF99B /* ListSalonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListSalonViewController.h; sourceTree = "<group>"; };
+		B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListSalonViewController.m; sourceTree = "<group>"; };
+		B8E89DDD1F985CC6009AF99B /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		B8E89DE91F985E0C009AF99B /* ItemMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemMenu.h; sourceTree = "<group>"; };
+		B8E89DEA1F985E0C009AF99B /* ItemMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemMenu.m; sourceTree = "<group>"; };
+		B8E89DED1F985E37009AF99B /* UIColor+Method.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Method.h"; sourceTree = "<group>"; };
+		B8E89DEE1F985E37009AF99B /* UIColor+Method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Method.m"; sourceTree = "<group>"; };
+		B8E89DF11F985E8B009AF99B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B8E89DF21F985E8B009AF99B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B8E89DF41F985F07009AF99B /* harista.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = harista.pch; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +110,11 @@
 		B823AE8B1F94AE7300568820 /* BookSouls */ = {
 			isa = PBXGroup;
 			children = (
+				B8E89DF41F985F07009AF99B /* harista.pch */,
+				B8E89DD31F985AFC009AF99B /* Utilities */,
+				B8E89DCE1F985879009AF99B /* Controller */,
+				B8E89DCF1F985879009AF99B /* CustomView */,
+				B8E89DCD1F985879009AF99B /* Model */,
 				B823AE8C1F94AE7300568820 /* AppDelegate.h */,
 				B823AE8D1F94AE7300568820 /* AppDelegate.m */,
 				B823AE8F1F94AE7300568820 /* ViewController.h */,
@@ -93,6 +126,108 @@
 				B823AE9B1F94AE7300568820 /* main.m */,
 			);
 			path = BookSouls;
+			sourceTree = "<group>";
+		};
+		B83CFF591F99AAF300149E39 /* MenuLeft */ = {
+			isa = PBXGroup;
+			children = (
+				B83CFF5A1F99AAF300149E39 /* MenuCell */,
+				B83CFF5E1F99AAF300149E39 /* MenuLeftView.h */,
+				B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */,
+				B83CFF601F99AAF300149E39 /* MenuLeftView.xib */,
+			);
+			path = MenuLeft;
+			sourceTree = "<group>";
+		};
+		B83CFF5A1F99AAF300149E39 /* MenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				B83CFF5B1F99AAF300149E39 /* MenuCell.h */,
+				B83CFF5C1F99AAF300149E39 /* MenuCell.m */,
+				B83CFF5D1F99AAF300149E39 /* MenuCell.xib */,
+			);
+			path = MenuCell;
+			sourceTree = "<group>";
+		};
+		B8E89DCD1F985879009AF99B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DE81F985E0C009AF99B /* ItemMenu */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8E89DCE1F985879009AF99B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DF01F985E7E009AF99B /* LoginViewController */,
+				B8E89DD81F985BA6009AF99B /* ListSalonViewController */,
+				B8E89DD51F985B83009AF99B /* SlideMenuViewController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B8E89DCF1F985879009AF99B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		B8E89DD31F985AFC009AF99B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DEC1F985E37009AF99B /* UIColor+Method */,
+				B8E89DD41F985AFC009AF99B /* CommonEnum.h */,
+				B8E89DDD1F985CC6009AF99B /* CommonDefine.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B8E89DD51F985B83009AF99B /* SlideMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B83CFF591F99AAF300149E39 /* MenuLeft */,
+				B8E89DD61F985B83009AF99B /* SlideMenuViewController.h */,
+				B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */,
+			);
+			path = SlideMenuViewController;
+			sourceTree = "<group>";
+		};
+		B8E89DD81F985BA6009AF99B /* ListSalonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DD91F985BB1009AF99B /* ListSalonViewController.h */,
+				B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */,
+			);
+			path = ListSalonViewController;
+			sourceTree = "<group>";
+		};
+		B8E89DE81F985E0C009AF99B /* ItemMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DE91F985E0C009AF99B /* ItemMenu.h */,
+				B8E89DEA1F985E0C009AF99B /* ItemMenu.m */,
+			);
+			path = ItemMenu;
+			sourceTree = "<group>";
+		};
+		B8E89DEC1F985E37009AF99B /* UIColor+Method */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DED1F985E37009AF99B /* UIColor+Method.h */,
+				B8E89DEE1F985E37009AF99B /* UIColor+Method.m */,
+			);
+			path = "UIColor+Method";
+			sourceTree = "<group>";
+		};
+		B8E89DF01F985E7E009AF99B /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8E89DF11F985E8B009AF99B /* LoginViewController.h */,
+				B8E89DF21F985E8B009AF99B /* LoginViewController.m */,
+			);
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +293,9 @@
 			files = (
 				B823AE991F94AE7300568820 /* LaunchScreen.storyboard in Resources */,
 				B823AE961F94AE7300568820 /* Assets.xcassets in Resources */,
+				B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */,
 				B823AE941F94AE7300568820 /* Main.storyboard in Resources */,
+				B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,8 +360,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E89DEF1F985E3E009AF99B /* UIColor+Method.m in Sources */,
+				B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */,
+				B8E89DF31F985E8B009AF99B /* LoginViewController.m in Sources */,
+				B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */,
+				B8E89DDB1F985BB1009AF99B /* ListSalonViewController.m in Sources */,
+				B83CFF611F99AAF300149E39 /* MenuCell.m in Sources */,
 				B823AE911F94AE7300568820 /* ViewController.m in Sources */,
 				B823AE9C1F94AE7300568820 /* main.m in Sources */,
+				B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */,
 				B823AE8E1F94AE7300568820 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = harista.pch;
 				INFOPLIST_FILE = BookSouls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -376,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = harista.pch;
 				INFOPLIST_FILE = BookSouls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,0 +1,23 @@
+//
+//  Nail&Spa.pch
+//  demo_Get_Data_API
+//
+//  Created by Dong Vo on 4/2/17.
+//  Copyright © 2017 Xuan Anh. All rights reserved.
+//
+
+#ifndef Nail_Spa_pch
+#define Nail_Spa_pch
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import "CommonDefine.h"
+    #import "CommonDefine.h"
+    //#import "APIRequestHandler.h"
+    #import "AppDelegate.h"
+    #import "MBProgressHUD.h"
+    #import "CommonEnum.h"
+    #import "SlideMenuViewController.h"
+
+#endif /* Nail_Spa_pch */
