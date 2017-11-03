@@ -18,6 +18,7 @@
 		B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF5D1F99AAF300149E39 /* MenuCell.xib */; };
 		B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */; };
 		B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF601F99AAF300149E39 /* MenuLeftView.xib */; };
+		B874616D1FA72C930023E1C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B874616C1FA72C7D0023E1C6 /* GoogleService-Info.plist */; };
 		B8E89DDB1F985BB1009AF99B /* ListSalonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */; };
 		B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */; };
 		B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DEA1F985E0C009AF99B /* ItemMenu.m */; };
@@ -45,6 +46,8 @@
 		B83CFF5E1F99AAF300149E39 /* MenuLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLeftView.h; sourceTree = "<group>"; };
 		B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLeftView.m; sourceTree = "<group>"; };
 		B83CFF601F99AAF300149E39 /* MenuLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuLeftView.xib; sourceTree = "<group>"; };
+		B874616C1FA72C7D0023E1C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B8DA5CEA1FAC5EB200588E72 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E89DD41F985AFC009AF99B /* CommonEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonEnum.h; sourceTree = "<group>"; };
 		B8E89DD61F985B83009AF99B /* SlideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
 		B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
@@ -57,7 +60,7 @@
 		B8E89DEE1F985E37009AF99B /* UIColor+Method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Method.m"; sourceTree = "<group>"; };
 		B8E89DF11F985E8B009AF99B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B8E89DF21F985E8B009AF99B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		B8E89DF41F985F07009AF99B /* harista.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = harista.pch; sourceTree = SOURCE_ROOT; };
+		B8E89DF41F985F07009AF99B /* booksouls.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = booksouls.pch; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		9C55085190E11B7E4A092B99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8DA5CEA1FAC5EB200588E72 /* libGoogleToolboxForMac.a */,
 				8709803AC4C5C551F640285C /* libPods-BookSouls.a */,
 			);
 			name = Frameworks;
@@ -110,7 +114,7 @@
 		B823AE8B1F94AE7300568820 /* BookSouls */ = {
 			isa = PBXGroup;
 			children = (
-				B8E89DF41F985F07009AF99B /* harista.pch */,
+				B8E89DF41F985F07009AF99B /* booksouls.pch */,
 				B8E89DD31F985AFC009AF99B /* Utilities */,
 				B8E89DCE1F985879009AF99B /* Controller */,
 				B8E89DCF1F985879009AF99B /* CustomView */,
@@ -123,6 +127,7 @@
 				B823AE951F94AE7300568820 /* Assets.xcassets */,
 				B823AE971F94AE7300568820 /* LaunchScreen.storyboard */,
 				B823AE9A1F94AE7300568820 /* Info.plist */,
+				B874616C1FA72C7D0023E1C6 /* GoogleService-Info.plist */,
 				B823AE9B1F94AE7300568820 /* main.m */,
 			);
 			path = BookSouls;
@@ -291,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B874616D1FA72C930023E1C6 /* GoogleService-Info.plist in Resources */,
 				B823AE991F94AE7300568820 /* LaunchScreen.storyboard in Resources */,
 				B823AE961F94AE7300568820 /* Assets.xcassets in Resources */,
 				B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */,
@@ -309,6 +315,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls-resources.sh",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -505,11 +513,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = harista.pch;
+				DEVELOPMENT_TEAM = YN248DF397;
+				GCC_PREFIX_HEADER = booksouls.pch;
 				INFOPLIST_FILE = BookSouls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dongvo.dragdrop.BookSouls;
+				PRODUCT_BUNDLE_IDENTIFIER = booksouls.cenvisco.vn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -521,11 +530,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = harista.pch;
+				DEVELOPMENT_TEAM = YN248DF397;
+				GCC_PREFIX_HEADER = booksouls.pch;
 				INFOPLIST_FILE = BookSouls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dongvo.dragdrop.BookSouls;
+				PRODUCT_BUNDLE_IDENTIFIER = booksouls.cenvisco.vn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

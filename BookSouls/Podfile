@@ -8,5 +8,5 @@ target 'BookSouls' do
 	pod 'AFNetworking', '~> 3.0'
 	pod 'SDWebImage', '~>4.0’
 	pod 'MBProgressHUD', '~> 1.0.0'
-
+	pod 'Google/SignIn'
 end

@@ -8,6 +8,7 @@
 
 #import "ListSalonViewController.h"
 
+
 @interface ListSalonViewController ()
 
 @end
@@ -23,6 +24,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
