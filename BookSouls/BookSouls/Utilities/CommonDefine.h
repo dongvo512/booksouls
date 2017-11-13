@@ -9,7 +9,10 @@
 #ifndef CommonDefine_h
 #define CommonDefine_h
 
-#define Appdelegate_hairista ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+typedef void (^CallAPIResult)(BOOL isError, NSString *stringError, id responseDataObject);
+typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDataObject, NSProgress *progress);
+
+#define Appdelegate_BookSouls ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 
 #define _CM_IPAD @"IPAD"
@@ -31,5 +34,40 @@
 
 #define IMG_DEFAULT [UIImage imageNamed:@"bg_default"]
 #define IMG_USER_DEFAULT [UIImage imageNamed:@"ic_avatar"]
+
+// Api Define
+
+#define kHTTP_METHOD_POST   @"POST"
+#define kHTTP_METHOD_GET    @"GET"
+
+#define URL_DEFAULT @"http://203.162.76.2/book/api/v1/"
+#define LIMIT_ITEM 10
+
+/////////// GET
+#define GET_BOOK_NEW @"books"
+
+#define GET_BOOK_NEARLY @"books/nearly"
+
+#define GET_BOOK_POPULAR @"booksPopular"
+
+#define GET_BOOK_CATEGORIES @"categories"
+
+#define GET_BEST_SELLER @"bestSellers"
+
+#define GET_LIST_BOOK_RELATED @"posts"
+
+////////// POST
+
+#define ORDER_BOOK @"booking"
+
+#define POST_REGISTER @"register"
+
+#define POST_LOGIN @"login"
+
+#define POST_LOGIN_FB @"loginFb"
+
+#define POST_LOGIN_GOOGLE @"loginGL"
+
+
 
 #endif /* CommonDefine_h */

@@ -8,9 +8,18 @@
 
 #import "LoginViewController.h"
 #import <Google/SignIn.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "SignUpViewController.h"
+#import "SlideMenuViewController.h"
+#import "SessionUser.h"
 
+@interface LoginViewController ()<GIDSignInUIDelegate, GIDSignInDelegate, UITextFieldDelegate>
 
-@interface LoginViewController ()<GIDSignInUIDelegate, GIDSignInDelegate>
+@property (weak, nonatomic) IBOutlet UIView *viewLogin;
+@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
+@property (weak, nonatomic) IBOutlet UITextField *tfPassword;
+@property (weak, nonatomic) IBOutlet UILabel *lblError;
 
 @end
 
@@ -18,7 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self configUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,45 +36,333 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Action
+- (IBAction)touchBtnRegis:(id)sender {
+    
+    UIStoryboard *mystoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SignUpViewController *signUpVC = [mystoryboard instantiateViewControllerWithIdentifier:@"SignUpViewController"];
+    [self.navigationController pushViewController:signUpVC animated:YES];
+    
 }
-*/
 
-#pragma mark - Method
+- (IBAction)touchBtnEyePassword:(id)sender {
+    
+     [self.tfPassword setSecureTextEntry:!self.tfPassword.secureTextEntry];
+}
 
-- (IBAction)touchBtnLogin:(id)sender {
-   
+
+- (IBAction)touchBtnLoginAccount:(id)sender {
+    
+    [self loginAcount];
+}
+
+- (IBAction)touchBtnGoogleLogin:(id)sender {
+    
     [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].delegate = self;
     [[GIDSignIn sharedInstance] hasAuthInKeychain];
     [[GIDSignIn sharedInstance] signIn];
     
 }
+- (IBAction)touchBtnFBLogin:(id)sender {
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile",@"email",@"user_birthday"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+             
+         } else if (result.isCancelled) {
+             
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+             
+         } else {
+             
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+             
+             if ([FBSDKAccessToken currentAccessToken]) {
+                 
+                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"email,name,first_name,devices,birthday,gender,picture"}]
+                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                     
+                      if (!error) {
+                         
+                          [self loginFaceBook:[FBSDKAccessToken currentAccessToken].tokenString];
+                         
+                      }
+                      
+                  }];
+                 
+                 
+             }
+             
+         }
+     }];
+}
+
+#pragma mark - Call API
+
+- (void)loginFaceBook:(NSString *)accessToken {
+    
+     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSDictionary *dicBody = @{@"accessToken":accessToken, @"deviceToken":(Appdelegate_BookSouls.deviceToken)?Appdelegate_BookSouls.deviceToken:@"", @"deviceType":@"ios"};
+    
+    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,POST_LOGIN_FB] withHttpMethod:kHTTP_METHOD_POST withRequestBody:dicBody callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if(isError){
+            
+            [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
+        }
+        else{
+            
+            NSError *error;
+            
+            Appdelegate_BookSouls.sesstionUser = [[SessionUser alloc] initWithDictionary:responseDataObject error:&error];
+          
+            NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:Appdelegate_BookSouls.sesstionUser];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:encodedObject forKey:@"FirstRun"];
+            [defaults synchronize];
+            
+            [self.navigationController pushViewController:[SlideMenuViewController sharedInstance] animated:YES];
+            
+        }
+        
+    }];
+    
+}
+
+- (void)loginGoogle:(NSString *)accessToken {
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    NSDictionary *dicBody = @{@"accessToken":accessToken};
+    
+    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,POST_LOGIN_GOOGLE] withHttpMethod:kHTTP_METHOD_POST withRequestBody:dicBody callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if(isError){
+            
+            [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
+        }
+        else{
+            
+            NSError *error;
+            
+            Appdelegate_BookSouls.sesstionUser = [[SessionUser alloc] initWithDictionary:responseDataObject error:&error];
+            
+            NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:Appdelegate_BookSouls.sesstionUser];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:encodedObject forKey:@"FirstRun"];
+            [defaults synchronize];
+            
+            [self.navigationController pushViewController:[SlideMenuViewController sharedInstance] animated:YES];
+            
+        }
+        
+    }];
+    
+}
+
+- (void)loginAcount{
+    
+    NSString *error = [self getStringValidate];
+    
+    [self.view endEditing:YES];
+   
+    if(error.length > 0){
+        
+        self.lblError.text = error;
+        [self showError];
+    }
+    else{
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        [self.lblError setHidden:YES];
+        
+        NSDictionary *dicBody = @{@"email":self.tfEmail.text,@"password":self.tfPassword.text};
+        
+        [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,POST_LOGIN] withHttpMethod:kHTTP_METHOD_POST withRequestBody:dicBody callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            if(isError){
+                
+                [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
+            }
+            else{
+                
+                NSError *error;
+                
+                Appdelegate_BookSouls.sesstionUser = [[SessionUser alloc] initWithDictionary:responseDataObject error:&error];
+                
+                NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:Appdelegate_BookSouls.sesstionUser];
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:encodedObject forKey:@"FirstRun"];
+                [defaults synchronize];
+                
+                [self.navigationController pushViewController:[SlideMenuViewController sharedInstance] animated:YES];
+                
+            }
+            
+        }];
+    }
+}
+
+#pragma mark - Method
+
+- (void)addShadowWithAnimation{
+    
+    self.viewLogin.layer.borderWidth = 0.0;
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
+    anim.fromValue = [NSNumber numberWithFloat:0.0];
+    anim.toValue = [NSNumber numberWithFloat:0.2];
+    anim.duration = 0.3;
+    [self.viewLogin.layer addAnimation:anim forKey:@"shadowOpacity"];
+    self.viewLogin.layer.shadowOpacity = 0.2;
+    
+}
+
+- (void)hideShadowWithAnimation{
+    
+    self.viewLogin.layer.borderWidth = 0.5;
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
+    anim.fromValue = [NSNumber numberWithFloat:0.2];
+    anim.toValue = [NSNumber numberWithFloat:0.0];
+    anim.duration = 0.3;
+    [self.viewLogin.layer addAnimation:anim forKey:@"shadowOpacity"];
+    self.viewLogin.layer.shadowOpacity = 0.0;
+}
+
+- (void) keyboardWillHideHandler:(NSNotification *)notification {
+   
+    [self hideShadowWithAnimation];
+    
+}
+
+- (void)showError{
+    
+    [self.lblError setHidden:NO];
+    
+    //for zoom in
+    [UIView animateWithDuration:0.5f animations:^{
+        
+        self.lblError.transform = CGAffineTransformMakeScale(2.0, 2.0);
+    } completion:^(BOOL finished){
+        
+    }];
+    // for zoom out
+    [UIView animateWithDuration:0.5f animations:^{
+        
+        self.lblError.transform = CGAffineTransformMakeScale(1, 1);
+    }completion:^(BOOL finished){}];
+}
+
+- (NSString *)getStringValidate{
+    
+    NSString *strValidate = _CM_STRING_EMPTY;
+    
+    if(self.tfEmail.text.length == 0){
+        
+        return strValidate = @"Email Không được để trống";
+    }
+    else if(self.tfPassword.text.length == 0){
+        
+        return strValidate = @"Mật khẩu không được để trống";
+    }
+    else if(![Common validateEmailAddress:self.tfEmail.text]){
+        
+        return strValidate = @"Email không đúng định dạng";
+    }
+    else if(self.tfPassword.text.length < 6 ){
+        
+        return strValidate = @"Mật khẩu phải lớn hơn 6 ký tự";
+    }
+    
+    
+    return strValidate;
+}
+
+- (void)configUI{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHideHandler:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    self.viewLogin.layer.cornerRadius = 10;
+    self.viewLogin.layer.borderWidth = 0.5;
+    self.viewLogin.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.viewLogin.layer.masksToBounds = NO;
+    self.viewLogin.layer.shadowOffset = CGSizeMake(0, 0);
+    self.viewLogin.layer.shadowRadius = 8;
+    self.viewLogin.layer.shadowOpacity = 0.0;
+    
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    [self addShadowWithAnimation];
+    
+    return YES;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    
+    if([textField isEqual:self.tfEmail]){
+        
+        if([Common validateEmailAddress:self.tfEmail.text]){
+            
+            [self.lblError setHidden:YES];
+            [self.tfPassword becomeFirstResponder];
+            
+        }
+        else{
+            self.lblError.text = @"Email không đúng định dạng";
+            [self showError];
+            
+        }
+    }
+    else if([textField isEqual:self.tfPassword]){
+        
+        if(self.tfPassword.text.length >= 6){
+            
+            [self.lblError setHidden:YES];
+            [self loginAcount];
+            
+        }
+        else{
+
+            self.lblError.text = @"Mật khẩu phải lớn hơn 6 ký tự";
+            [self showError];
+            
+        }
+    }
+    
+    return YES;
+}
 #pragma mark - GIDSignInDelegate
 
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
-    //add your code here
     
-   // loginView.btnGoogle.enabled = NO;
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if(!error && [GIDSignIn sharedInstance].hasAuthInKeychain){
-     
-//        NSString *userId = user.userID;                  // For client-side use only!
-//        NSString *idToken = user.authentication.idToken; // Safe to send to the server
-//        NSString *fullName = user.profile.name;
-//        NSString *givenName = user.profile.givenName;
-//        NSString *familyName = user.profile.familyName;
-//        NSString *email = user.profile.email;
+   
+        NSString *accessToken = user.authentication.accessToken; // Safe to send to the server
+        [self loginGoogle:accessToken];
         
-    }else{
-        
-       // loginView.btnGoogle.enabled = YES;
     }
 }
 
@@ -101,4 +399,6 @@ dismissViewController:(UIViewController *)viewController {
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
 @end

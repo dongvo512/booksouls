@@ -9,8 +9,7 @@
 #import "SlideMenuViewController.h"
 #import "CommonEnum.h"
 #import "CommonDefine.h"
-#import "ListSalonViewController.h"
-
+#import "MainViewController.h"
 
 @interface SlideMenuViewController ()
 {
@@ -44,6 +43,15 @@ static SlideMenuViewController *sharedInstance = nil;
     
 }
 
++ (void)resetSharedInstance {
+    
+    @synchronized(self) {
+        
+        sharedInstance = nil;
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -68,9 +76,10 @@ static SlideMenuViewController *sharedInstance = nil;
 - (void)createNavigationContent{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ListSalonViewController *vcListSalon = [storyboard instantiateViewControllerWithIdentifier:@"ListSalonViewController"];
     
-    vcNavigation = [[UINavigationController alloc] initWithRootViewController:vcListSalon];
+    MainViewController *vcMain = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    
+    vcNavigation = [[UINavigationController alloc] initWithRootViewController:vcMain];
     vcNavigation.navigationBarHidden = YES;
     vcNavigation.view.frame = self.view.bounds;
     
@@ -177,7 +186,7 @@ static SlideMenuViewController *sharedInstance = nil;
 
 -(void)createMenuLeft{
     
-    self.viewMenuLeft = [[MenuLeftView alloc] init:self.isUserManager isAdmin:self.isAdmin];
+    self.viewMenuLeft = [[MenuLeftView alloc] init];
     
     self.viewMenuLeft.backgroundColor = [UIColor whiteColor];
     

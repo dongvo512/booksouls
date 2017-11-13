@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import <Google/SignIn.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "LoginViewController.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()<UIApplicationDelegate, GIDSignInDelegate>
 
@@ -19,11 +24,76 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    for(NSString *fontfamilyname in [UIFont familyNames])
+//    {
+//        NSLog(@"Family:'%@'",fontfamilyname);
+//        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+//        {
+//            NSLog(@"\tfont:'%@'",fontName);
+//        }
+//        NSLog(@"~~~~~~~~");
+//    }
+//
+    
+    // IQKeyboard
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
+    [[IQKeyboardManager sharedManager] setShouldShowToolbarPlaceholder:NO];
+    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
+    
+    // Faric
+     [Fabric with:@[[Crashlytics class]]];
+    
+    // config Google Sign In
     NSError* configureError;
     [[GGLContext sharedInstance] configureWithError: &configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     [GIDSignIn sharedInstance].delegate = self;
+    
+    // config Facebook Login
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+   
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
+    
+    
+    NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
+    
+    NSData *encodedObject = [defaults objectForKey:@"FirstRun"];
+    SessionUser *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    
+    
+    if(!object){
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *vcLogin = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        
+        self.navigation = [[UINavigationController alloc] initWithRootViewController:vcLogin];
+        
+    }
+    else{
+        
+        self.sesstionUser = object;
+        
+        SlideMenuViewController *vcSlideMenu = [SlideMenuViewController sharedInstance];
+        self.navigation = [[UINavigationController alloc] initWithRootViewController:vcSlideMenu];
+       
+        
+    }
+    
+    self.navigation.navigationBarHidden = YES;
+    [self.window setRootViewController:self.navigation];
+    
     return YES;
 }
 
@@ -59,18 +129,65 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     
-    return [[GIDSignIn sharedInstance] handleURL:url
+     [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:sourceApplication
+                                                               annotation:annotation
+                    ];
+   
+     [[GIDSignIn sharedInstance] handleURL:url
                                sourceApplication:sourceApplication
                                       annotation:annotation];
+    
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options {
+    [[FBSDKApplicationDelegate sharedInstance] application:app
+                                                   openURL:url
+                                                   options:options];
     
-    return [[GIDSignIn sharedInstance] handleURL:url
-                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-                                      annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    [[GIDSignIn sharedInstance] handleURL:url
+                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    if (notificationSettings.types != UIUserNotificationTypeNone) {
+        NSLog(@"didRegisterUser");
+        [application registerForRemoteNotifications];
+    }
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
+    
+    if (userInfo != nil) {
+        
+        //NSArray *array = [userInfo objectForKey:@"extraPayLoad"];
+        
+        
+    }
+}
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    //NSString *str = [NSString stringWithFormat:@"Device Token=%@",deviceToken];
+    
+    self.deviceToken = [[[[deviceToken description]
+                          stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                         stringByReplacingOccurrencesOfString: @">" withString: @""]
+                        stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    NSLog(@"This is device token%@", deviceToken);
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    //  NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    NSLog(@"Error %@",err.localizedDescription);
+}
 @end

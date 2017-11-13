@@ -13,11 +13,12 @@
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
     #import "CommonDefine.h"
-    #import "CommonDefine.h"
-    //#import "APIRequestHandler.h"
+    #import "APIRequestHandler.h"
     #import "AppDelegate.h"
     #import "MBProgressHUD.h"
     #import "CommonEnum.h"
+    #import "Common.h"
     #import "SlideMenuViewController.h"
+    #import <JSONModel.h>
 
 #endif /* Nail_Spa_pch */

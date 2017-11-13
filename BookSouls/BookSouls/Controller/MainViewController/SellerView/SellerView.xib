@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Light.ttf">
+            <string>Muli-Light</string>
+        </array>
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+        <array key="soulsbookv4.ttf">
+            <string>soulsbookv4</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SellerView" id="U6b-Vx-4bR" customClass="SellerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Người bán uy tín" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plj-Ez-Cjb">
+                    <rect key="frame" x="24" y="18" width="189" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2Rm-51-h83"/>
+                        <constraint firstAttribute="width" constant="189" id="mLK-J3-f4F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                    <color key="textColor" red="0.14509803921568626" green="0.17254901960784313" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-5M-bCE">
+                    <rect key="frame" x="0.0" y="48" width="320" height="120"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="Ad9-yM-geY"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZkN-dd-i5O">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="U6b-Vx-4bR" id="bcs-Gz-TyJ"/>
+                        <outlet property="delegate" destination="U6b-Vx-4bR" id="bAN-wr-Zle"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwv-pR-dIt">
+                    <rect key="frame" x="169" y="11" width="151" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xem tất cả" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhv-cz-iTn">
+                            <rect key="frame" x="28" y="7" width="95" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="8k1-g7-bIU"/>
+                                <constraint firstAttribute="width" constant="95" id="clh-67-VIj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="13"/>
+                            <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyq-RP-f6k">
+                            <rect key="frame" x="129" y="11" width="8" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="8" id="bJK-Ub-2DM"/>
+                                <constraint firstAttribute="height" constant="13" id="nn8-hs-5V5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="soulsbookv4" family="soulsbookv4" pointSize="13"/>
+                            <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Nhv-cz-iTn" firstAttribute="centerY" secondItem="vwv-pR-dIt" secondAttribute="centerY" id="2dU-aX-Lxg"/>
+                        <constraint firstAttribute="trailing" secondItem="yyq-RP-f6k" secondAttribute="trailing" constant="14" id="WYr-wM-cLW"/>
+                        <constraint firstItem="yyq-RP-f6k" firstAttribute="centerY" secondItem="vwv-pR-dIt" secondAttribute="centerY" id="Wdm-yg-huI"/>
+                        <constraint firstAttribute="height" constant="35" id="YEO-uX-crG"/>
+                        <constraint firstItem="yyq-RP-f6k" firstAttribute="leading" secondItem="Nhv-cz-iTn" secondAttribute="trailing" constant="6" id="dEK-P3-ksK"/>
+                        <constraint firstAttribute="width" constant="151" id="j83-Hc-8gk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xtb-5M-bCE" firstAttribute="top" secondItem="Plj-Ez-Cjb" secondAttribute="bottom" constant="9" id="3I9-b8-WcL"/>
+                <constraint firstItem="xtb-5M-bCE" firstAttribute="trailing" secondItem="9Gg-ye-v9C" secondAttribute="trailing" id="D6Y-Ky-VEg"/>
+                <constraint firstItem="vwv-pR-dIt" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="11" id="DYO-vd-x52"/>
+                <constraint firstItem="xtb-5M-bCE" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" id="PVb-c0-bvB"/>
+                <constraint firstItem="Plj-Ez-Cjb" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="24" id="Z6V-ts-Yb6"/>
+                <constraint firstItem="Plj-Ez-Cjb" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="18" id="loy-Si-7w8"/>
+                <constraint firstItem="vwv-pR-dIt" firstAttribute="trailing" secondItem="9Gg-ye-v9C" secondAttribute="trailing" id="qJ8-9C-Tao"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
+            <connections>
+                <outlet property="cllSeller" destination="xtb-5M-bCE" id="R5u-RL-Hky"/>
+                <outlet property="lblTitle" destination="Plj-Ez-Cjb" id="hIs-on-ryJ"/>
+            </connections>
+            <point key="canvasLocation" x="-252" y="-212"/>
+        </collectionReusableView>
+    </objects>
+</document>

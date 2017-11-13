@@ -12,7 +12,8 @@
 
 @interface MenuCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgIcon;
+@property (weak, nonatomic) IBOutlet UILabel *lblIcon;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
 
 @end
@@ -32,7 +33,7 @@
 
 - (void)setDataForCell:(ItemMenu *)itemMenu{
 
-    self.imgIcon.image = [UIImage imageNamed:itemMenu.itemIconName];
+    self.lblIcon.text = itemMenu.itemIconName;
     
     self.lblName.text = itemMenu.itemName;
 }

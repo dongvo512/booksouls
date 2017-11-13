@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoriesCell" id="gTV-IL-0wX" customClass="CategoriesCell">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Jz-IvH">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="72" id="xSo-GY-Nvg"/>
+                        </constraints>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truyện ngắn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMx-fD-TCb">
+                        <rect key="frame" x="8" y="46.5" width="104" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="jQe-Jz-IvH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0JX-hb-A82"/>
+                <constraint firstItem="jQe-Jz-IvH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4GJ-Tl-bZi"/>
+                <constraint firstAttribute="bottom" secondItem="SMx-fD-TCb" secondAttribute="bottom" constant="10" id="7Ax-9p-0qy"/>
+                <constraint firstItem="SMx-fD-TCb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Yed-4E-Rmu"/>
+                <constraint firstAttribute="trailing" secondItem="SMx-fD-TCb" secondAttribute="trailing" constant="8" id="cw1-xB-Kj7"/>
+                <constraint firstAttribute="trailing" secondItem="jQe-Jz-IvH" secondAttribute="trailing" id="l4q-nw-yi8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="imgCategories" destination="jQe-Jz-IvH" id="RGY-Wa-Bd3"/>
+                <outlet property="lblTitle" destination="SMx-fD-TCb" id="SIZ-P2-hAn"/>
+            </connections>
+            <point key="canvasLocation" x="-242" y="-140"/>
+        </collectionViewCell>
+    </objects>
+</document>

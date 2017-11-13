@@ -8,21 +8,90 @@
 
 /* Begin PBXBuildFile section */
 		615C48451C48697FC28AD5EE /* libPods-BookSouls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8709803AC4C5C551F640285C /* libPods-BookSouls.a */; };
+		B801E5931FB9735800A49143 /* Muli-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5851FB9735500A49143 /* Muli-BlackItalic.ttf */; };
+		B801E5941FB9735800A49143 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5861FB9735500A49143 /* Muli-Regular.ttf */; };
+		B801E5951FB9735800A49143 /* Muli-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5871FB9735600A49143 /* Muli-Black.ttf */; };
+		B801E5961FB9735800A49143 /* Muli-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5881FB9735600A49143 /* Muli-ExtraLightItalic.ttf */; };
+		B801E5971FB9735800A49143 /* Muli-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5891FB9735600A49143 /* Muli-Italic.ttf */; };
+		B801E5981FB9735800A49143 /* Muli-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E58A1FB9735600A49143 /* Muli-ExtraLight.ttf */; };
+		B801E5991FB9735800A49143 /* Muli-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E58B1FB9735600A49143 /* Muli-Light.ttf */; };
+		B801E59A1FB9735800A49143 /* Muli-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E58C1FB9735700A49143 /* Muli-SemiBoldItalic.ttf */; };
+		B801E59B1FB9735800A49143 /* Muli-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E58D1FB9735700A49143 /* Muli-ExtraBoldItalic.ttf */; };
+		B801E59C1FB9735800A49143 /* Muli-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E58E1FB9735700A49143 /* Muli-ExtraBold.ttf */; };
+		B801E59D1FB9735800A49143 /* Muli-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E58F1FB9735700A49143 /* Muli-LightItalic.ttf */; };
+		B801E59E1FB9735800A49143 /* Muli-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5901FB9735700A49143 /* Muli-BoldItalic.ttf */; };
+		B801E59F1FB9735800A49143 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5911FB9735800A49143 /* Muli-Bold.ttf */; };
+		B801E5A01FB9735800A49143 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B801E5921FB9735800A49143 /* Muli-SemiBold.ttf */; };
+		B801E5A41FB9786A00A49143 /* BookImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B801E5A31FB9786A00A49143 /* BookImageViewController.m */; };
+		B801E5A91FB979AB00A49143 /* BookImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B801E5A71FB979AB00A49143 /* BookImageCell.m */; };
+		B801E5AA1FB979AB00A49143 /* BookImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B801E5A81FB979AB00A49143 /* BookImageCell.xib */; };
 		B823AE8E1F94AE7300568820 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B823AE8D1F94AE7300568820 /* AppDelegate.m */; };
-		B823AE911F94AE7300568820 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B823AE901F94AE7300568820 /* ViewController.m */; };
 		B823AE941F94AE7300568820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B823AE921F94AE7300568820 /* Main.storyboard */; };
 		B823AE961F94AE7300568820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B823AE951F94AE7300568820 /* Assets.xcassets */; };
 		B823AE991F94AE7300568820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B823AE971F94AE7300568820 /* LaunchScreen.storyboard */; };
 		B823AE9C1F94AE7300568820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B823AE9B1F94AE7300568820 /* main.m */; };
+		B823ED831FB2B08300F9A0F6 /* BookView.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED811FB2B05B00F9A0F6 /* BookView.m */; };
+		B823ED841FB2B19D00F9A0F6 /* BookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED821FB2B05B00F9A0F6 /* BookView.xib */; };
+		B823ED8D1FB2D69C00F9A0F6 /* CategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED8B1FB2D69C00F9A0F6 /* CategoriesCell.m */; };
+		B823ED8E1FB2D69C00F9A0F6 /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED8C1FB2D69C00F9A0F6 /* CategoriesCell.xib */; };
+		B823ED921FB2D81D00F9A0F6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED911FB2D81D00F9A0F6 /* Categories.m */; };
+		B823ED931FB2DA1600F9A0F6 /* BookCategoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED881FB2C5E200F9A0F6 /* BookCategoriesView.xib */; };
+		B823ED941FB2DA2200F9A0F6 /* BookCategoriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED871FB2C5E200F9A0F6 /* BookCategoriesView.m */; };
+		B823ED991FB2ED6600F9A0F6 /* SellerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED961FB2ED1500F9A0F6 /* SellerView.m */; };
+		B823ED9E1FB2ED9C00F9A0F6 /* SellerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED9C1FB2ED9C00F9A0F6 /* SellerCell.m */; };
+		B823ED9F1FB2ED9C00F9A0F6 /* SellerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED9D1FB2ED9C00F9A0F6 /* SellerCell.xib */; };
+		B823EDA01FB2F5CA00F9A0F6 /* SellerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED981FB2ED1600F9A0F6 /* SellerView.xib */; };
 		B83CFF611F99AAF300149E39 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5C1F99AAF300149E39 /* MenuCell.m */; };
 		B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF5D1F99AAF300149E39 /* MenuCell.xib */; };
 		B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */; };
 		B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF601F99AAF300149E39 /* MenuLeftView.xib */; };
-		B874616D1FA72C930023E1C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B874616C1FA72C7D0023E1C6 /* GoogleService-Info.plist */; };
-		B8E89DDB1F985BB1009AF99B /* ListSalonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */; };
+		B88ECAAB1FB021270035525C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA8D1FAFFFAE0035525C /* Roboto-Black.ttf */; };
+		B88ECAAC1FB021270035525C /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA981FAFFFB00035525C /* Roboto-BlackItalic.ttf */; };
+		B88ECAAD1FB021270035525C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA8B1FAFFFAE0035525C /* Roboto-Bold.ttf */; };
+		B88ECAAE1FB021270035525C /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA9A1FAFFFB00035525C /* Roboto-BoldItalic.ttf */; };
+		B88ECAAF1FB021270035525C /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA901FAFFFAF0035525C /* Roboto-Italic.ttf */; };
+		B88ECAB01FB021270035525C /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA9C1FAFFFB00035525C /* Roboto-Light.ttf */; };
+		B88ECAB11FB021270035525C /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA971FAFFFB00035525C /* Roboto-LightItalic.ttf */; };
+		B88ECAB21FB021270035525C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA861FAFFFAE0035525C /* Roboto-Medium.ttf */; };
+		B88ECAB31FB021270035525C /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA8C1FAFFFAE0035525C /* Roboto-MediumItalic.ttf */; };
+		B88ECAB41FB021270035525C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA911FAFFFAF0035525C /* Roboto-Regular.ttf */; };
+		B88ECAB51FB021270035525C /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA951FAFFFAF0035525C /* Roboto-Thin.ttf */; };
+		B88ECAB61FB021270035525C /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA991FAFFFB00035525C /* Roboto-ThinItalic.ttf */; };
+		B88ECABB1FB0378F0035525C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ECABA1FB0378F0035525C /* SignUpViewController.m */; };
+		B88ECABF1FB0419B0035525C /* APIRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ECABE1FB0417C0035525C /* APIRequestHandler.m */; };
+		B88ECAC21FB0424D0035525C /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ECAC11FB042420035525C /* Common.m */; };
+		B88ECAC71FB042D90035525C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ECAC61FB042C00035525C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B88ECACB1FB06C100035525C /* SessionUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ECACA1FB06BE60035525C /* SessionUser.m */; };
+		B88ECACF1FB06E1A0035525C /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ECACE1FB06E1A0035525C /* UserInfo.m */; };
+		B89E88261FB6AAB4004C5C13 /* BookContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B89E88241FB6AAB4004C5C13 /* BookContentView.m */; };
+		B89E88271FB6AAB4004C5C13 /* BookContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89E88251FB6AAB4004C5C13 /* BookContentView.xib */; };
+		B8A122431FB40343007D6C27 /* SearchBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A122421FB40343007D6C27 /* SearchBookViewController.m */; };
+		B8A122461FB4173D007D6C27 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A122451FB4173D007D6C27 /* UIColor+HexString.m */; };
+		B8A1224D1FB45BCF007D6C27 /* SearchBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A1224C1FB45B9F007D6C27 /* SearchBookCell.xib */; };
+		B8A1224E1FB45BE9007D6C27 /* SearchBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A1224B1FB45B9E007D6C27 /* SearchBookCell.m */; };
+		B8A752B31FB157AE0060EBDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8A752B21FB153F10060EBDB /* GoogleService-Info.plist */; };
+		B8A752B71FB1899A0060EBDB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752B61FB1899A0060EBDB /* MainViewController.m */; };
+		B8A752C21FB194E60060EBDB /* WellcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752C01FB194E60060EBDB /* WellcomeView.m */; };
+		B8A752C31FB194E60060EBDB /* WellcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A752C11FB194E60060EBDB /* WellcomeView.xib */; };
+		B8A752C71FB1A4F60060EBDB /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752C61FB1A4F60060EBDB /* Book.m */; };
+		B8A752CB1FB1AB830060EBDB /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752CA1FB1AB830060EBDB /* Image.m */; };
+		B8A752D11FB1ACFC0060EBDB /* BookNewView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752CF1FB1ACFC0060EBDB /* BookNewView.m */; };
+		B8A752D21FB1ACFC0060EBDB /* BookNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A752D01FB1ACFC0060EBDB /* BookNewView.xib */; };
+		B8A752D71FB1B1E10060EBDB /* BookNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752D51FB1B1E10060EBDB /* BookNewCell.m */; };
+		B8A752D81FB1B1E10060EBDB /* BookNewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A752D61FB1B1E10060EBDB /* BookNewCell.xib */; };
+		B8AC6D201FB546370002B7AE /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC6D1F1FB546370002B7AE /* CategoriesViewController.m */; };
+		B8AC6D251FB54D240002B7AE /* CategoriesTblCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC6D231FB54D240002B7AE /* CategoriesTblCell.m */; };
+		B8AC6D261FB54D240002B7AE /* CategoriesTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC6D241FB54D240002B7AE /* CategoriesTblCell.xib */; };
+		B8AC6D2A1FB59B060002B7AE /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC6D291FB59B060002B7AE /* BookDetailViewController.m */; };
+		B8AC6D2F1FB5AB090002B7AE /* BookDetailTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC6D2D1FB5AB090002B7AE /* BookDetailTitleView.m */; };
+		B8AC6D301FB5AB090002B7AE /* BookDetailTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC6D2E1FB5AB090002B7AE /* BookDetailTitleView.xib */; };
+		B8AC6D351FB5AC100002B7AE /* BookDetailBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC6D331FB5AC100002B7AE /* BookDetailBannerCell.m */; };
+		B8AC6D361FB5AC100002B7AE /* BookDetailBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC6D341FB5AC100002B7AE /* BookDetailBannerCell.xib */; };
+		B8AC6D3B1FB5BE4E0002B7AE /* BookSellerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC6D391FB5BE4E0002B7AE /* BookSellerView.m */; };
+		B8AC6D3C1FB5BE4E0002B7AE /* BookSellerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC6D3A1FB5BE4E0002B7AE /* BookSellerView.xib */; };
+		B8B2247E1FB7F10000BE2B36 /* soulsbookv4.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8B2247D1FB7F0FF00BE2B36 /* soulsbookv4.ttf */; };
 		B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */; };
 		B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DEA1F985E0C009AF99B /* ItemMenu.m */; };
-		B8E89DEF1F985E3E009AF99B /* UIColor+Method.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DEE1F985E37009AF99B /* UIColor+Method.m */; };
 		B8E89DF31F985E8B009AF99B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DF21F985E8B009AF99B /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -30,34 +99,131 @@
 		5D70C349DA8D344838F026FB /* Pods-BookSouls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSouls.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls.release.xcconfig"; sourceTree = "<group>"; };
 		8709803AC4C5C551F640285C /* libPods-BookSouls.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookSouls.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFCE7AB326CA8858C429DC3 /* Pods-BookSouls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSouls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls.debug.xcconfig"; sourceTree = "<group>"; };
+		B801E5851FB9735500A49143 /* Muli-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B801E5861FB9735500A49143 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Regular.ttf"; sourceTree = "<group>"; };
+		B801E5871FB9735600A49143 /* Muli-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Black.ttf"; sourceTree = "<group>"; };
+		B801E5881FB9735600A49143 /* Muli-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		B801E5891FB9735600A49143 /* Muli-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Italic.ttf"; sourceTree = "<group>"; };
+		B801E58A1FB9735600A49143 /* Muli-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B801E58B1FB9735600A49143 /* Muli-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Light.ttf"; sourceTree = "<group>"; };
+		B801E58C1FB9735700A49143 /* Muli-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		B801E58D1FB9735700A49143 /* Muli-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B801E58E1FB9735700A49143 /* Muli-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B801E58F1FB9735700A49143 /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
+		B801E5901FB9735700A49143 /* Muli-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B801E5911FB9735800A49143 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
+		B801E5921FB9735800A49143 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
+		B801E5A21FB9786A00A49143 /* BookImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookImageViewController.h; sourceTree = "<group>"; };
+		B801E5A31FB9786A00A49143 /* BookImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookImageViewController.m; sourceTree = "<group>"; };
+		B801E5A61FB979AB00A49143 /* BookImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookImageCell.h; sourceTree = "<group>"; };
+		B801E5A71FB979AB00A49143 /* BookImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookImageCell.m; sourceTree = "<group>"; };
+		B801E5A81FB979AB00A49143 /* BookImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookImageCell.xib; sourceTree = "<group>"; };
 		B823AE891F94AE7300568820 /* BookSouls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSouls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B823AE8C1F94AE7300568820 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B823AE8D1F94AE7300568820 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B823AE8F1F94AE7300568820 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B823AE901F94AE7300568820 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B823AE931F94AE7300568820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B823AE951F94AE7300568820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B823AE981F94AE7300568820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B823AE9A1F94AE7300568820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B823AE9B1F94AE7300568820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B823ED801FB2B05B00F9A0F6 /* BookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookView.h; sourceTree = "<group>"; };
+		B823ED811FB2B05B00F9A0F6 /* BookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookView.m; sourceTree = "<group>"; };
+		B823ED821FB2B05B00F9A0F6 /* BookView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookView.xib; sourceTree = "<group>"; };
+		B823ED861FB2C5E200F9A0F6 /* BookCategoriesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCategoriesView.h; sourceTree = "<group>"; };
+		B823ED871FB2C5E200F9A0F6 /* BookCategoriesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCategoriesView.m; sourceTree = "<group>"; };
+		B823ED881FB2C5E200F9A0F6 /* BookCategoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCategoriesView.xib; sourceTree = "<group>"; };
+		B823ED8A1FB2D69C00F9A0F6 /* CategoriesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesCell.h; sourceTree = "<group>"; };
+		B823ED8B1FB2D69C00F9A0F6 /* CategoriesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesCell.m; sourceTree = "<group>"; };
+		B823ED8C1FB2D69C00F9A0F6 /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
+		B823ED901FB2D81D00F9A0F6 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
+		B823ED911FB2D81D00F9A0F6 /* Categories.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
+		B823ED961FB2ED1500F9A0F6 /* SellerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerView.m; sourceTree = "<group>"; };
+		B823ED971FB2ED1600F9A0F6 /* SellerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerView.h; sourceTree = "<group>"; };
+		B823ED981FB2ED1600F9A0F6 /* SellerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerView.xib; sourceTree = "<group>"; };
+		B823ED9B1FB2ED9C00F9A0F6 /* SellerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerCell.h; sourceTree = "<group>"; };
+		B823ED9C1FB2ED9C00F9A0F6 /* SellerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerCell.m; sourceTree = "<group>"; };
+		B823ED9D1FB2ED9C00F9A0F6 /* SellerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerCell.xib; sourceTree = "<group>"; };
+		B823EDA21FB30D2B00F9A0F6 /* BookSouls.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookSouls.entitlements; sourceTree = "<group>"; };
 		B83CFF5B1F99AAF300149E39 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		B83CFF5C1F99AAF300149E39 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		B83CFF5D1F99AAF300149E39 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		B83CFF5E1F99AAF300149E39 /* MenuLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLeftView.h; sourceTree = "<group>"; };
 		B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLeftView.m; sourceTree = "<group>"; };
 		B83CFF601F99AAF300149E39 /* MenuLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuLeftView.xib; sourceTree = "<group>"; };
-		B874616C1FA72C7D0023E1C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B88ECA861FAFFFAE0035525C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		B88ECA8B1FAFFFAE0035525C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		B88ECA8C1FAFFFAE0035525C /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B88ECA8D1FAFFFAE0035525C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		B88ECA901FAFFFAF0035525C /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		B88ECA911FAFFFAF0035525C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		B88ECA951FAFFFAF0035525C /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		B88ECA971FAFFFB00035525C /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		B88ECA981FAFFFB00035525C /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B88ECA991FAFFFB00035525C /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B88ECA9A1FAFFFB00035525C /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B88ECA9C1FAFFFB00035525C /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		B88ECAB91FB0378F0035525C /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		B88ECABA1FB0378F0035525C /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		B88ECABD1FB0417C0035525C /* APIRequestHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIRequestHandler.h; sourceTree = "<group>"; };
+		B88ECABE1FB0417C0035525C /* APIRequestHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIRequestHandler.m; sourceTree = "<group>"; };
+		B88ECAC01FB042420035525C /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		B88ECAC11FB042420035525C /* Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		B88ECAC51FB042C00035525C /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B88ECAC61FB042C00035525C /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B88ECAC91FB06BE60035525C /* SessionUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionUser.h; sourceTree = "<group>"; };
+		B88ECACA1FB06BE60035525C /* SessionUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionUser.m; sourceTree = "<group>"; };
+		B88ECACD1FB06E1A0035525C /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		B88ECACE1FB06E1A0035525C /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		B89E88231FB6AAB4004C5C13 /* BookContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookContentView.h; sourceTree = "<group>"; };
+		B89E88241FB6AAB4004C5C13 /* BookContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookContentView.m; sourceTree = "<group>"; };
+		B89E88251FB6AAB4004C5C13 /* BookContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookContentView.xib; sourceTree = "<group>"; };
+		B8A122411FB40343007D6C27 /* SearchBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBookViewController.h; sourceTree = "<group>"; };
+		B8A122421FB40343007D6C27 /* SearchBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBookViewController.m; sourceTree = "<group>"; };
+		B8A122441FB4173D007D6C27 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		B8A122451FB4173D007D6C27 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		B8A1224A1FB45B9E007D6C27 /* SearchBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBookCell.h; sourceTree = "<group>"; };
+		B8A1224B1FB45B9E007D6C27 /* SearchBookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBookCell.m; sourceTree = "<group>"; };
+		B8A1224C1FB45B9F007D6C27 /* SearchBookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBookCell.xib; sourceTree = "<group>"; };
+		B8A752B21FB153F10060EBDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B8A752B51FB1899A0060EBDB /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B8A752B61FB1899A0060EBDB /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B8A752BF1FB194E60060EBDB /* WellcomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WellcomeView.h; sourceTree = "<group>"; };
+		B8A752C01FB194E60060EBDB /* WellcomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WellcomeView.m; sourceTree = "<group>"; };
+		B8A752C11FB194E60060EBDB /* WellcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WellcomeView.xib; sourceTree = "<group>"; };
+		B8A752C51FB1A4F60060EBDB /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		B8A752C61FB1A4F60060EBDB /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		B8A752C91FB1AB830060EBDB /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		B8A752CA1FB1AB830060EBDB /* Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		B8A752CE1FB1ACFC0060EBDB /* BookNewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookNewView.h; sourceTree = "<group>"; };
+		B8A752CF1FB1ACFC0060EBDB /* BookNewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookNewView.m; sourceTree = "<group>"; };
+		B8A752D01FB1ACFC0060EBDB /* BookNewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookNewView.xib; sourceTree = "<group>"; };
+		B8A752D41FB1B1E10060EBDB /* BookNewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookNewCell.h; sourceTree = "<group>"; };
+		B8A752D51FB1B1E10060EBDB /* BookNewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookNewCell.m; sourceTree = "<group>"; };
+		B8A752D61FB1B1E10060EBDB /* BookNewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookNewCell.xib; sourceTree = "<group>"; };
+		B8AC6D1E1FB546370002B7AE /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		B8AC6D1F1FB546370002B7AE /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		B8AC6D221FB54D240002B7AE /* CategoriesTblCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesTblCell.h; sourceTree = "<group>"; };
+		B8AC6D231FB54D240002B7AE /* CategoriesTblCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesTblCell.m; sourceTree = "<group>"; };
+		B8AC6D241FB54D240002B7AE /* CategoriesTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTblCell.xib; sourceTree = "<group>"; };
+		B8AC6D281FB59B060002B7AE /* BookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		B8AC6D291FB59B060002B7AE /* BookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
+		B8AC6D2C1FB5AB090002B7AE /* BookDetailTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailTitleView.h; sourceTree = "<group>"; };
+		B8AC6D2D1FB5AB090002B7AE /* BookDetailTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailTitleView.m; sourceTree = "<group>"; };
+		B8AC6D2E1FB5AB090002B7AE /* BookDetailTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailTitleView.xib; sourceTree = "<group>"; };
+		B8AC6D321FB5AC100002B7AE /* BookDetailBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailBannerCell.h; sourceTree = "<group>"; };
+		B8AC6D331FB5AC100002B7AE /* BookDetailBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailBannerCell.m; sourceTree = "<group>"; };
+		B8AC6D341FB5AC100002B7AE /* BookDetailBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailBannerCell.xib; sourceTree = "<group>"; };
+		B8AC6D381FB5BE4E0002B7AE /* BookSellerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookSellerView.h; sourceTree = "<group>"; };
+		B8AC6D391FB5BE4E0002B7AE /* BookSellerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookSellerView.m; sourceTree = "<group>"; };
+		B8AC6D3A1FB5BE4E0002B7AE /* BookSellerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookSellerView.xib; sourceTree = "<group>"; };
+		B8B2247D1FB7F0FF00BE2B36 /* soulsbookv4.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = soulsbookv4.ttf; sourceTree = "<group>"; };
 		B8DA5CEA1FAC5EB200588E72 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E89DD41F985AFC009AF99B /* CommonEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonEnum.h; sourceTree = "<group>"; };
 		B8E89DD61F985B83009AF99B /* SlideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
 		B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
-		B8E89DD91F985BB1009AF99B /* ListSalonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListSalonViewController.h; sourceTree = "<group>"; };
-		B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListSalonViewController.m; sourceTree = "<group>"; };
 		B8E89DDD1F985CC6009AF99B /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
 		B8E89DE91F985E0C009AF99B /* ItemMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemMenu.h; sourceTree = "<group>"; };
 		B8E89DEA1F985E0C009AF99B /* ItemMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemMenu.m; sourceTree = "<group>"; };
-		B8E89DED1F985E37009AF99B /* UIColor+Method.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Method.h"; sourceTree = "<group>"; };
-		B8E89DEE1F985E37009AF99B /* UIColor+Method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Method.m"; sourceTree = "<group>"; };
 		B8E89DF11F985E8B009AF99B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B8E89DF21F985E8B009AF99B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B8E89DF41F985F07009AF99B /* booksouls.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = booksouls.pch; sourceTree = SOURCE_ROOT; };
@@ -93,6 +259,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B801E5A11FB9785C00A49143 /* BookImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B801E5A21FB9786A00A49143 /* BookImageViewController.h */,
+				B801E5A31FB9786A00A49143 /* BookImageViewController.m */,
+			);
+			path = BookImageViewController;
+			sourceTree = "<group>";
+		};
+		B801E5A51FB9799A00A49143 /* BookImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				B801E5A61FB979AB00A49143 /* BookImageCell.h */,
+				B801E5A71FB979AB00A49143 /* BookImageCell.m */,
+				B801E5A81FB979AB00A49143 /* BookImageCell.xib */,
+			);
+			path = BookImageCell;
+			sourceTree = "<group>";
+		};
 		B823AE801F94AE7300568820 = {
 			isa = PBXGroup;
 			children = (
@@ -114,23 +299,83 @@
 		B823AE8B1F94AE7300568820 /* BookSouls */ = {
 			isa = PBXGroup;
 			children = (
+				B823EDA21FB30D2B00F9A0F6 /* BookSouls.entitlements */,
+				B88ECA731FAFFD450035525C /* Font */,
 				B8E89DF41F985F07009AF99B /* booksouls.pch */,
 				B8E89DD31F985AFC009AF99B /* Utilities */,
+				B88ECAC31FB042B70035525C /* Lirary */,
 				B8E89DCE1F985879009AF99B /* Controller */,
 				B8E89DCF1F985879009AF99B /* CustomView */,
 				B8E89DCD1F985879009AF99B /* Model */,
 				B823AE8C1F94AE7300568820 /* AppDelegate.h */,
 				B823AE8D1F94AE7300568820 /* AppDelegate.m */,
-				B823AE8F1F94AE7300568820 /* ViewController.h */,
-				B823AE901F94AE7300568820 /* ViewController.m */,
 				B823AE921F94AE7300568820 /* Main.storyboard */,
 				B823AE951F94AE7300568820 /* Assets.xcassets */,
 				B823AE971F94AE7300568820 /* LaunchScreen.storyboard */,
+				B8A752B21FB153F10060EBDB /* GoogleService-Info.plist */,
 				B823AE9A1F94AE7300568820 /* Info.plist */,
-				B874616C1FA72C7D0023E1C6 /* GoogleService-Info.plist */,
 				B823AE9B1F94AE7300568820 /* main.m */,
 			);
 			path = BookSouls;
+			sourceTree = "<group>";
+		};
+		B823ED7F1FB2B03F00F9A0F6 /* BookView */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED801FB2B05B00F9A0F6 /* BookView.h */,
+				B823ED811FB2B05B00F9A0F6 /* BookView.m */,
+				B823ED821FB2B05B00F9A0F6 /* BookView.xib */,
+			);
+			path = BookView;
+			sourceTree = "<group>";
+		};
+		B823ED851FB2C5D200F9A0F6 /* BookCategoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED861FB2C5E200F9A0F6 /* BookCategoriesView.h */,
+				B823ED871FB2C5E200F9A0F6 /* BookCategoriesView.m */,
+				B823ED881FB2C5E200F9A0F6 /* BookCategoriesView.xib */,
+			);
+			path = BookCategoriesView;
+			sourceTree = "<group>";
+		};
+		B823ED891FB2D69000F9A0F6 /* CategoriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED8A1FB2D69C00F9A0F6 /* CategoriesCell.h */,
+				B823ED8B1FB2D69C00F9A0F6 /* CategoriesCell.m */,
+				B823ED8C1FB2D69C00F9A0F6 /* CategoriesCell.xib */,
+			);
+			path = CategoriesCell;
+			sourceTree = "<group>";
+		};
+		B823ED8F1FB2D80F00F9A0F6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED901FB2D81D00F9A0F6 /* Categories.h */,
+				B823ED911FB2D81D00F9A0F6 /* Categories.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B823ED951FB2ECEB00F9A0F6 /* SellerView */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED971FB2ED1600F9A0F6 /* SellerView.h */,
+				B823ED961FB2ED1500F9A0F6 /* SellerView.m */,
+				B823ED981FB2ED1600F9A0F6 /* SellerView.xib */,
+			);
+			path = SellerView;
+			sourceTree = "<group>";
+		};
+		B823ED9A1FB2ED8200F9A0F6 /* SellerCell */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED9B1FB2ED9C00F9A0F6 /* SellerCell.h */,
+				B823ED9C1FB2ED9C00F9A0F6 /* SellerCell.m */,
+				B823ED9D1FB2ED9C00F9A0F6 /* SellerCell.xib */,
+			);
+			path = SellerCell;
 			sourceTree = "<group>";
 		};
 		B83CFF591F99AAF300149E39 /* MenuLeft */ = {
@@ -154,9 +399,269 @@
 			path = MenuCell;
 			sourceTree = "<group>";
 		};
+		B88ECA731FAFFD450035525C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B801E5871FB9735600A49143 /* Muli-Black.ttf */,
+				B801E5851FB9735500A49143 /* Muli-BlackItalic.ttf */,
+				B801E5911FB9735800A49143 /* Muli-Bold.ttf */,
+				B801E5901FB9735700A49143 /* Muli-BoldItalic.ttf */,
+				B801E58E1FB9735700A49143 /* Muli-ExtraBold.ttf */,
+				B801E58D1FB9735700A49143 /* Muli-ExtraBoldItalic.ttf */,
+				B801E58A1FB9735600A49143 /* Muli-ExtraLight.ttf */,
+				B801E5881FB9735600A49143 /* Muli-ExtraLightItalic.ttf */,
+				B801E5891FB9735600A49143 /* Muli-Italic.ttf */,
+				B801E58B1FB9735600A49143 /* Muli-Light.ttf */,
+				B801E58F1FB9735700A49143 /* Muli-LightItalic.ttf */,
+				B801E5861FB9735500A49143 /* Muli-Regular.ttf */,
+				B801E5921FB9735800A49143 /* Muli-SemiBold.ttf */,
+				B801E58C1FB9735700A49143 /* Muli-SemiBoldItalic.ttf */,
+				B8B2247D1FB7F0FF00BE2B36 /* soulsbookv4.ttf */,
+				B88ECA8D1FAFFFAE0035525C /* Roboto-Black.ttf */,
+				B88ECA981FAFFFB00035525C /* Roboto-BlackItalic.ttf */,
+				B88ECA8B1FAFFFAE0035525C /* Roboto-Bold.ttf */,
+				B88ECA9A1FAFFFB00035525C /* Roboto-BoldItalic.ttf */,
+				B88ECA901FAFFFAF0035525C /* Roboto-Italic.ttf */,
+				B88ECA9C1FAFFFB00035525C /* Roboto-Light.ttf */,
+				B88ECA971FAFFFB00035525C /* Roboto-LightItalic.ttf */,
+				B88ECA861FAFFFAE0035525C /* Roboto-Medium.ttf */,
+				B88ECA8C1FAFFFAE0035525C /* Roboto-MediumItalic.ttf */,
+				B88ECA911FAFFFAF0035525C /* Roboto-Regular.ttf */,
+				B88ECA951FAFFFAF0035525C /* Roboto-Thin.ttf */,
+				B88ECA991FAFFFB00035525C /* Roboto-ThinItalic.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		B88ECAB81FB037770035525C /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B88ECAB91FB0378F0035525C /* SignUpViewController.h */,
+				B88ECABA1FB0378F0035525C /* SignUpViewController.m */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
+		B88ECABC1FB03FB90035525C /* APIHandler */ = {
+			isa = PBXGroup;
+			children = (
+				B88ECABD1FB0417C0035525C /* APIRequestHandler.h */,
+				B88ECABE1FB0417C0035525C /* APIRequestHandler.m */,
+			);
+			path = APIHandler;
+			sourceTree = "<group>";
+		};
+		B88ECAC31FB042B70035525C /* Lirary */ = {
+			isa = PBXGroup;
+			children = (
+				B88ECAC41FB042C00035525C /* Reachability */,
+			);
+			path = Lirary;
+			sourceTree = "<group>";
+		};
+		B88ECAC41FB042C00035525C /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B88ECAC51FB042C00035525C /* Reachability.h */,
+				B88ECAC61FB042C00035525C /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		B88ECAC81FB06BE60035525C /* SessionUser */ = {
+			isa = PBXGroup;
+			children = (
+				B88ECAC91FB06BE60035525C /* SessionUser.h */,
+				B88ECACA1FB06BE60035525C /* SessionUser.m */,
+			);
+			path = SessionUser;
+			sourceTree = "<group>";
+		};
+		B88ECACC1FB06E0A0035525C /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B88ECACD1FB06E1A0035525C /* UserInfo.h */,
+				B88ECACE1FB06E1A0035525C /* UserInfo.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		B89E88221FB6AA86004C5C13 /* BookContentView */ = {
+			isa = PBXGroup;
+			children = (
+				B89E88231FB6AAB4004C5C13 /* BookContentView.h */,
+				B89E88241FB6AAB4004C5C13 /* BookContentView.m */,
+				B89E88251FB6AAB4004C5C13 /* BookContentView.xib */,
+			);
+			path = BookContentView;
+			sourceTree = "<group>";
+		};
+		B8A122401FB4032A007D6C27 /* SearchBookViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8A122491FB45B80007D6C27 /* SearchBookCell */,
+				B8A122411FB40343007D6C27 /* SearchBookViewController.h */,
+				B8A122421FB40343007D6C27 /* SearchBookViewController.m */,
+			);
+			path = SearchBookViewController;
+			sourceTree = "<group>";
+		};
+		B8A122491FB45B80007D6C27 /* SearchBookCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8A1224A1FB45B9E007D6C27 /* SearchBookCell.h */,
+				B8A1224B1FB45B9E007D6C27 /* SearchBookCell.m */,
+				B8A1224C1FB45B9F007D6C27 /* SearchBookCell.xib */,
+			);
+			path = SearchBookCell;
+			sourceTree = "<group>";
+		};
+		B8A752B41FB189870060EBDB /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B823ED9A1FB2ED8200F9A0F6 /* SellerCell */,
+				B823ED951FB2ECEB00F9A0F6 /* SellerView */,
+				B823ED891FB2D69000F9A0F6 /* CategoriesCell */,
+				B823ED851FB2C5D200F9A0F6 /* BookCategoriesView */,
+				B823ED7F1FB2B03F00F9A0F6 /* BookView */,
+				B8A752D31FB1B1CE0060EBDB /* BookNewCell */,
+				B8A752CD1FB1ACDE0060EBDB /* BookNewView */,
+				B8A752BE1FB194A90060EBDB /* WellcomeView */,
+				B8A752B51FB1899A0060EBDB /* MainViewController.h */,
+				B8A752B61FB1899A0060EBDB /* MainViewController.m */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		B8A752BE1FB194A90060EBDB /* WellcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				B8A752BF1FB194E60060EBDB /* WellcomeView.h */,
+				B8A752C01FB194E60060EBDB /* WellcomeView.m */,
+				B8A752C11FB194E60060EBDB /* WellcomeView.xib */,
+			);
+			path = WellcomeView;
+			sourceTree = "<group>";
+		};
+		B8A752C41FB1A4DB0060EBDB /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				B8A752C51FB1A4F60060EBDB /* Book.h */,
+				B8A752C61FB1A4F60060EBDB /* Book.m */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		B8A752C81FB1AB780060EBDB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B8A752C91FB1AB830060EBDB /* Image.h */,
+				B8A752CA1FB1AB830060EBDB /* Image.m */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		B8A752CD1FB1ACDE0060EBDB /* BookNewView */ = {
+			isa = PBXGroup;
+			children = (
+				B8A752CE1FB1ACFC0060EBDB /* BookNewView.h */,
+				B8A752CF1FB1ACFC0060EBDB /* BookNewView.m */,
+				B8A752D01FB1ACFC0060EBDB /* BookNewView.xib */,
+			);
+			path = BookNewView;
+			sourceTree = "<group>";
+		};
+		B8A752D31FB1B1CE0060EBDB /* BookNewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8A752D41FB1B1E10060EBDB /* BookNewCell.h */,
+				B8A752D51FB1B1E10060EBDB /* BookNewCell.m */,
+				B8A752D61FB1B1E10060EBDB /* BookNewCell.xib */,
+			);
+			path = BookNewCell;
+			sourceTree = "<group>";
+		};
+		B8AC6D1C1FB5461A0002B7AE /* DataMaster */ = {
+			isa = PBXGroup;
+			children = (
+				B8AC6D1D1FB5462C0002B7AE /* CategoriesViewController */,
+			);
+			path = DataMaster;
+			sourceTree = "<group>";
+		};
+		B8AC6D1D1FB5462C0002B7AE /* CategoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8AC6D211FB54D150002B7AE /* CategoriesTblCell */,
+				B8AC6D1E1FB546370002B7AE /* CategoriesViewController.h */,
+				B8AC6D1F1FB546370002B7AE /* CategoriesViewController.m */,
+			);
+			path = CategoriesViewController;
+			sourceTree = "<group>";
+		};
+		B8AC6D211FB54D150002B7AE /* CategoriesTblCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8AC6D221FB54D240002B7AE /* CategoriesTblCell.h */,
+				B8AC6D231FB54D240002B7AE /* CategoriesTblCell.m */,
+				B8AC6D241FB54D240002B7AE /* CategoriesTblCell.xib */,
+			);
+			path = CategoriesTblCell;
+			sourceTree = "<group>";
+		};
+		B8AC6D271FB59AF50002B7AE /* BookDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B801E5A51FB9799A00A49143 /* BookImageCell */,
+				B801E5A11FB9785C00A49143 /* BookImageViewController */,
+				B89E88221FB6AA86004C5C13 /* BookContentView */,
+				B8AC6D371FB5BE380002B7AE /* BookSellerView */,
+				B8AC6D311FB5AC000002B7AE /* BookDetailBannerCell */,
+				B8AC6D2B1FB5AAED0002B7AE /* BookDetailTitleView */,
+				B8AC6D281FB59B060002B7AE /* BookDetailViewController.h */,
+				B8AC6D291FB59B060002B7AE /* BookDetailViewController.m */,
+			);
+			path = BookDetailViewController;
+			sourceTree = "<group>";
+		};
+		B8AC6D2B1FB5AAED0002B7AE /* BookDetailTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				B8AC6D2C1FB5AB090002B7AE /* BookDetailTitleView.h */,
+				B8AC6D2D1FB5AB090002B7AE /* BookDetailTitleView.m */,
+				B8AC6D2E1FB5AB090002B7AE /* BookDetailTitleView.xib */,
+			);
+			path = BookDetailTitleView;
+			sourceTree = "<group>";
+		};
+		B8AC6D311FB5AC000002B7AE /* BookDetailBannerCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8AC6D321FB5AC100002B7AE /* BookDetailBannerCell.h */,
+				B8AC6D331FB5AC100002B7AE /* BookDetailBannerCell.m */,
+				B8AC6D341FB5AC100002B7AE /* BookDetailBannerCell.xib */,
+			);
+			path = BookDetailBannerCell;
+			sourceTree = "<group>";
+		};
+		B8AC6D371FB5BE380002B7AE /* BookSellerView */ = {
+			isa = PBXGroup;
+			children = (
+				B8AC6D381FB5BE4E0002B7AE /* BookSellerView.h */,
+				B8AC6D391FB5BE4E0002B7AE /* BookSellerView.m */,
+				B8AC6D3A1FB5BE4E0002B7AE /* BookSellerView.xib */,
+			);
+			path = BookSellerView;
+			sourceTree = "<group>";
+		};
 		B8E89DCD1F985879009AF99B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B823ED8F1FB2D80F00F9A0F6 /* Categories */,
+				B8A752C81FB1AB780060EBDB /* Image */,
+				B8A752C41FB1A4DB0060EBDB /* Book */,
+				B88ECACC1FB06E0A0035525C /* UserInfo */,
+				B88ECAC81FB06BE60035525C /* SessionUser */,
 				B8E89DE81F985E0C009AF99B /* ItemMenu */,
 			);
 			path = Model;
@@ -165,8 +670,12 @@
 		B8E89DCE1F985879009AF99B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B8AC6D271FB59AF50002B7AE /* BookDetailViewController */,
+				B8AC6D1C1FB5461A0002B7AE /* DataMaster */,
+				B8A122401FB4032A007D6C27 /* SearchBookViewController */,
+				B8A752B41FB189870060EBDB /* MainViewController */,
+				B88ECAB81FB037770035525C /* SignUpViewController */,
 				B8E89DF01F985E7E009AF99B /* LoginViewController */,
-				B8E89DD81F985BA6009AF99B /* ListSalonViewController */,
 				B8E89DD51F985B83009AF99B /* SlideMenuViewController */,
 			);
 			path = Controller;
@@ -182,6 +691,9 @@
 		B8E89DD31F985AFC009AF99B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B88ECAC01FB042420035525C /* Common.h */,
+				B88ECAC11FB042420035525C /* Common.m */,
+				B88ECABC1FB03FB90035525C /* APIHandler */,
 				B8E89DEC1F985E37009AF99B /* UIColor+Method */,
 				B8E89DD41F985AFC009AF99B /* CommonEnum.h */,
 				B8E89DDD1F985CC6009AF99B /* CommonDefine.h */,
@@ -199,15 +711,6 @@
 			path = SlideMenuViewController;
 			sourceTree = "<group>";
 		};
-		B8E89DD81F985BA6009AF99B /* ListSalonViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B8E89DD91F985BB1009AF99B /* ListSalonViewController.h */,
-				B8E89DDA1F985BB1009AF99B /* ListSalonViewController.m */,
-			);
-			path = ListSalonViewController;
-			sourceTree = "<group>";
-		};
 		B8E89DE81F985E0C009AF99B /* ItemMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +723,8 @@
 		B8E89DEC1F985E37009AF99B /* UIColor+Method */ = {
 			isa = PBXGroup;
 			children = (
-				B8E89DED1F985E37009AF99B /* UIColor+Method.h */,
-				B8E89DEE1F985E37009AF99B /* UIColor+Method.m */,
+				B8A122441FB4173D007D6C27 /* UIColor+HexString.h */,
+				B8A122451FB4173D007D6C27 /* UIColor+HexString.m */,
 			);
 			path = "UIColor+Method";
 			sourceTree = "<group>";
@@ -248,6 +751,7 @@
 				B823AE871F94AE7300568820 /* Resources */,
 				F73DF832ADE7AF5FCC41E9B7 /* [CP] Embed Pods Frameworks */,
 				148FD9B44604533ED9844AA4 /* [CP] Copy Pods Resources */,
+				B823EDA11FB306E300F9A0F6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -269,7 +773,12 @@
 				TargetAttributes = {
 					B823AE881F94AE7300568820 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -296,10 +805,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B874616D1FA72C930023E1C6 /* GoogleService-Info.plist in Resources */,
+				B8A1224D1FB45BCF007D6C27 /* SearchBookCell.xib in Resources */,
+				B823EDA01FB2F5CA00F9A0F6 /* SellerView.xib in Resources */,
+				B823ED931FB2DA1600F9A0F6 /* BookCategoriesView.xib in Resources */,
+				B823ED841FB2B19D00F9A0F6 /* BookView.xib in Resources */,
+				B801E5981FB9735800A49143 /* Muli-ExtraLight.ttf in Resources */,
+				B8AC6D3C1FB5BE4E0002B7AE /* BookSellerView.xib in Resources */,
+				B801E5991FB9735800A49143 /* Muli-Light.ttf in Resources */,
+				B8A752B31FB157AE0060EBDB /* GoogleService-Info.plist in Resources */,
+				B8AC6D301FB5AB090002B7AE /* BookDetailTitleView.xib in Resources */,
+				B801E5971FB9735800A49143 /* Muli-Italic.ttf in Resources */,
+				B801E59D1FB9735800A49143 /* Muli-LightItalic.ttf in Resources */,
+				B823ED9F1FB2ED9C00F9A0F6 /* SellerCell.xib in Resources */,
+				B8B2247E1FB7F10000BE2B36 /* soulsbookv4.ttf in Resources */,
+				B8AC6D361FB5AC100002B7AE /* BookDetailBannerCell.xib in Resources */,
+				B801E59C1FB9735800A49143 /* Muli-ExtraBold.ttf in Resources */,
+				B89E88271FB6AAB4004C5C13 /* BookContentView.xib in Resources */,
+				B801E5951FB9735800A49143 /* Muli-Black.ttf in Resources */,
+				B801E59B1FB9735800A49143 /* Muli-ExtraBoldItalic.ttf in Resources */,
+				B88ECAAB1FB021270035525C /* Roboto-Black.ttf in Resources */,
+				B88ECAAC1FB021270035525C /* Roboto-BlackItalic.ttf in Resources */,
+				B88ECAAD1FB021270035525C /* Roboto-Bold.ttf in Resources */,
+				B88ECAAE1FB021270035525C /* Roboto-BoldItalic.ttf in Resources */,
+				B88ECAAF1FB021270035525C /* Roboto-Italic.ttf in Resources */,
+				B88ECAB01FB021270035525C /* Roboto-Light.ttf in Resources */,
+				B88ECAB11FB021270035525C /* Roboto-LightItalic.ttf in Resources */,
+				B823ED8E1FB2D69C00F9A0F6 /* CategoriesCell.xib in Resources */,
+				B801E5A01FB9735800A49143 /* Muli-SemiBold.ttf in Resources */,
+				B8A752D81FB1B1E10060EBDB /* BookNewCell.xib in Resources */,
+				B88ECAB21FB021270035525C /* Roboto-Medium.ttf in Resources */,
+				B88ECAB31FB021270035525C /* Roboto-MediumItalic.ttf in Resources */,
+				B8A752D21FB1ACFC0060EBDB /* BookNewView.xib in Resources */,
+				B801E59E1FB9735800A49143 /* Muli-BoldItalic.ttf in Resources */,
+				B801E5AA1FB979AB00A49143 /* BookImageCell.xib in Resources */,
+				B801E5941FB9735800A49143 /* Muli-Regular.ttf in Resources */,
+				B88ECAB41FB021270035525C /* Roboto-Regular.ttf in Resources */,
+				B801E59A1FB9735800A49143 /* Muli-SemiBoldItalic.ttf in Resources */,
+				B88ECAB51FB021270035525C /* Roboto-Thin.ttf in Resources */,
+				B88ECAB61FB021270035525C /* Roboto-ThinItalic.ttf in Resources */,
+				B8A752C31FB194E60060EBDB /* WellcomeView.xib in Resources */,
 				B823AE991F94AE7300568820 /* LaunchScreen.storyboard in Resources */,
+				B801E5961FB9735800A49143 /* Muli-ExtraLightItalic.ttf in Resources */,
 				B823AE961F94AE7300568820 /* Assets.xcassets in Resources */,
+				B801E59F1FB9735800A49143 /* Muli-Bold.ttf in Resources */,
+				B801E5931FB9735800A49143 /* Muli-BlackItalic.ttf in Resources */,
 				B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */,
+				B8AC6D261FB54D240002B7AE /* CategoriesTblCell.xib in Resources */,
 				B823AE941F94AE7300568820 /* Main.storyboard in Resources */,
 				B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */,
 			);
@@ -315,6 +866,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BookSouls/Pods-BookSouls-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
@@ -346,6 +898,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B823EDA11FB306E300F9A0F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 997fe35fe87e589239f33e758cd23715b581a371 743eef7f7b36c5f14998783898065b0e692c4dfc71156259aec8d482707e4e76";
+		};
 		F73DF832ADE7AF5FCC41E9B7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,16 +933,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E89DEF1F985E3E009AF99B /* UIColor+Method.m in Sources */,
+				B8A1224E1FB45BE9007D6C27 /* SearchBookCell.m in Sources */,
+				B823ED991FB2ED6600F9A0F6 /* SellerView.m in Sources */,
+				B8AC6D251FB54D240002B7AE /* CategoriesTblCell.m in Sources */,
+				B823ED941FB2DA2200F9A0F6 /* BookCategoriesView.m in Sources */,
+				B8AC6D3B1FB5BE4E0002B7AE /* BookSellerView.m in Sources */,
+				B801E5A41FB9786A00A49143 /* BookImageViewController.m in Sources */,
+				B823ED831FB2B08300F9A0F6 /* BookView.m in Sources */,
+				B8A752C21FB194E60060EBDB /* WellcomeView.m in Sources */,
+				B8AC6D201FB546370002B7AE /* CategoriesViewController.m in Sources */,
+				B88ECACB1FB06C100035525C /* SessionUser.m in Sources */,
+				B823ED8D1FB2D69C00F9A0F6 /* CategoriesCell.m in Sources */,
+				B88ECAC71FB042D90035525C /* Reachability.m in Sources */,
+				B88ECAC21FB0424D0035525C /* Common.m in Sources */,
+				B8AC6D2F1FB5AB090002B7AE /* BookDetailTitleView.m in Sources */,
+				B8A752CB1FB1AB830060EBDB /* Image.m in Sources */,
+				B8A752B71FB1899A0060EBDB /* MainViewController.m in Sources */,
+				B89E88261FB6AAB4004C5C13 /* BookContentView.m in Sources */,
+				B88ECABF1FB0419B0035525C /* APIRequestHandler.m in Sources */,
+				B8A752D11FB1ACFC0060EBDB /* BookNewView.m in Sources */,
+				B8A122461FB4173D007D6C27 /* UIColor+HexString.m in Sources */,
 				B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */,
+				B823ED921FB2D81D00F9A0F6 /* Categories.m in Sources */,
 				B8E89DF31F985E8B009AF99B /* LoginViewController.m in Sources */,
+				B8A752C71FB1A4F60060EBDB /* Book.m in Sources */,
 				B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */,
-				B8E89DDB1F985BB1009AF99B /* ListSalonViewController.m in Sources */,
+				B823ED9E1FB2ED9C00F9A0F6 /* SellerCell.m in Sources */,
 				B83CFF611F99AAF300149E39 /* MenuCell.m in Sources */,
-				B823AE911F94AE7300568820 /* ViewController.m in Sources */,
+				B8A122431FB40343007D6C27 /* SearchBookViewController.m in Sources */,
 				B823AE9C1F94AE7300568820 /* main.m in Sources */,
+				B8AC6D351FB5AC100002B7AE /* BookDetailBannerCell.m in Sources */,
 				B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */,
+				B88ECABB1FB0378F0035525C /* SignUpViewController.m in Sources */,
+				B88ECACF1FB06E1A0035525C /* UserInfo.m in Sources */,
+				B8AC6D2A1FB59B060002B7AE /* BookDetailViewController.m in Sources */,
 				B823AE8E1F94AE7300568820 /* AppDelegate.m in Sources */,
+				B801E5A91FB979AB00A49143 /* BookImageCell.m in Sources */,
+				B8A752D71FB1B1E10060EBDB /* BookNewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +1024,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thin Tran (YN248DF397)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -487,7 +1079,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thin Tran (YN248DF397)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -512,14 +1104,27 @@
 			baseConfigurationReference = 8DFCE7AB326CA8858C429DC3 /* Pods-BookSouls.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = BookSouls/BookSouls.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YN248DF397;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/Google/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
 				GCC_PREFIX_HEADER = booksouls.pch;
 				INFOPLIST_FILE = BookSouls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = booksouls.cenvisco.vn;
+				PRODUCT_BUNDLE_IDENTIFIER = cenvisco.booksouls.vn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e88db35f-2d42-4ee6-878f-f06b4b1e41a4";
+				PROVISIONING_PROFILE_SPECIFIER = dev_booksouls;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -529,14 +1134,27 @@
 			baseConfigurationReference = 5D70C349DA8D344838F026FB /* Pods-BookSouls.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = BookSouls/BookSouls.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YN248DF397;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/Google/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
 				GCC_PREFIX_HEADER = booksouls.pch;
 				INFOPLIST_FILE = BookSouls/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = booksouls.cenvisco.vn;
+				PRODUCT_BUNDLE_IDENTIFIER = cenvisco.booksouls.vn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e88db35f-2d42-4ee6-878f-f06b4b1e41a4";
+				PROVISIONING_PROFILE_SPECIFIER = dev_booksouls;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

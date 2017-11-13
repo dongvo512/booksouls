@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WellcomeView" id="U6b-Vx-4bR" customClass="WellcomeView">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xin chào, Võ Nguyên Đông" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-VA-p2p">
+                    <rect key="frame" x="24" y="151" width="320" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="7mR-aw-rv1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hằng ngày những cuốn sách mới sẽ thường  xuyên làm mới ở đây!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnr-qz-Yc8">
+                    <rect key="frame" x="24" y="185" width="320" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="aUC-Qk-fky"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
+                    <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="Cwk-qs-ZVQ">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="135"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Cwk-qs-ZVQ" secondAttribute="height" multiplier="360:144" constant="23" id="r5U-pY-lIo"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Cwk-qs-ZVQ" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" id="SHr-AH-7aZ"/>
+                <constraint firstItem="Wnr-qz-Yc8" firstAttribute="top" secondItem="bWX-VA-p2p" secondAttribute="bottom" constant="8" id="SZD-Z3-xZl"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="Cwk-qs-ZVQ" secondAttribute="trailing" id="XrH-NS-JsT"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="Wnr-qz-Yc8" secondAttribute="trailing" constant="16" id="dZT-hw-o7m"/>
+                <constraint firstItem="bWX-VA-p2p" firstAttribute="top" secondItem="Cwk-qs-ZVQ" secondAttribute="bottom" constant="16" id="hIL-DM-tSX"/>
+                <constraint firstItem="Wnr-qz-Yc8" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="24" id="lHE-4d-9bG"/>
+                <constraint firstItem="bWX-VA-p2p" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="24" id="qx3-Q4-QTS"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="bWX-VA-p2p" secondAttribute="trailing" constant="16" id="uji-mE-5RM"/>
+                <constraint firstItem="Cwk-qs-ZVQ" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" id="x62-wx-1j6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
+            <connections>
+                <outlet property="lblTitle" destination="bWX-VA-p2p" id="Tez-2H-DLR"/>
+            </connections>
+            <point key="canvasLocation" x="-167" y="-354"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="banner" width="360" height="144"/>
+    </resources>
+</document>

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SessionUser.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) SessionUser *sesstionUser;
+@property (nonatomic, strong) NSString *deviceToken;
+@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) NSMutableArray *arrCategories;
 
 @end
 

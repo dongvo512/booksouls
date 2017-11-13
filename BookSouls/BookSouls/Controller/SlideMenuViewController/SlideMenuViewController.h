@@ -13,7 +13,7 @@
 @interface SlideMenuViewController : UIViewController
 
 + (id)sharedInstance;
-
++ (void)resetSharedInstance;
 @property (nonatomic, strong) MenuLeftView *viewMenuLeft;
 @property (nonatomic) BOOL isUserManager;
 @property (nonatomic) BOOL isAdmin;

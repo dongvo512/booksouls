@@ -9,4 +9,10 @@ target 'BookSouls' do
 	pod 'SDWebImage', '~>4.0’
 	pod 'MBProgressHUD', '~> 1.0.0'
 	pod 'Google/SignIn'
+	pod 'FBSDKCoreKit'
+	pod 'FBSDKShareKit'
+	pod 'FBSDKLoginKit'
+	pod 'JSONModel'
+	pod 'Fabric'
+	pod 'Crashlytics'
 end
