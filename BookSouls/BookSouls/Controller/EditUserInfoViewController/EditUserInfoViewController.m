@@ -7,8 +7,10 @@
 //
 
 #import "EditUserInfoViewController.h"
+#import "UIColor+HexString.h"
 
 @interface EditUserInfoViewController ()
+@property (weak, nonatomic) IBOutlet UIView *viewUserInfo;
 
 @end
 
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self configUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +27,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Action
+- (IBAction)touchBtnMenu:(id)sender {
+    
+    [[SlideMenuViewController sharedInstance] toggle];
 }
-*/
+
+#pragma mark - Method
+- (void)configUI{
+    
+    self.viewUserInfo.layer.cornerRadius = 6;
+   // self.viewUserInfo.layer.borderWidth = 1.0;
+    //self.viewUserInfo.layer.borderColor = [UIColor colorWithHexString:@"#95989A"].CGColor;
+    self.viewUserInfo.layer.shadowColor = [UIColor colorWithHexString:@"#95989A"].CGColor;
+    self.viewUserInfo.layer.masksToBounds = NO;
+    self.viewUserInfo.layer.shadowOffset = CGSizeMake(0, 0);
+    self.viewUserInfo.layer.shadowRadius = 4;
+    self.viewUserInfo.layer.shadowOpacity = 0.3;
+    
+}
 
 @end

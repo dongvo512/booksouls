@@ -4,11 +4,11 @@
 
 typedef NS_ENUM(NSInteger, ItemMenuType) {
     
-    Item_Salon,
-    Item_Images,
-    Item_Favorite,
-    Item_Bookings,
-    Item_InfoUser
+    Item_Home,
+    Item_Notification,
+    Item_MyBook,
+    Item_UserInfo,
+    Item_Support
 };
 
 typedef NS_ENUM(NSInteger, ItemMenuManage) {

@@ -10,6 +10,8 @@
 #import "CommonEnum.h"
 #import "CommonDefine.h"
 #import "MainViewController.h"
+#import "EditUserInfoViewController.h"
+
 
 @interface SlideMenuViewController ()
 {
@@ -57,7 +59,7 @@ static SlideMenuViewController *sharedInstance = nil;
     
     ratioWidthMenuLeft = 0.75;
     
-    indexSelectedCurr = Item_Salon;
+    indexSelectedCurr = Item_Home;
     
     [self createNavigationContent];
     [self createBackgroundView];
@@ -124,64 +126,30 @@ static SlideMenuViewController *sharedInstance = nil;
         return;
     }
     
-    if(self.isUserManager){
-        
-        [self selectItemManager:index];
-    }
-    else if (self.isAdmin){
-        
-        [self selectItemAdmin:index];
-    }
-    else{
-        
-        [self selectItemMemeber:index];
+    switch (index) {
+        case Item_Home:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MainViewController *vcMain = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            [vcNavigation setViewControllers:@[vcMain] animated:YES];
+        }
+            break;
+        case Item_UserInfo:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            EditUserInfoViewController *vcEditUserInfo = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfoViewController"];
+            [vcNavigation setViewControllers:@[vcEditUserInfo] animated:YES];
+        }
+            
+            break;
+            
+        default:
+            break;
     }
     
     indexSelectedCurr = index;
     
     [self toggle];
-}
-- (void)selectItemManager:(NSInteger)index{
-    
-    switch (index) {
-            
-        case Item_InFoUserManger:{
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
-    
-}
-
-- (void)selectItemMemeber:(NSInteger)index{
-    
-    switch (index) {
-            
-        case Item_Salon:{
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
-    
-}
-
-- (void)selectItemAdmin:(NSInteger)index{
-    
-    switch (index) {
-            
-        case ItemAdminUser:{
-            
-        }
-            break;
-        default:
-            break;
-    }
 }
 
 -(void)createMenuLeft{
