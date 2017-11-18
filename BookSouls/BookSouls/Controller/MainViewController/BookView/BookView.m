@@ -36,6 +36,15 @@
     [self.cllBookNew registerNib:[UINib nibWithNibName:@"BookNewCell" bundle:nil] forCellWithReuseIdentifier:@"BookNewCell"];
 }
 
+#pragma mark - Action
+
+- (IBAction)touchBtnReadMore:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(readMoreBookHot)]){
+        
+        [[self delegate] readMoreBookHot];
+    }
+}
 #pragma mark - UICollectionViewDataSource - UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

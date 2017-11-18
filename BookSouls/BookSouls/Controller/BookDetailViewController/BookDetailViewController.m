@@ -325,7 +325,7 @@ typedef NS_ENUM(NSInteger, BookDetail) {
                 
                 BookView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"BookView" forIndexPath:indexPath];
                 [headerView.viewReadMore setHidden:YES];
-                
+                headerView.delegate = self;
                 if(self.arrRelated.count > 0){
                     
                     [headerView setDataForView:self.arrRelated title:@"Có thể bạn quan tâm"];
@@ -340,6 +340,15 @@ typedef NS_ENUM(NSInteger, BookDetail) {
     }
     
     return reusableview;
+}
+
+#pragma mark - BookViewDelegate
+- (void)selectedItemBook:(Book *)book{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookDetailViewController *vcBookImage = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
+    vcBookImage.bookCurr = book;
+    [self.navigationController pushViewController:vcBookImage animated:YES];
 }
 
 #pragma mark - BookContentViewDelegate
@@ -364,8 +373,6 @@ typedef NS_ENUM(NSInteger, BookDetail) {
 
 #pragma mark - BookSellerViewDelegate
 - (void)touchCall{
-    
-    self.bookCurr.user.phone = @"0932188608";
     
     NSString *phoneNumber = [@"tel://" stringByAppendingString:self.bookCurr.user.phone];
     

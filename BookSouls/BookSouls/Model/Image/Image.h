@@ -10,10 +10,11 @@
 
 @interface Image : JSONModel
 
-@property (nonatomic, strong) NSString <Optional> *id;
+@property (nonatomic, strong) NSNumber <Optional> *id;
 @property (nonatomic, strong) NSNumber <Optional> *active;
 @property (nonatomic, strong) NSString <Optional> *name;
 @property (nonatomic, strong) NSString <Optional> *path;
 @property (nonatomic, strong) NSString <Optional> *url;
+@property (nonatomic, strong) NSNumber <Optional> *isDefaultIMG;
 
 @end

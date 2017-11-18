@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+        <array key="soulsbookv4.ttf">
+            <string>soulsbookv4</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView">
+            <connections>
+                <outlet property="btnIcon" destination="okO-xV-FKH" id="PMt-LG-nXy"/>
+                <outlet property="lblSubTitle" destination="mqd-KB-kbY" id="WYx-sm-2Nl"/>
+                <outlet property="tfContent" destination="nRX-aZ-Hgk" id="mfp-Eh-1oF"/>
+                <outlet property="topSubTitleContraint" destination="Zqv-xz-ZON" id="Jeu-HS-bOw"/>
+                <outlet property="view" destination="iN0-l3-epB" id="2yG-2a-KKU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="296" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên sách" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqd-KB-kbY">
+                    <rect key="frame" x="12" y="22" width="272" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="qSN-RA-uyy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" red="0.56470588235294117" green="0.59607843137254901" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRX-aZ-Hgk">
+                    <rect key="frame" x="12" y="17" width="254" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Rby-lF-lbK"/>
+                    </constraints>
+                    <color key="textColor" red="0.14509803921568626" green="0.17254901960784313" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="aS8-oX-0ag"/>
+                    </connections>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxh-k6-1FC">
+                    <rect key="frame" x="12" y="57" width="272" height="1"/>
+                    <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ppy-KU-nrn"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okO-xV-FKH">
+                    <rect key="frame" x="244" y="18" width="40" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="JKf-aq-dqz"/>
+                        <constraint firstAttribute="width" constant="40" id="Vsr-46-Jg8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="soulsbookv4" family="soulsbookv4" pointSize="15"/>
+                    <state key="normal" title="">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="touchBtnIcon:" destination="-1" eventType="touchUpInside" id="7Uj-ii-3OK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mqd-KB-kbY" secondAttribute="trailing" constant="12" id="46M-Fi-ONL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nRX-aZ-Hgk" secondAttribute="trailing" constant="30" id="GBu-Y1-UlC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sxh-k6-1FC" secondAttribute="trailing" constant="12" id="IgS-qB-LSm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="okO-xV-FKH" secondAttribute="trailing" constant="12" id="NWa-uy-QjZ"/>
+                <constraint firstItem="mqd-KB-kbY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="Ypb-87-u8d"/>
+                <constraint firstItem="mqd-KB-kbY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="22" id="Zqv-xz-ZON"/>
+                <constraint firstItem="nRX-aZ-Hgk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="17" id="cS5-b0-TzC"/>
+                <constraint firstItem="sxh-k6-1FC" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ddG-Mz-4EY"/>
+                <constraint firstItem="nRX-aZ-Hgk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="dhW-qX-1Za"/>
+                <constraint firstItem="okO-xV-FKH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="ou6-Ob-oWy"/>
+                <constraint firstItem="sxh-k6-1FC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="xFj-1g-pif"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-281" y="-364"/>
+        </view>
+    </objects>
+</document>

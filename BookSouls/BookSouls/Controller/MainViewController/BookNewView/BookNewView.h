@@ -16,4 +16,5 @@
 
 @protocol BookNewViewDelegate <NSObject>
 - (void)selectedItemBookNew:(Book *)book;
+- (void)readMoreBookNew;
 @end

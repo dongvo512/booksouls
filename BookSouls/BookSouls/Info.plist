@@ -46,7 +46,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>14</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -71,10 +71,14 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Để bạn có thể chụp hình ảnh</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Để có thể lấy vị trí của bạn</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Để có thể lấy vị trí của bạn</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Để bạn có thể chọn hình ảnh</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>

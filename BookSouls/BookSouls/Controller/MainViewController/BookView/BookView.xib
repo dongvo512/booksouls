@@ -74,15 +74,25 @@
                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2x-ZV-WaF">
+                            <rect key="frame" x="0.0" y="0.0" width="151" height="35"/>
+                            <connections>
+                                <action selector="touchBtnReadMore:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="IbZ-5l-x3y"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="151" id="87i-Ne-2ZY"/>
+                        <constraint firstItem="Y2x-ZV-WaF" firstAttribute="top" secondItem="gDS-ws-aSs" secondAttribute="top" id="M1D-Wn-wD3"/>
                         <constraint firstAttribute="trailing" secondItem="ToX-RH-eBx" secondAttribute="trailing" constant="14" id="XOu-A7-thu"/>
                         <constraint firstAttribute="height" constant="35" id="bS4-1K-OBW"/>
                         <constraint firstItem="whi-BE-VUO" firstAttribute="centerY" secondItem="gDS-ws-aSs" secondAttribute="centerY" id="c5E-jV-J0Z"/>
                         <constraint firstItem="ToX-RH-eBx" firstAttribute="centerY" secondItem="gDS-ws-aSs" secondAttribute="centerY" id="gau-Xj-cwM"/>
                         <constraint firstItem="ToX-RH-eBx" firstAttribute="leading" secondItem="whi-BE-VUO" secondAttribute="trailing" constant="6" id="l8t-PX-2YX"/>
+                        <constraint firstAttribute="trailing" secondItem="Y2x-ZV-WaF" secondAttribute="trailing" id="uwQ-fw-Eua"/>
+                        <constraint firstAttribute="bottom" secondItem="Y2x-ZV-WaF" secondAttribute="bottom" id="xXQ-xw-0Hm"/>
+                        <constraint firstItem="Y2x-ZV-WaF" firstAttribute="leading" secondItem="gDS-ws-aSs" secondAttribute="leading" id="zfa-eR-e5g"/>
                     </constraints>
                 </view>
             </subviews>

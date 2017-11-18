@@ -15,4 +15,5 @@ target 'BookSouls' do
 	pod 'JSONModel'
 	pod 'Fabric'
 	pod 'Crashlytics'
+	pod 'MTBBarcodeScanner'
 end

@@ -29,12 +29,16 @@
     
     [self.cllImage registerNib:[UINib nibWithNibName:@"BookImageCell" bundle:nil] forCellWithReuseIdentifier:@"BookImageCell"];
     
-     [self.cllImage scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.indexCurr inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
     
-
+    
     [self showButtonWithIndexCurr];
 }
-
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+     [self.cllImage scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.indexCurr inSection:0] atScrollPosition:UICollectionViewScrollPositionRight animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

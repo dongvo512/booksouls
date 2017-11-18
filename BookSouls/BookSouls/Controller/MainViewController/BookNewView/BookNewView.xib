@@ -74,6 +74,12 @@
                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E06-GC-MxR">
+                            <rect key="frame" x="0.0" y="0.0" width="151" height="35"/>
+                            <connections>
+                                <action selector="touchBtnReadMore:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="WBm-wJ-TBT"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -82,7 +88,11 @@
                         <constraint firstAttribute="trailing" secondItem="Z5p-H2-0VG" secondAttribute="trailing" constant="14" id="RER-GY-Tx4"/>
                         <constraint firstAttribute="width" constant="151" id="TwK-t3-gMj"/>
                         <constraint firstAttribute="height" constant="35" id="VAe-Zt-Gbw"/>
+                        <constraint firstItem="E06-GC-MxR" firstAttribute="leading" secondItem="rdw-H0-Q32" secondAttribute="leading" id="YFu-Ym-sRh"/>
+                        <constraint firstAttribute="bottom" secondItem="E06-GC-MxR" secondAttribute="bottom" id="aVc-fZ-CoV"/>
+                        <constraint firstItem="E06-GC-MxR" firstAttribute="top" secondItem="rdw-H0-Q32" secondAttribute="top" id="gZq-8D-Uhi"/>
                         <constraint firstItem="G8B-Ub-IAJ" firstAttribute="centerY" secondItem="rdw-H0-Q32" secondAttribute="centerY" id="obn-Cg-kEb"/>
+                        <constraint firstAttribute="trailing" secondItem="E06-GC-MxR" secondAttribute="trailing" id="pMr-B7-zTf"/>
                     </constraints>
                 </view>
             </subviews>

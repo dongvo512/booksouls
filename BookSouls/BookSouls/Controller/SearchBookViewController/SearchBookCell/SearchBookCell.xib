@@ -153,6 +153,7 @@
                 <outlet property="lblPrice" destination="g7e-lY-cfT" id="rP0-oG-00B"/>
                 <outlet property="lblTitle" destination="Tf0-3h-Zci" id="d9z-Qm-yNT"/>
                 <outlet property="viewImage" destination="zok-yp-Wfr" id="DGr-hY-12Q"/>
+                <outlet property="viewPrice" destination="vge-4k-LIs" id="kPC-pV-MFQ"/>
             </connections>
             <point key="canvasLocation" x="-323" y="-409"/>
         </collectionViewCell>

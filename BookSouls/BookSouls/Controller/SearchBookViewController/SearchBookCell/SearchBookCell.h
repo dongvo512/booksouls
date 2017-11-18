@@ -11,6 +11,7 @@
 @class Book;
 
 @interface SearchBookCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIView *viewPrice;
 
 - (void)setDataForCell:(Book *)book;
 

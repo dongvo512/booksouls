@@ -10,7 +10,7 @@
 
 @interface Categories : JSONModel
 
-@property (nonatomic, strong) NSString <Optional> *id;
+@property (nonatomic, strong) NSNumber <Optional> *id;
 @property (nonatomic, strong) NSString <Optional> *name;
 @property (nonatomic, strong) NSNumber <Optional> *slug;
 @property (nonatomic, strong) NSString <Optional> *isShow;

@@ -16,6 +16,8 @@
 #import "SellerView.h"
 #import "SearchBookViewController.h"
 #import "BookDetailViewController.h"
+#import "CreateBookViewController.h"
+#import "BookAllViewController.h"
 
 
 #define NUM_GROUP 5
@@ -74,6 +76,14 @@ typedef NS_ENUM(NSInteger, GroupBook) {
 
 #pragma mark - Action
 
+- (IBAction)touchBtnCreateBook:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CreateBookViewController *vcCreateBook = [storyboard instantiateViewControllerWithIdentifier:@"CreateBookViewController"];
+    
+    [self.navigationController pushViewController:vcCreateBook animated:YES];
+
+}
 - (IBAction)touchBtnMenu:(id)sender {
     
     [[SlideMenuViewController sharedInstance] toggle];
@@ -449,6 +459,16 @@ typedef NS_ENUM(NSInteger, GroupBook) {
 }
 
 #pragma mark - BookNewViewDelegate
+
+- (void)readMoreBookNew{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookAllViewController *vcBookAll = [storyboard instantiateViewControllerWithIdentifier:@"BookAllViewController"];
+    vcBookAll.typeBook = 0;
+    vcBookAll.strTitle = @"Sách mới";
+    [self.navigationController pushViewController:vcBookAll animated:YES];
+}
+
 - (void)selectedItemBookNew:(Book *)book{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -459,6 +479,14 @@ typedef NS_ENUM(NSInteger, GroupBook) {
 
 #pragma mark - BookViewDelegate
 
+- (void)readMoreBookHot{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookAllViewController *vcBookAll = [storyboard instantiateViewControllerWithIdentifier:@"BookAllViewController"];
+    vcBookAll.typeBook = 1;
+    vcBookAll.strTitle = @"Sách bán chạy";
+    [self.navigationController pushViewController:vcBookAll animated:YES];
+}
 - (void)selectedItemBook:(Book *)book{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

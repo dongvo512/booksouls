@@ -12,5 +12,7 @@
 
 + (void)initWithURLString:(NSString *)url withHttpMethod:(NSString *)httpMethod withRequestBody:(id)requestBody callApiResult:(CallAPIResult)callAPIResult;
 
-+ (void)uploadImageWithURLString:(NSString *)url withHttpMethod:(NSString *)httpMethod withRequestBody:(id)requestBody uploadAPIResult:(UploadResult)uploadAPIResult;
++ (void)initWithUrlStringXML:(NSString *)url withHttpMethod:(NSString *)httpMethod callApiResult:(CallAPIResult)callAPIResult;
+
++ (void)uploadImageWithURLString:(NSString *)url filePath:(NSString *)filePath withHttpMethod:(NSString *)httpMethod uploadAPIResult:(UploadResult)uploadAPIResult;
 @end

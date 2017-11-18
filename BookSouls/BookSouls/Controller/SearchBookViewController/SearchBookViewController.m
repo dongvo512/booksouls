@@ -180,7 +180,7 @@ typedef NS_ENUM(NSInteger, SearchWith) {
     
     typeSearch = NameType;
     
-    self.tfSeach.placeholder = @"Nhập tên Sách...";
+    self.tfSeach.placeholder = @"Nhập tên sách...";
     [self changeButtonDefault];
 
     [self changeBtnWithButtonCurr:sender];
@@ -624,7 +624,7 @@ typedef NS_ENUM(NSInteger, SearchWith) {
     }
     else{
         
-        categoryID = cat.id;
+        categoryID = cat.id.stringValue;
     }
     
     self.lblCategories.text = cat.name;
@@ -670,7 +670,7 @@ typedef NS_ENUM(NSInteger, SearchWith) {
             
             [self.btnNearly setImage:[UIImage imageNamed:@"btn_checkbox_none"] forState:UIControlStateNormal];
             
-            [Common showAlert:self title:@"Thông báo" message:@"Bạn chưa xác nhận định vị toạ độ" buttonClick:nil];
+            [Common showAlert:self title:@"Thông báo" message:@"Bạn chưa mở định vị toạ độ" buttonClick:nil];
         }
     }
 }
