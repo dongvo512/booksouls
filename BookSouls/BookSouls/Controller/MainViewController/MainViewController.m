@@ -80,7 +80,8 @@ typedef NS_ENUM(NSInteger, GroupBook) {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CreateBookViewController *vcCreateBook = [storyboard instantiateViewControllerWithIdentifier:@"CreateBookViewController"];
-    
+    vcCreateBook.strTitle = @"Đăng sách";
+    vcCreateBook.btnTitle = @"Đăng sách";
     [self.navigationController pushViewController:vcCreateBook animated:YES];
 
 }
@@ -457,7 +458,28 @@ typedef NS_ENUM(NSInteger, GroupBook) {
     
     return reusableview;
 }
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if(indexPath.section == NewBook){
+        
+        Book *book = [self.arrListBookNew objectAtIndex:indexPath.row];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        BookDetailViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
+        vcBookDetail.bookCurr = book;
+        [self.navigationController pushViewController:vcBookDetail animated:YES];
+    }
+    else if(indexPath.section == HotBook){
+        
+        Book *book = [self.arrListBookHot objectAtIndex:indexPath.row];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        BookDetailViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
+        vcBookDetail.bookCurr = book;
+        [self.navigationController pushViewController:vcBookDetail animated:YES];
+    }
+   
+}
 #pragma mark - BookNewViewDelegate
 
 - (void)readMoreBookNew{

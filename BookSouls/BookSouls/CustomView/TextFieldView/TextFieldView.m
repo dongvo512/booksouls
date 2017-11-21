@@ -135,20 +135,23 @@
     }
     else{
         
-        self.topSubTitleContraint.constant = TOP_SUB_TITLE_DEFAULT;
-        
-        [UIView animateWithDuration:0.3
-                         animations:^{
-                             
-                             [self.lblSubTitle setFont:[UIFont fontWithName:FONT_SUB_DEFAULT size:SIZE_SUB_DEFAULT]];
-                             
-                             [self.lblSubTitle setTextColor:[UIColor colorWithHexString:COLOR_SUB_EDIT]];
-                             
-                             [self.view layoutIfNeeded];
-                             
-                         }
-                         completion:nil];
-        [UIView commitAnimations];
+        if(!self.isDisable){
+            
+            self.topSubTitleContraint.constant = TOP_SUB_TITLE_DEFAULT;
+            
+            [UIView animateWithDuration:0.3
+                             animations:^{
+                                 
+                                 [self.lblSubTitle setFont:[UIFont fontWithName:FONT_SUB_DEFAULT size:SIZE_SUB_DEFAULT]];
+                                 
+                                 [self.lblSubTitle setTextColor:[UIColor colorWithHexString:COLOR_SUB_EDIT]];
+                                 
+                                 [self.view layoutIfNeeded];
+                                 
+                             }
+                             completion:nil];
+            [UIView commitAnimations];
+        }
         
     }
 }

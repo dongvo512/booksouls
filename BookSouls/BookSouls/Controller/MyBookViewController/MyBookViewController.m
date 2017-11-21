@@ -1,20 +1,20 @@
 //
-//  BookAllViewController.m
+//  MyBookViewController.m
 //  BookSouls
 //
-//  Created by Dong Vo on 11/17/17.
+//  Created by Dong Vo on 11/20/17.
 //  Copyright © 2017 Dong Vo. All rights reserved.
 //
 
-#import "BookAllViewController.h"
+#import "MyBookViewController.h"
+#import "UIColor+HexString.h"
+#import "StatusBookViewController.h"
+#import "CategoriesViewController.h"
 #import "SearchBookCell.h"
 #import "BookDetailViewController.h"
 #import "Book.h"
-#import "CategoriesViewController.h"
 #import "Categories.h"
-#import "StatusBookViewController.h"
-
-
+#import "CreateBookViewController.h"
 
 #define HEIGHT_APEND_OPTION 200
 
@@ -25,29 +25,38 @@ typedef NS_ENUM(NSInteger, PriceSort) {
 };
 
 typedef NS_ENUM(NSInteger, TypeBook) {
-   
+    
     TypeBookNew,
     TypeBookHot
 };
 
-@interface BookAllViewController (){
+typedef NS_ENUM(NSInteger, SelectedButton) {
+    
+    Selling,
+    BookEnd
+};
+
+@interface MyBookViewController (){
+    
+    NSInteger indexSort;
+    
+    NSInteger indexSelected;
+    
+    NSInteger indexPage;
     
     BOOL isLoadingData;
     BOOL isFullData;
     
-    NSInteger indexPage;
-    
     UIRefreshControl *refreshControl;
     
     NSString *categoryID;
-    
-    NSInteger indexSort;
-    
 }
+@property (weak, nonatomic) IBOutlet UIView *viewTab;
 @property (weak, nonatomic) IBOutlet UIView *viewBackground;
-
 @property (nonatomic, strong) NSMutableArray *arrSearchBook;
 @property (nonatomic, strong) NSMutableArray *arrSearchResult;
+
+
 @property (weak, nonatomic) IBOutlet UICollectionView *cllBook;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UIView *viewOption;
@@ -57,44 +66,93 @@ typedef NS_ENUM(NSInteger, TypeBook) {
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
 @property (weak, nonatomic) IBOutlet UIButton *btnLowToHight;
 @property (weak, nonatomic) IBOutlet UIButton *btnHightToLow;
+@property (weak, nonatomic) IBOutlet UIView *viewSubSelling;
+@property (weak, nonatomic) IBOutlet UIView *viewSubBookEnd;
+@property (weak, nonatomic) IBOutlet UIButton *btnSelling;
+@property (weak, nonatomic) IBOutlet UIButton *btnBookEnd;
+
 
 @end
 
-@implementation BookAllViewController
+@implementation MyBookViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configUI];
-    
-    indexPage = 1;
     self.arrSearchBook = [NSMutableArray array];
     
+    [self configUI];
     
-    if(self.typeBook == TypeBookNew){
-        
-        [self getListNewBook:YES];
-    }
-    else if(self.typeBook == TypeBookHot){
-        
-        [self getlistHotBook:YES];
-    }
-    
+    [self getListBookSelling:@(1)];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 #pragma mark - Action
 
+- (IBAction)touchBtnMenu:(id)sender {
+    
+    [[SlideMenuViewController sharedInstance] toggle];
+}
+
+- (IBAction)touchBtnBookEnd:(id)sender {
+    
+    if(indexSelected != BookEnd){
+        
+        indexSelected = BookEnd;
+        indexPage = 1;
+        isFullData = NO;
+        
+        [self.arrSearchBook removeAllObjects];
+        
+        [self.btnBookEnd setBackgroundColor:[UIColor colorWithHexString:@"#50AFF3"]];
+        [self.viewSubBookEnd setBackgroundColor:[UIColor colorWithHexString:@"#50AFF3"]];
+        [self.btnBookEnd setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.btnBookEnd.titleLabel setFont:[UIFont fontWithName:@"Roboto-Regular" size:14.0]];
+        
+        [self.btnSelling setBackgroundColor:[UIColor colorWithHexString:@"#F5F5F5"]];
+        [self.viewSubSelling setBackgroundColor:[UIColor colorWithHexString:@"#F5F5F5"]];
+        [self.btnSelling setTitleColor:[UIColor colorWithHexString:@"#1C2D51"] forState:UIControlStateNormal];
+        [self.btnSelling.titleLabel setFont:[UIFont fontWithName:@"Roboto-Light" size:14.0]];
+       
+        [self setDafaultOptionFilter];
+        [self getListBookSelling:@(1)];
+    }
+   
+}
+- (IBAction)touchBookSelling:(id)sender {
+    
+    if(indexSelected != Selling){
+        
+        indexSelected = Selling;
+        indexPage = 1;
+        isFullData = NO;
+        [self.arrSearchBook removeAllObjects];
+        
+        [self.btnSelling setBackgroundColor:[UIColor colorWithHexString:@"#50AFF3"]];
+        [self.viewSubSelling setBackgroundColor:[UIColor colorWithHexString:@"#50AFF3"]];
+        [self.btnSelling setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.btnSelling.titleLabel setFont:[UIFont fontWithName:@"Roboto-Regular" size:14.0]];
+        
+        [self.btnBookEnd setBackgroundColor:[UIColor colorWithHexString:@"#F5F5F5"]];
+        [self.viewSubBookEnd setBackgroundColor:[UIColor colorWithHexString:@"#F5F5F5"]];
+        [self.btnBookEnd setTitleColor:[UIColor colorWithHexString:@"#1C2D51"] forState:UIControlStateNormal];
+        [self.btnBookEnd.titleLabel setFont:[UIFont fontWithName:@"Roboto-Light" size:14.0]];
+        
+        [self setDafaultOptionFilter];
+        [self getListBookSelling:@(1)];
+    }
+   
+}
 - (IBAction)touchBackground:(id)sender {
     
     [self hideViewOptionSearch];
     
     [self.btnFilter setSelected:NO];
 }
+
 - (IBAction)touchBtnHightToLow:(id)sender {
     
     [self.btnLowToHight setSelected:NO];
@@ -107,7 +165,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     
     self.arrSearchResult = [NSMutableArray arrayWithArray:[self.arrSearchResult sortedArrayUsingDescriptors:@[sortDescriptor]]];
     
-     [self.cllBook reloadData];
+    [self.cllBook reloadData];
 }
 
 - (IBAction)touchBtnLowToHight:(id)sender {
@@ -121,7 +179,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                                                  ascending:YES];
     self.arrSearchResult = [NSMutableArray arrayWithArray:[self.arrSearchResult sortedArrayUsingDescriptors:@[sortDescriptor]]];
     
-     [self.cllBook reloadData];
+    [self.cllBook reloadData];
 }
 - (IBAction)touchBtnStatus:(id)sender {
     
@@ -137,10 +195,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     vcCategories.delegate = self;
     [vcCategories presentInParentViewController:self];
 }
-- (IBAction)touchBtnBack:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 - (IBAction)touchBtnFilter:(id)sender {
     
     [self.btnFilter setSelected:!self.btnFilter.selected];
@@ -154,109 +209,31 @@ typedef NS_ENUM(NSInteger, TypeBook) {
         [self hideViewOptionSearch];
     }
 }
-#pragma mark - Cal API
 
-- (void)refreshNewBook{
+#pragma mark - Call API
+- (void)getListBookSelling:(NSNumber *)numShowHUD{
     
-    NSString *url = [NSString stringWithFormat:@"%@?limit=%@&page=%@",GET_BOOK_NEW,@(LIMIT_ITEM),@(indexPage)];
+    NSString *url = @"";
     
-    isLoadingData = YES;
-    
-    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,url] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+    if(indexSelected == Selling){
         
-        isLoadingData = NO;
+        url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLING,@(LIMIT_ITEM),@(indexPage)];
+    }
+    else{
         
-        if(isError){
-            
-            [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
-        }
-        else{
-            
-            NSArray *arrData = [responseDataObject objectForKey:@"data"];
-            [self.arrSearchBook removeAllObjects];
-            
-            for(NSDictionary *dic in arrData){
-                
-                NSError *error;
-                
-                Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
-                [self.arrSearchBook addObject:book];
-                
-            }
-            
-            if(arrData.count < LIMIT_ITEM){
-                
-                isFullData = YES;
-            }
-            
-            self.arrSearchResult = self.arrSearchBook;
-            [refreshControl endRefreshing];
-            [self.cllBook reloadData];
-        }
-        
-    }];
+         url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@&qty=0",URL_DEFAULT,GET_LIST_SELLING,@(LIMIT_ITEM),@(indexPage)];
+    }
     
-}
-
-- (void)refreshHotBook{
-    
-    NSString *url = [NSString stringWithFormat:@"%@?limit=%@&page=%@",GET_BOOK_POPULAR,@(LIMIT_ITEM),@(indexPage)];
-    
-    isLoadingData = YES;
-    
-    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,url] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
-        
-        isLoadingData = NO;
-        
-        if(isError){
-            
-            [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
-        }
-        else{
-            
-            NSArray *arrData = [responseDataObject objectForKey:@"data"];
-            [self.arrSearchBook removeAllObjects];
-            for(NSDictionary *dic in arrData){
-                
-                NSError *error;
-                
-                Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
-                [self.arrSearchBook addObject:book];
-                
-            }
-            
-            if(arrData.count < LIMIT_ITEM){
-                
-                isFullData = YES;
-            }
-            
-            self.arrSearchResult = self.arrSearchBook;
-            [refreshControl endRefreshing];
-            [self.cllBook reloadData];
-            
-        }
-        
-    }];
-    
-}
-
-- (void)getlistHotBook:(BOOL)isShowHUD{
-    
-    if(isShowHUD){
+    if([numShowHUD boolValue]){
         
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
     
-    NSString *url = [NSString stringWithFormat:@"%@?limit=%@&page=%@",GET_BOOK_POPULAR,@(LIMIT_ITEM),@(indexPage)];
-    
     isLoadingData = YES;
     
-    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,url] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+    [APIRequestHandler initWithURLString:url withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
         isLoadingData = NO;
         
         if(isError){
@@ -272,7 +249,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrSearchBook addObject:book];
                 
             }
@@ -282,63 +259,86 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                 isFullData = YES;
             }
             
-            self.arrSearchResult = self.arrSearchBook;
+            self.arrSearchResult = [NSMutableArray arrayWithArray:self.arrSearchBook];
             [self.cllBook reloadData];
             
         }
         
-    }];
-}
-
-- (void)getListNewBook:(BOOL)isShowHUD{
-    
-    NSString *url = [NSString stringWithFormat:@"%@?limit=%@&page=%@",GET_BOOK_NEW,@(LIMIT_ITEM),@(indexPage)];
-    
-    isLoadingData = YES;
-    
-    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,url] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
-        
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
-        isLoadingData = NO;
-        
-        if(isError){
-            
-            [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
-        }
-        else{
-            
-            NSArray *arrData = [responseDataObject objectForKey:@"data"];
-            
-            
-            for(NSDictionary *dic in arrData){
-                
-                NSError *error;
-                
-                Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
-                [self.arrSearchBook addObject:book];
-                
-            }
-            
-            if(arrData.count < LIMIT_ITEM){
-                
-                isFullData = YES;
-            }
-            
-            self.arrSearchResult = self.arrSearchBook;
-            [self.cllBook reloadData];
-        }
-        
+        [refreshControl endRefreshing];
     }];
     
 }
 
 #pragma mark - Method
 
+- (void)setDafaultOptionFilter{
+    
+    self.lblCategories.text = @"Tất cả";
+    self.lblStatus.text = @"Tất cả";
+    
+    categoryID = @"";
+    indexSort = -1;
+    
+    
+    [self.btnHightToLow setSelected:NO];
+    [self.btnLowToHight setSelected:NO];
+    
+}
+
+- (void)refreshTable{
+    
+    indexPage = 1;
+    [self setDafaultOptionFilter];
+    [self.arrSearchBook removeAllObjects];
+    [self performSelector:@selector(getListBookSelling:) withObject:@(0) afterDelay:1.0f];
+    
+    
+}
+
+- (void)showViewOptionSearch{
+    
+    self.heightContraintOption.constant = HEIGHT_APEND_OPTION;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        [self.view layoutIfNeeded];
+        self.viewOption.alpha = 1.0;
+        self.viewBackground.alpha = 1.0;
+    } completion:nil];
+    
+}
+- (void)hideViewOptionSearch{
+    
+    self.heightContraintOption.constant = 0;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        [self.view layoutIfNeeded];
+        self.viewOption.alpha = 0.0;
+        self.viewBackground.alpha = 0.0;
+        
+    } completion:nil];
+}
+
+- (void)configUI{
+    
+    categoryID = @"";
+    indexSort = -1;
+    
+    refreshControl = [[UIRefreshControl alloc]init];
+    [self.cllBook addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
+    [self.cllBook registerNib:[UINib nibWithNibName:@"SearchBookCell" bundle:nil] forCellWithReuseIdentifier:@"SearchBookCell"];
+    
+    self.viewTab.layer.cornerRadius = 15.0f;
+    self.viewTab.layer.borderWidth = 1.0f;
+    self.viewTab.layer.borderColor = [UIColor colorWithHexString:@"#D3D7E0"].CGColor;
+    
+    indexSelected = Selling;
+}
 - (void)filterBook{
     
-  
     NSArray *arrSearch;
     
     if(![self.lblCategories.text isEqualToString:@"Tất cả"]){
@@ -384,84 +384,6 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     [self.cllBook reloadData];
     
 }
-
-- (void)showViewOptionSearch{
-    
-    self.heightContraintOption.constant = HEIGHT_APEND_OPTION;
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        [self.view layoutIfNeeded];
-        self.viewOption.alpha = 1.0;
-        self.viewBackground.alpha = 1.0;
-    } completion:nil];
-    
-}
-- (void)hideViewOptionSearch{
-    
-    self.heightContraintOption.constant = 0;
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        [self.view layoutIfNeeded];
-        self.viewOption.alpha = 0.0;
-        self.viewBackground.alpha = 0.0;
-        
-    } completion:nil];
-}
-
-- (void)configUI{
-    
-    self.lblTitle.text = self.strTitle;
-    
-    [self.cllBook registerNib:[UINib nibWithNibName:@"SearchBookCell" bundle:nil] forCellWithReuseIdentifier:@"SearchBookCell"];
-    
-    refreshControl = [[UIRefreshControl alloc]init];
-    [self.cllBook addSubview:refreshControl];
-    [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-    
-    [self.btnLowToHight setSelected:NO];
-    [self.btnHightToLow setSelected:NO];
-    
-    categoryID = @"";
-    indexSort = -1;
-    
-}
-
-- (void)refreshTable{
-    
-    indexPage = 1;
-    self.lblCategories.text = @"Tất cả";
-    self.lblStatus.text = @"Tất cả";
-    
-    categoryID = @"";
-    indexSort = -1;
-    
-    
-    [self.btnHightToLow setSelected:NO];
-    [self.btnLowToHight setSelected:NO];
-    
-
-    if(self.typeBook == TypeBookNew){
-        
-        [self performSelector:@selector(refreshNewBook) withObject:nil afterDelay:1.0f];
-    }
-    else if(self.typeBook == TypeBookHot){
-        
-         [self performSelector:@selector(refreshHotBook) withObject:nil afterDelay:1.0f];
-    }
-}
-
-- (void)refeshListBookHot{
-    
-    [self getlistHotBook:NO];
-}
-
-- (void)refeshListBookNew{
-    
-    [self getListNewBook:NO];
-}
-
 #pragma mark - StatusBookViewControllerDelegate
 - (void)selectedStatusBook:(NSString *)status{
     
@@ -479,6 +401,17 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     [self performSelector:@selector(filterBook) withObject:nil afterDelay:0.0f];
 }
 
+#pragma mark - CreateBookViewControllerDelegate
+- (void)finishEditing:(Book *)bookNew bookEdit:(Book*)bookEdit{
+    
+    NSInteger index = [self.arrSearchResult indexOfObject:bookEdit];
+    NSInteger index2 = [self.arrSearchBook indexOfObject:bookEdit];
+    [self.arrSearchResult replaceObjectAtIndex:index withObject:bookNew];
+    
+    [self.arrSearchBook replaceObjectAtIndex:index2 withObject:bookNew];
+    
+    [self.cllBook reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]];
+}
 #pragma mark - CategoriesViewControllerDelegate
 - (void)selectedCategories:(Categories *)cat{
     
@@ -511,24 +444,17 @@ typedef NS_ENUM(NSInteger, TypeBook) {
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     SearchBookCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SearchBookCell" forIndexPath:indexPath];
-    
+    cell.delegate = self;
     Book *book = [self.arrSearchResult objectAtIndex:indexPath.row];
     
     [cell setDataForCell:book];
-
+    
     if(indexPath.row == self.arrSearchResult.count - 1 && !isLoadingData &&!isFullData){
-
+        
         indexPage ++;
         
-        if(self.typeBook == TypeBookNew){
-            
-            [self getListNewBook:NO];
-        }
-        else{
-            
-             [self getlistHotBook:NO];
-        }
-
+        [self getListBookSelling:@(0)];
+        
     }
     return cell;
 }
@@ -562,4 +488,28 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     [self.navigationController pushViewController:vcBookDetail animated:YES];
 }
 
+#pragma mark - SearchBookCellDelegate
+- (void)selectButtonEdit:(Book *)book{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CreateBookViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"CreateBookViewController"];
+    vcBookDetail.bookEdit = book;
+    vcBookDetail.delegate = self;
+    vcBookDetail.strTitle = book.name;
+    vcBookDetail.btnTitle = @"Lưu";
+    vcBookDetail.isEdit = YES;
+    [self.navigationController pushViewController:vcBookDetail animated:YES];
+}
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    Book *book = [self.arrSearchResult objectAtIndex:indexPath.row];
+//
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    CreateBookViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"CreateBookViewController"];
+//    vcBookDetail.bookEdit = book;
+//    vcBookDetail.strTitle = book.name;
+//    vcBookDetail.btnTitle = @"Lưu";
+//    vcBookDetail.isEdit = YES;
+//    [self.navigationController pushViewController:vcBookDetail animated:YES];
+//}
 @end

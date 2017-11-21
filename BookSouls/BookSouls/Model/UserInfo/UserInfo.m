@@ -36,10 +36,10 @@
     [encoder encodeObject:self.totalSell forKey:@"totalSell"];
     [encoder encodeObject:self.avgRating forKey:@"avgRating"];
     [encoder encodeObject:self.openTime forKey:@"openTime"];
-    [encoder encodeObject:self.openTime forKey:@"role"];
-    [encoder encodeObject:self.openTime forKey:@"createdAt"];
-    [encoder encodeObject:self.openTime forKey:@"avatar"];
-    [encoder encodeObject:self.openTime forKey:@"wallpaper"];
+    [encoder encodeObject:self.role forKey:@"role"];
+    [encoder encodeObject:self.createdAt forKey:@"createdAt"];
+    [encoder encodeObject:self.avatar forKey:@"avatar"];
+    [encoder encodeObject:self.wallpaper forKey:@"wallpaper"];
     
 }
 

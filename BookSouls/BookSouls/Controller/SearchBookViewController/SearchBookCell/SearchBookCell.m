@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
 @property (weak, nonatomic) IBOutlet UIView *viewImage;
 @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
+@property (nonatomic, strong) Book *bookCurr;
 
 @end
 
@@ -36,6 +37,8 @@
 
 - (void)setDataForCell:(Book *)book{
     
+    self.bookCurr = book;
+    
     self.lblTitle.text = book.name;
     self.lblAuthor.text = book.author;
     
@@ -51,5 +54,14 @@
     }
 
 }
+- (IBAction)touchBtnEdit:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(selectButtonEdit:)]){
+        
+        [[self delegate] selectButtonEdit:self.bookCurr];
+    }
+}
+
+
 
 @end

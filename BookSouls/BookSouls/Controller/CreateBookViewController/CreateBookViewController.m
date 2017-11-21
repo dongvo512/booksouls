@@ -37,12 +37,13 @@
     
     ImagePickerViewController *vcImagePicker;
     
-    Categories *catSelected;
+   NSString *categoryID;
     
     float lat;
     float lng;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *lblQuality;
 
 @property (weak, nonatomic) IBOutlet TextFieldView *tfViewNXB;
 @property (weak, nonatomic) IBOutlet TextFieldView *tfViewBookName;
@@ -55,6 +56,9 @@
 @property (nonatomic, strong) NSMutableArray *arrImages;
 @property (nonatomic, strong) NSMutableArray *arrBooks;
 @property (weak, nonatomic) IBOutlet UICollectionView *cllImages;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UIButton *btnCreate;
+@property (weak, nonatomic) IBOutlet UIStepper *stepperQuality;
 
 @end
 
@@ -89,6 +93,8 @@
     vcImagePicker = [[ImagePickerViewController alloc] init];
     vcImagePicker.delegateImg = self;
     vcImagePicker.vcParent = self;
+    
+    [self loadDataEditing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -97,13 +103,27 @@
 
 #pragma mark - Action
 
+- (IBAction)touchSteper:(UIStepper *)sender {
+    
+    double value = [sender value];
+    
+    [self.lblQuality setText:[NSString stringWithFormat:@"%d", (int)value]];
+}
+
 - (IBAction)touchBtnCreateBook:(id)sender {
     
     [self.view endEditing:YES];
     
-    [self createBook];
+    if(self.isEdit){
+        
+        [self updateBook];
+    }
+    else{
+        
+        [self createBook];
+    }
+    
 }
-
 
 - (IBAction)touchBtnBack:(id)sender {
     
@@ -136,6 +156,48 @@
 
 #pragma mark - Call API
 
+- (void)updateBook{
+    
+    NSString *error = [self checkValidate];
+    
+    if(error.length > 0 ){
+        
+        [Common showAlert:self title:@"Thông báo" message:error buttonClick:nil];
+    }
+    else{
+        
+        NSDictionary *dic = @{@"description":self.tfDescription.tfContent.text, @"lat":(lat!= 0)?@(lat):@"", @"lng":(lng != 0)?@(lng):@"",@"images":[self getlListIdImageStr], @"categoryId":categoryID, @"price":[self getValueFromPrice], @"name":self.tfViewBookName.tfContent.text, @"author":self.tfViewAuthor.tfContent.text,@"nxb":self.tfViewNXB.tfContent.text, @"subStatus":self.tfViewStatusBook.tfContent.text, @"qty":self.lblQuality.text,@"isbn":(self.tfViewBarcode.tfContent.text)?self.tfViewBarcode.tfContent.text:@""};
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@posts/%@/update",URL_DEFAULT,self.bookEdit.id.stringValue] withHttpMethod:kHTTP_METHOD_PUT withRequestBody:dic callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            if(isError){
+                
+                [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
+            }
+            else{
+                
+                [Common showAlert:self title:@"Thông báo" message:@"Cập nhật sách thành công" buttonClick:nil];
+                
+                NSError *error;
+                
+                Book *book = [[Book alloc] initWithDictionary:responseDataObject error:&error];
+                
+                if([[self delegate] respondsToSelector:@selector(finishEditing:bookEdit:)]){
+                    
+                    [[self delegate] finishEditing:book bookEdit:self.bookEdit];
+                }
+                
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }];
+    }
+    
+}
+
 - (void)createBook{
     
     NSString *error = [self checkValidate];
@@ -146,7 +208,7 @@
     }
     else{
         
-        NSDictionary *dic = @{@"description":self.tfDescription.tfContent.text, @"lat":(lat!= 0)?@(lat):@"", @"lng":(lng != 0)?@(lng):@"",@"images":[self getlListIdImageStr], @"categoryId":catSelected.id.stringValue, @"price":[self getValueFromPrice], @"name":self.tfViewBookName.tfContent.text, @"author":self.tfViewAuthor.tfContent.text,@"nxb":self.tfViewNXB.tfContent.text, @"subStatus":self.tfViewStatusBook.tfContent.text};
+        NSDictionary *dic = @{@"description":self.tfDescription.tfContent.text, @"lat":(lat!= 0)?@(lat):@"", @"lng":(lng != 0)?@(lng):@"",@"images":[self getlListIdImageStr], @"categoryId":categoryID, @"price":[self getValueFromPrice], @"name":self.tfViewBookName.tfContent.text, @"author":self.tfViewAuthor.tfContent.text,@"nxb":self.tfViewNXB.tfContent.text, @"subStatus":self.tfViewStatusBook.tfContent.text, @"qty":self.lblQuality.text,@"isbn":self.tfViewBarcode.tfContent.text};
         
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
@@ -325,8 +387,104 @@
     } while ((element = element->nextSibling));
 }
 
-
 #pragma mark - Method
+- (void)configUI{
+    
+    self.tfViewBarcode.strSubTile = @"Mã barcode";
+    self.tfViewBarcode.strIcon = @"";
+    self.tfViewBarcode.isDisable = YES;
+    self.tfViewBarcode.tfContent.placeholder = @"Lấy mã barcode";
+    [self.tfViewBarcode setDataForTextView];
+    
+    self.tfViewBookName.strSubTile = @"Tên sách";
+    self.tfViewBookName.strIcon = @"";
+    [self.tfViewBookName setDataForTextView];
+    self.tfViewBookName.delegate = self;
+    
+    self.tfViewAuthor.strSubTile = @"Tên tác giả";
+    self.tfViewAuthor.strIcon = @"";
+    [self.tfViewAuthor setDataForTextView];
+    
+    self.tfViewCategories.strSubTile = @"Thể loại";
+    self.tfViewCategories.strIcon = @"";
+    self.tfViewCategories.isDisable = YES;
+    self.tfViewCategories.tfContent.placeholder = @"Chọn thể loại";
+    [self.tfViewCategories setDataForTextView];
+    
+    self.tfViewStatusBook.strSubTile = @"Tình trạng";
+    self.tfViewStatusBook.strIcon = @"";
+    self.tfViewStatusBook.isDisable = YES;
+    self.tfViewStatusBook.tfContent.placeholder = @"Chọn tình trạng sách";
+    [self.tfViewStatusBook setDataForTextView];
+    
+    self.tfPrice.strSubTile = @"Giá sách";
+    self.tfPrice.tfContent.keyboardType = UIKeyboardTypeNumberPad;
+    self.tfPrice.isPrice = YES;
+    self.tfPrice.strIcon = @"";
+    [self.tfPrice setDataForTextView];
+    
+    self.tfDescription.strSubTile = @"Mô tả";
+    self.tfDescription.tfContent.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+    self.tfDescription.strIcon = @"";
+    [self.tfDescription setDataForTextView];
+    
+    self.tfViewNXB.strSubTile = @"Nhà xuất bản";
+    self.tfViewNXB.strIcon = @"";
+    [self.tfViewNXB setDataForTextView];
+    
+    self.lblTitle.text = self.strTitle;
+    
+    [self.btnCreate setTitle:self.btnTitle forState:UIControlStateNormal];
+    
+    self.arrImages = [NSMutableArray array];
+    
+    [self.cllImages registerNib:[UINib nibWithNibName:@"ImageBookCell" bundle:nil] forCellWithReuseIdentifier:@"ImageBookCell"];
+    
+    
+}
+
+- (void)loadDataEditing{
+    
+    if(self.isEdit && self.bookEdit){
+        
+        [self.stepperQuality setMinimumValue:0];
+        
+        [self.tfViewBarcode setDataEditing:self.bookEdit.isbn];
+        
+        [self.tfViewBookName setDataEditing:self.bookEdit.name];
+        
+        [self.tfViewAuthor setDataEditing:self.bookEdit.author];
+        
+        NSString *catName = [self getCatNameFromID:self.bookEdit.categoryId];
+        
+        categoryID = self.bookEdit.categoryId;
+        
+        if(catName.length > 0 ){
+            
+            [self.tfViewCategories setDataEditing:catName];
+        }
+        
+        [self.tfViewStatusBook setDataEditing:self.bookEdit.subStatus];
+        
+        [self.tfPrice setDataEditing:[Common getString3DigitsDot:self.bookEdit.price.integerValue]];
+        
+        [self.tfDescription setDataEditing:self.bookEdit.descriptionStr];
+        
+        [self.tfViewNXB setDataEditing:self.bookEdit.nxb];
+        
+        [self.stepperQuality setValue:self.bookEdit.qty.integerValue];
+        
+        self.lblQuality.text = self.bookEdit.qty.stringValue;
+        
+        self.arrImages = [NSMutableArray arrayWithArray:self.bookEdit.images];
+    }
+    
+    Image *img = [[Image alloc] init];
+    img.isDefaultIMG = @(1);
+    [self.arrImages addObject:img];
+    
+    [self.cllImages reloadData];
+}
 
 - (void)clearAllDataInput{
     
@@ -405,60 +563,34 @@
     return strImages;
 }
 
+- (NSString *)getCatNameFromID:(NSString *)idCat{
+    
+    NSString *catName = @"";
+   
+    NSPredicate *preID = [NSPredicate predicateWithFormat:@"id == %@",[NSNumber numberWithInt:idCat.integerValue]];
+    
+    if(Appdelegate_BookSouls.arrCategories.count > 0 ){
+        
+        NSArray *arrResult = [Appdelegate_BookSouls.arrCategories filteredArrayUsingPredicate:preID];
+        
+        if(arrResult.count > 0 ){
+            
+            Categories *cat = [arrResult firstObject];
+            
+            catName = cat.name;
+        }
+    }
+    return catName;
+}
 
-- (void)configUI{
+#pragma mark - ImagePickerViewControllerDelegate
+- (void)finishGetImage:(NSString *)fileName
+                 image:(UIImage *)image{
     
-    self.tfViewBarcode.strSubTile = @"Mã barcode";
-    self.tfViewBarcode.strIcon = @"";
-    self.tfViewBarcode.isDisable = YES;
-    self.tfViewBarcode.tfContent.placeholder = @"Lấy mã barcode";
-    [self.tfViewBarcode setDataForTextView];
-    
-    self.tfViewBookName.strSubTile = @"Tên sách";
-    self.tfViewBookName.strIcon = @"";
-    [self.tfViewBookName setDataForTextView];
-    self.tfViewBookName.delegate = self;
-    
-    self.tfViewAuthor.strSubTile = @"Tên tác giả";
-    self.tfViewAuthor.strIcon = @"";
-    [self.tfViewAuthor setDataForTextView];
-    
-    self.tfViewCategories.strSubTile = @"Thể loại";
-    self.tfViewCategories.strIcon = @"";
-    self.tfViewCategories.isDisable = YES;
-    self.tfViewCategories.tfContent.placeholder = @"Chọn thể loại";
-    [self.tfViewCategories setDataForTextView];
-    
-    self.tfViewStatusBook.strSubTile = @"Tình trạng";
-    self.tfViewStatusBook.strIcon = @"";
-    self.tfViewStatusBook.isDisable = YES;
-    self.tfViewStatusBook.tfContent.placeholder = @"Chọn tình trạng sách";
-    [self.tfViewStatusBook setDataForTextView];
-    
-    self.tfPrice.strSubTile = @"Giá sách";
-    self.tfPrice.tfContent.keyboardType = UIKeyboardTypeNumberPad;
-    self.tfPrice.isPrice = YES;
-    self.tfPrice.strIcon = @"";
-    [self.tfPrice setDataForTextView];
-    
-    self.tfDescription.strSubTile = @"Mô tả";
-    self.tfDescription.tfContent.autocapitalizationType = UITextAutocapitalizationTypeSentences;
-    self.tfDescription.strIcon = @"";
-    [self.tfDescription setDataForTextView];
-    
-    self.tfViewNXB.strSubTile = @"Nhà xuất bản";
-    self.tfViewNXB.strIcon = @"";
-    [self.tfViewNXB setDataForTextView];
-    
-    self.arrImages = [NSMutableArray array];
-    
-    Image *img = [[Image alloc] init];
-    img.isDefaultIMG = @(1);
-    [self.arrImages addObject:img];
-    
-    [self.cllImages registerNib:[UINib nibWithNibName:@"ImageBookCell" bundle:nil] forCellWithReuseIdentifier:@"ImageBookCell"];
+    [self performSelector:@selector(showPreviewImage:) withObject:image afterDelay:0.5];
     
 }
+
 #pragma mark - UICollectionViewDataSource - UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -505,7 +637,7 @@
             [vcImagePicker cameraRoll:self];
         }];
         
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Bỏ qua" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             [vcAlert dismissViewControllerAnimated:YES completion:nil];
         }];
@@ -583,14 +715,6 @@
     
 }
 
-#pragma mark - ImagePickerViewControllerDelegate
-- (void)finishGetImage:(NSString *)fileName
-                 image:(UIImage *)image{
-    
-    [self performSelector:@selector(showPreviewImage:) withObject:image afterDelay:0.5];
-    
-}
-
 #pragma mark - PreviewBarcodeViewControllerDelegate
 - (void)finishGetBarcode:(NSString *)barcode{
     
@@ -628,7 +752,7 @@
     if(cat){
         
         [self.tfViewCategories setDataEditing:cat.name];
-        catSelected = cat;
+        categoryID = cat.id.stringValue;
     }
 }
 

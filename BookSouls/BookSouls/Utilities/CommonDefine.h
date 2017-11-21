@@ -39,10 +39,14 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 
 #define kHTTP_METHOD_POST   @"POST"
 #define kHTTP_METHOD_GET    @"GET"
+#define kHTTP_METHOD_PUT    @"PUT"
 
 #define URL_DEFAULT @"http://203.162.76.2/book/api/v1/"
 #define URL_GOODREADS_SEARCH @"https://www.goodreads.com/search/index.xml?key=Kqv88ydGACMTdTY1KqEkA&q="
 #define LIMIT_ITEM 10
+
+/////////// PUT
+#define PUT_USER_UPDATE @"users/me"
 
 /////////// GET
 #define GET_BOOK_NEW @"books"
@@ -56,6 +60,8 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 #define GET_BEST_SELLER @"bestSellers"
 
 #define GET_LIST_BOOK_RELATED @"posts"
+
+#define GET_LIST_SELLING @"posts/me?selling"
 
 ////////// POST
 

@@ -12,7 +12,11 @@
 
 @interface SearchBookCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIView *viewPrice;
-
+@property (weak, nonatomic) IBOutlet UIButton *btnEdit;
+@property (nonatomic, weak) id delegate;
 - (void)setDataForCell:(Book *)book;
 
+@end
+@protocol SearchBookCellDelegate <NSObject>
+- (void)selectButtonEdit:(Book *)book;
 @end

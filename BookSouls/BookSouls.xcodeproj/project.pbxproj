@@ -110,6 +110,7 @@
 		B8EA7A241FBA91A100A80E78 /* TextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EA7A231FBA91A100A80E78 /* TextFieldView.m */; };
 		B8EA7A261FBA91AC00A80E78 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8EA7A251FBA91AC00A80E78 /* TextFieldView.xib */; };
 		B8EA7A291FBA94DE00A80E78 /* CreateBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EA7A281FBA94DE00A80E78 /* CreateBookViewController.m */; };
+		B8F40B651FC2B3DC00A45565 /* MyBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F40B641FC2B3DC00A45565 /* MyBookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,6 +277,8 @@
 		B8EA7A251FBA91AC00A80E78 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		B8EA7A271FBA94DE00A80E78 /* CreateBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBookViewController.h; sourceTree = "<group>"; };
 		B8EA7A281FBA94DE00A80E78 /* CreateBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateBookViewController.m; sourceTree = "<group>"; };
+		B8F40B631FC2B3DC00A45565 /* MyBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBookViewController.h; sourceTree = "<group>"; };
+		B8F40B641FC2B3DC00A45565 /* MyBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -829,6 +832,7 @@
 		B8E89DCE1F985879009AF99B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B8F40B621FC2B3CD00A45565 /* MyBookViewController */,
 				B8AE108A1FBEC1B200C87AA9 /* BookAllViewController */,
 				B89376751FBD682900C2AF24 /* EditUserInfoViewController */,
 				B8AAB9011FBC442D00E7FBB9 /* PreviewImageViewController */,
@@ -921,6 +925,15 @@
 				B8EA7A251FBA91AC00A80E78 /* TextFieldView.xib */,
 			);
 			path = TextFieldView;
+			sourceTree = "<group>";
+		};
+		B8F40B621FC2B3CD00A45565 /* MyBookViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8F40B631FC2B3DC00A45565 /* MyBookViewController.h */,
+				B8F40B641FC2B3DC00A45565 /* MyBookViewController.m */,
+			);
+			path = MyBookViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1126,6 +1139,7 @@
 				B8AAB8E11FBBE71900E7FBB9 /* TBXML.m in Sources */,
 				B8A1224E1FB45BE9007D6C27 /* SearchBookCell.m in Sources */,
 				B823ED991FB2ED6600F9A0F6 /* SellerView.m in Sources */,
+				B8F40B651FC2B3DC00A45565 /* MyBookViewController.m in Sources */,
 				B8AC6D251FB54D240002B7AE /* CategoriesTblCell.m in Sources */,
 				B823ED941FB2DA2200F9A0F6 /* BookCategoriesView.m in Sources */,
 				B8AC6D3B1FB5BE4E0002B7AE /* BookSellerView.m in Sources */,

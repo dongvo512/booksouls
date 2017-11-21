@@ -53,13 +53,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_default" translatesAutoresizingMaskIntoConstraints="NO" id="XwT-bi-Siu">
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="172"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-M1-aW6">
+                                <rect key="frame" x="68" y="134" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="BxQ-o8-hEZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="tSZ-4k-p36"/>
+                                </constraints>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="touchBtnEdit:" destination="gTV-IL-0wX" eventType="touchUpInside" id="PgT-78-BD8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XwT-bi-Siu" firstAttribute="leading" secondItem="zok-yp-Wfr" secondAttribute="leading" id="4gj-j2-eBl"/>
                             <constraint firstAttribute="bottom" secondItem="XwT-bi-Siu" secondAttribute="bottom" id="AWx-sx-cMa"/>
+                            <constraint firstItem="uRj-M1-aW6" firstAttribute="top" secondItem="XwT-bi-Siu" secondAttribute="bottom" constant="-38" id="KPp-bE-geE"/>
                             <constraint firstItem="XwT-bi-Siu" firstAttribute="top" secondItem="zok-yp-Wfr" secondAttribute="top" id="RDt-d4-DDr"/>
                             <constraint firstAttribute="width" secondItem="zok-yp-Wfr" secondAttribute="height" multiplier="120:172" id="m07-Ip-nWE"/>
+                            <constraint firstItem="uRj-M1-aW6" firstAttribute="leading" secondItem="XwT-bi-Siu" secondAttribute="trailing" constant="-52" id="wZT-mh-4OG"/>
                             <constraint firstAttribute="trailing" secondItem="XwT-bi-Siu" secondAttribute="trailing" id="zFi-E0-chZ"/>
                         </constraints>
                     </view>
@@ -148,6 +161,7 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="120" height="238"/>
             <connections>
+                <outlet property="btnEdit" destination="uRj-M1-aW6" id="VnQ-UQ-RLK"/>
                 <outlet property="imgBookNew" destination="XwT-bi-Siu" id="flf-U1-31R"/>
                 <outlet property="lblAuthor" destination="AvW-Aa-vrl" id="dEF-j3-SIw"/>
                 <outlet property="lblPrice" destination="g7e-lY-cfT" id="rP0-oG-00B"/>

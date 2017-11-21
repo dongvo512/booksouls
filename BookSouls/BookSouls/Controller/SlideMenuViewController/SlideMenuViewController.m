@@ -11,7 +11,7 @@
 #import "CommonDefine.h"
 #import "MainViewController.h"
 #import "EditUserInfoViewController.h"
-
+#import "MyBookViewController.h"
 
 @interface SlideMenuViewController ()
 {
@@ -133,6 +133,14 @@ static SlideMenuViewController *sharedInstance = nil;
             MainViewController *vcMain = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
             [vcNavigation setViewControllers:@[vcMain] animated:YES];
         }
+            break;
+        case Item_MyBook:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MyBookViewController *vcMyBook = [storyboard instantiateViewControllerWithIdentifier:@"MyBookViewController"];
+            [vcNavigation setViewControllers:@[vcMyBook] animated:YES];
+        }
+            
             break;
         case Item_UserInfo:{
             

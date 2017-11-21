@@ -81,7 +81,7 @@
     
     [request setValue:[NSString stringWithFormat:@"Bearer %@",Appdelegate_BookSouls.sesstionUser.token] forHTTPHeaderField:@"Authorization"];
     
-   // NSLog(@"%@",[NSString stringWithFormat:@"Bearer %@",Appdelegate_BookSouls.sesstionUser.token]);
+    NSLog(@"%@",[NSString stringWithFormat:@"Bearer %@",Appdelegate_BookSouls.sesstionUser.token]);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
    

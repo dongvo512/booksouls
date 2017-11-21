@@ -24,8 +24,6 @@
 @property (nonatomic, strong) NSMutableArray *arrCategories;
 @property (nonatomic, strong) NSMutableArray *arrSearch;
 
-
-
 @end
 
 @implementation CategoriesViewController
