@@ -19,4 +19,5 @@
 @protocol BookSellerViewDelegate <NSObject>
 - (void)touchCall;
 - (void)touchSMS;
+- (void)selectedSellerInfo:(UserInfo *)seller;
 @end

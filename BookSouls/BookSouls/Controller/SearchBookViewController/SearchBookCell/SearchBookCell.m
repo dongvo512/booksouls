@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIView *viewImage;
 @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
 @property (nonatomic, strong) Book *bookCurr;
+@property (weak, nonatomic) IBOutlet UILabel *lblQuality;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewQuality;
 
 @end
 
@@ -41,6 +43,18 @@
     
     self.lblTitle.text = book.name;
     self.lblAuthor.text = book.author;
+   
+    if(book.qty.integerValue == 0){
+        
+        self.lblQuality.text = @"Đã hết";
+        [self.imgViewQuality setImage:[UIImage imageNamed:@"bg_orange_quality"]];
+    }
+    else{
+        
+        self.lblQuality.text = [NSString stringWithFormat:@"%@ sách",book.qty];
+        [self.imgViewQuality setImage:[UIImage imageNamed:@"bg_blue_quality"]];
+    }
+    
     
     NSString *priceNew = [Common getString3DigitsDot:book.price.integerValue];
     NSString *priceTemp = [NSString stringWithFormat:@"  %@",priceNew];
@@ -54,14 +68,5 @@
     }
 
 }
-- (IBAction)touchBtnEdit:(id)sender {
-    
-    if([[self delegate] respondsToSelector:@selector(selectButtonEdit:)]){
-        
-        [[self delegate] selectButtonEdit:self.bookCurr];
-    }
-}
-
-
 
 @end

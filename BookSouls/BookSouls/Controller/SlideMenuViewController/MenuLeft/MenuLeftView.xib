@@ -37,7 +37,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Hz-Mr-5MF">
-                    <rect key="frame" x="0.0" y="150" width="246" height="423"/>
+                    <rect key="frame" x="0.0" y="140" width="246" height="469"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,10 +47,10 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89H-Sn-eTB">
-                    <rect key="frame" x="0.0" y="0.0" width="246" height="150"/>
+                    <rect key="frame" x="0.0" y="0.0" width="246" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-nn-zOR">
-                            <rect key="frame" x="0.0" y="0.0" width="246" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="246" height="140"/>
                             <connections>
                                 <action selector="touchBtnUpdateUserInfo:" destination="-1" eventType="touchUpInside" id="1eH-DJ-LME"/>
                             </connections>
@@ -125,11 +125,11 @@
                         <constraint firstItem="SGm-eD-oaw" firstAttribute="top" secondItem="s8Q-2b-ubP" secondAttribute="bottom" constant="5" id="qpG-0j-30t"/>
                         <constraint firstAttribute="trailing" secondItem="SGm-eD-oaw" secondAttribute="trailing" constant="8" id="qyA-lT-hbY"/>
                         <constraint firstItem="7IM-FT-FeU" firstAttribute="leading" secondItem="89H-Sn-eTB" secondAttribute="leading" id="wH6-ay-tfn"/>
-                        <constraint firstAttribute="height" constant="150" id="wTc-HX-htm"/>
+                        <constraint firstAttribute="height" constant="140" id="wTc-HX-htm"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-WY-lZe">
-                    <rect key="frame" x="0.0" y="602" width="246" height="65"/>
+                    <rect key="frame" x="0.0" y="617" width="246" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-8S-WXy">
                             <rect key="frame" x="24" y="8" width="26" height="22"/>
@@ -157,7 +157,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="65" id="Kay-kx-J6R"/>
+                        <constraint firstAttribute="height" constant="50" id="Kay-kx-J6R"/>
                         <constraint firstItem="MTW-Sl-XhC" firstAttribute="top" secondItem="CAC-WY-lZe" secondAttribute="top" id="Ljh-FB-Ykf"/>
                         <constraint firstItem="MTW-Sl-XhC" firstAttribute="leading" secondItem="CAC-WY-lZe" secondAttribute="leading" id="WcG-tu-ONO"/>
                         <constraint firstAttribute="trailing" secondItem="MTW-Sl-XhC" secondAttribute="trailing" id="vOm-Vg-EVy"/>
@@ -170,9 +170,9 @@
                 <constraint firstItem="89H-Sn-eTB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4Ra-KI-fgH"/>
                 <constraint firstAttribute="trailing" secondItem="3Hz-Mr-5MF" secondAttribute="trailing" id="AAy-Tv-axc"/>
                 <constraint firstItem="89H-Sn-eTB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Dnr-tC-gFd"/>
-                <constraint firstAttribute="bottom" secondItem="3Hz-Mr-5MF" secondAttribute="bottom" constant="94" id="DxJ-pl-74X"/>
                 <constraint firstItem="CAC-WY-lZe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hdj-y7-DLS"/>
                 <constraint firstAttribute="trailing" secondItem="89H-Sn-eTB" secondAttribute="trailing" id="Mmz-Rx-aB5"/>
+                <constraint firstItem="CAC-WY-lZe" firstAttribute="top" secondItem="3Hz-Mr-5MF" secondAttribute="bottom" constant="8" id="k8C-bD-a5l"/>
                 <constraint firstAttribute="bottom" secondItem="CAC-WY-lZe" secondAttribute="bottom" id="mTg-ly-c46"/>
                 <constraint firstItem="3Hz-Mr-5MF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nqd-Qr-DVj"/>
                 <constraint firstAttribute="trailing" secondItem="CAC-WY-lZe" secondAttribute="trailing" id="snO-vh-GKL"/>

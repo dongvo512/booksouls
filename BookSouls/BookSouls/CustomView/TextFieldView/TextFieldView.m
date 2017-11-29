@@ -99,14 +99,14 @@
 
 - (void)setDataForTextView{
     
-    if(self.isDisable){
-        
-        [self.tfContent setEnabled:NO];
-        self.topSubTitleContraint.constant = TOP_SUB_TITLE_EDIT;
-        [self.lblSubTitle setFont:[UIFont fontWithName:FONT_SUB_EDIT size:SIZE_SUB_EDIT]];
-        
-        [self.lblSubTitle setTextColor:[UIColor colorWithHexString:COLOR_SUB_EDIT]];
-    }
+//    if(self.isDisable){
+//
+//        [self.tfContent setEnabled:NO];
+//        self.topSubTitleContraint.constant = TOP_SUB_TITLE_EDIT;
+//        [self.lblSubTitle setFont:[UIFont fontWithName:FONT_SUB_EDIT size:SIZE_SUB_EDIT]];
+//
+//        [self.lblSubTitle setTextColor:[UIColor colorWithHexString:COLOR_SUB_EDIT]];
+//    }
  
     self.lblSubTitle.text = self.strSubTile;
    
@@ -161,6 +161,11 @@
     
     self.topSubTitleContraint.constant = TOP_SUB_TITLE_EDIT;
     
+    if([[self delegate] respondsToSelector:@selector(beginEditing:)]){
+        
+        [[self delegate] beginEditing:self];
+    }
+    
     [UIView animateWithDuration:0.3
                      animations:^{
                         
@@ -199,13 +204,22 @@
     if(self.isPrice){
         
         NSString *strTemp = [textField.text stringByReplacingOccurrencesOfString:@"," withString:@""];
+       
+        if(strTemp.length > 0 ){
+            
+            textField.text = [Common getString3DigitsDot:strTemp.integerValue];
+        }
         
-        textField.text = [Common getString3DigitsDot:strTemp.integerValue];
     }
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
+    
+    if([[self delegate] respondsToSelector:@selector(returnKeyboard:)]){
+        
+        [[self delegate] returnKeyboard:self];
+    }
     
     return YES;
 }

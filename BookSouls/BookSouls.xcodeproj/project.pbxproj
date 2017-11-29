@@ -41,11 +41,28 @@
 		B823ED9E1FB2ED9C00F9A0F6 /* SellerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B823ED9C1FB2ED9C00F9A0F6 /* SellerCell.m */; };
 		B823ED9F1FB2ED9C00F9A0F6 /* SellerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED9D1FB2ED9C00F9A0F6 /* SellerCell.xib */; };
 		B823EDA01FB2F5CA00F9A0F6 /* SellerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B823ED981FB2ED1600F9A0F6 /* SellerView.xib */; };
+		B8366FEF1FC58A5F00FADB2F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8366FEE1FC58A5F00FADB2F /* ForgetPasswordViewController.m */; };
 		B83CFF611F99AAF300149E39 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5C1F99AAF300149E39 /* MenuCell.m */; };
 		B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF5D1F99AAF300149E39 /* MenuCell.xib */; };
 		B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */; };
 		B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CFF601F99AAF300149E39 /* MenuLeftView.xib */; };
+		B840477C1FC7C32200DFA1E4 /* InfoSellerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B840477B1FC7C32200DFA1E4 /* InfoSellerViewController.m */; };
+		B84047811FC7FD3300DFA1E4 /* SellerInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B840477F1FC7FD3300DFA1E4 /* SellerInfoView.m */; };
+		B84047821FC7FD3300DFA1E4 /* SellerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84047801FC7FD3300DFA1E4 /* SellerInfoView.xib */; };
+		B840478C1FC8035000DFA1E4 /* GroupTititleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B840478A1FC8035000DFA1E4 /* GroupTititleView.m */; };
+		B840478D1FC8035000DFA1E4 /* GroupTititleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B840478B1FC8035000DFA1E4 /* GroupTititleView.xib */; };
+		B84047911FC82E8100DFA1E4 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84047901FC82E8100DFA1E4 /* ChangePasswordViewController.m */; };
 		B854239C1FBAD0BD0015A688 /* PreviewBarcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B854239B1FBAD0BD0015A688 /* PreviewBarcodeViewController.m */; };
+		B87ED5591FCD3D3300A48D4B /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = B87ED5581FCD3D3300A48D4B /* Order.m */; };
+		B87ED5631FCD62F900A48D4B /* SellingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B87ED5611FCD62F900A48D4B /* SellingCell.m */; };
+		B87ED5651FCD658100A48D4B /* SellingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B87ED5621FCD62F900A48D4B /* SellingCell.xib */; };
+		B889EB091FCE639900ACF8BC /* SellerCancelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B889EB081FCE639900ACF8BC /* SellerCancelViewController.m */; };
+		B889EB0E1FCE6A1B00ACF8BC /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B889EB0C1FCE6A1B00ACF8BC /* CommentCell.m */; };
+		B889EB0F1FCE6A1B00ACF8BC /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B889EB0D1FCE6A1B00ACF8BC /* CommentCell.xib */; };
+		B889EB131FCE6D1E00ACF8BC /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = B889EB121FCE6D1E00ACF8BC /* Comment.m */; };
+		B889EB1B1FCE8B7100ACF8BC /* CommentBuyerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B889EB1A1FCE8B2800ACF8BC /* CommentBuyerViewController.m */; };
+		B889EB201FCE98EC00ACF8BC /* BuyingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B889EB1F1FCE98BA00ACF8BC /* BuyingCell.m */; };
+		B889EB211FCE98F500ACF8BC /* BuyingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B889EB1E1FCE98BA00ACF8BC /* BuyingCell.xib */; };
 		B88ECAAB1FB021270035525C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA8D1FAFFFAE0035525C /* Roboto-Black.ttf */; };
 		B88ECAAC1FB021270035525C /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA981FAFFFB00035525C /* Roboto-BlackItalic.ttf */; };
 		B88ECAAD1FB021270035525C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B88ECA8B1FAFFFAE0035525C /* Roboto-Bold.ttf */; };
@@ -104,12 +121,28 @@
 		B8AC6D3C1FB5BE4E0002B7AE /* BookSellerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC6D3A1FB5BE4E0002B7AE /* BookSellerView.xib */; };
 		B8AE108D1FBEC51200C87AA9 /* BookAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AE108C1FBEC51200C87AA9 /* BookAllViewController.m */; };
 		B8B2247E1FB7F10000BE2B36 /* soulsbookv4.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8B2247D1FB7F0FF00BE2B36 /* soulsbookv4.ttf */; };
+		B8BA90F11FC523D700C4308E /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA90F01FC523D700C4308E /* NotificationViewController.m */; };
+		B8BA90F91FC5283800C4308E /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA90F71FC5283800C4308E /* NotificationCell.m */; };
+		B8BA90FA1FC5283800C4308E /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8BA90F81FC5283800C4308E /* NotificationCell.xib */; };
+		B8BA91011FC5302F00C4308E /* Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA91001FC5302F00C4308E /* Notify.m */; };
+		B8C492051FC6A9D100A9581F /* AllCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C492041FC6A9D100A9581F /* AllCategoriesViewController.m */; };
+		B8DD86411FC6C18300E2DD57 /* BookCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DD86401FC6C18300E2DD57 /* BookCategoriesViewController.m */; };
+		B8DD86451FC6D19500E2DD57 /* ListSellerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DD86441FC6D19500E2DD57 /* ListSellerViewController.m */; };
+		B8DD86501FC6D93C00E2DD57 /* SellerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DD864E1FC6D90E00E2DD57 /* SellerListCell.m */; };
+		B8DD86511FC6D98800E2DD57 /* SellerListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8DD864F1FC6D90E00E2DD57 /* SellerListCell.xib */; };
+		B8DFEA371FCBB587006EA182 /* PushNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DFEA361FCBB587006EA182 /* PushNotificationView.m */; };
+		B8DFEA391FCBB646006EA182 /* PushNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8DFEA381FCBB646006EA182 /* PushNotificationView.xib */; };
+		B8DFEA3D1FCBE954006EA182 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DFEA3C1FCBE954006EA182 /* OrderViewController.m */; };
+		B8DFEA451FCC0B1D006EA182 /* ContentOrderViewSellingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DFEA441FCC0B1D006EA182 /* ContentOrderViewSellingController.m */; };
+		B8DFEA491FCC246D006EA182 /* ContentOrderBuyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DFEA481FCC246D006EA182 /* ContentOrderBuyingViewController.m */; };
 		B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */; };
 		B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DEA1F985E0C009AF99B /* ItemMenu.m */; };
 		B8E89DF31F985E8B009AF99B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E89DF21F985E8B009AF99B /* LoginViewController.m */; };
 		B8EA7A241FBA91A100A80E78 /* TextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EA7A231FBA91A100A80E78 /* TextFieldView.m */; };
 		B8EA7A261FBA91AC00A80E78 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8EA7A251FBA91AC00A80E78 /* TextFieldView.xib */; };
 		B8EA7A291FBA94DE00A80E78 /* CreateBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EA7A281FBA94DE00A80E78 /* CreateBookViewController.m */; };
+		B8F0B5821FC5511000690884 /* SupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0B5811FC5511000690884 /* SupportViewController.m */; };
+		B8F0B5861FC5679300690884 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0B5851FC5676B00690884 /* UITextView+Placeholder.m */; };
 		B8F40B651FC2B3DC00A45565 /* MyBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F40B641FC2B3DC00A45565 /* MyBookViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -162,14 +195,43 @@
 		B823ED9C1FB2ED9C00F9A0F6 /* SellerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerCell.m; sourceTree = "<group>"; };
 		B823ED9D1FB2ED9C00F9A0F6 /* SellerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerCell.xib; sourceTree = "<group>"; };
 		B823EDA21FB30D2B00F9A0F6 /* BookSouls.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookSouls.entitlements; sourceTree = "<group>"; };
+		B8366FED1FC58A5F00FADB2F /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		B8366FEE1FC58A5F00FADB2F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		B83CFF5B1F99AAF300149E39 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		B83CFF5C1F99AAF300149E39 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		B83CFF5D1F99AAF300149E39 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		B83CFF5E1F99AAF300149E39 /* MenuLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLeftView.h; sourceTree = "<group>"; };
 		B83CFF5F1F99AAF300149E39 /* MenuLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLeftView.m; sourceTree = "<group>"; };
 		B83CFF601F99AAF300149E39 /* MenuLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuLeftView.xib; sourceTree = "<group>"; };
+		B840477A1FC7C32200DFA1E4 /* InfoSellerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoSellerViewController.h; sourceTree = "<group>"; };
+		B840477B1FC7C32200DFA1E4 /* InfoSellerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoSellerViewController.m; sourceTree = "<group>"; };
+		B840477E1FC7FD3300DFA1E4 /* SellerInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerInfoView.h; sourceTree = "<group>"; };
+		B840477F1FC7FD3300DFA1E4 /* SellerInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerInfoView.m; sourceTree = "<group>"; };
+		B84047801FC7FD3300DFA1E4 /* SellerInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerInfoView.xib; sourceTree = "<group>"; };
+		B84047891FC8035000DFA1E4 /* GroupTititleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupTititleView.h; sourceTree = "<group>"; };
+		B840478A1FC8035000DFA1E4 /* GroupTititleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupTititleView.m; sourceTree = "<group>"; };
+		B840478B1FC8035000DFA1E4 /* GroupTititleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTititleView.xib; sourceTree = "<group>"; };
+		B840478F1FC82E8100DFA1E4 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		B84047901FC82E8100DFA1E4 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		B854239A1FBAD0BD0015A688 /* PreviewBarcodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewBarcodeViewController.h; sourceTree = "<group>"; };
 		B854239B1FBAD0BD0015A688 /* PreviewBarcodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewBarcodeViewController.m; sourceTree = "<group>"; };
+		B87ED5571FCD3D3300A48D4B /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		B87ED5581FCD3D3300A48D4B /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		B87ED5601FCD62F900A48D4B /* SellingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingCell.h; sourceTree = "<group>"; };
+		B87ED5611FCD62F900A48D4B /* SellingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellingCell.m; sourceTree = "<group>"; };
+		B87ED5621FCD62F900A48D4B /* SellingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellingCell.xib; sourceTree = "<group>"; };
+		B889EB071FCE639900ACF8BC /* SellerCancelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerCancelViewController.h; sourceTree = "<group>"; };
+		B889EB081FCE639900ACF8BC /* SellerCancelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerCancelViewController.m; sourceTree = "<group>"; };
+		B889EB0B1FCE6A1B00ACF8BC /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		B889EB0C1FCE6A1B00ACF8BC /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		B889EB0D1FCE6A1B00ACF8BC /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		B889EB111FCE6D1E00ACF8BC /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		B889EB121FCE6D1E00ACF8BC /* Comment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		B889EB191FCE8B2800ACF8BC /* CommentBuyerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentBuyerViewController.h; sourceTree = "<group>"; };
+		B889EB1A1FCE8B2800ACF8BC /* CommentBuyerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentBuyerViewController.m; sourceTree = "<group>"; };
+		B889EB1D1FCE98BA00ACF8BC /* BuyingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyingCell.h; sourceTree = "<group>"; };
+		B889EB1E1FCE98BA00ACF8BC /* BuyingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyingCell.xib; sourceTree = "<group>"; };
+		B889EB1F1FCE98BA00ACF8BC /* BuyingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyingCell.m; sourceTree = "<group>"; };
 		B88ECA861FAFFFAE0035525C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B88ECA8B1FAFFFAE0035525C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B88ECA8C1FAFFFAE0035525C /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -262,7 +324,32 @@
 		B8AE108B1FBEC51200C87AA9 /* BookAllViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookAllViewController.h; sourceTree = "<group>"; };
 		B8AE108C1FBEC51200C87AA9 /* BookAllViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookAllViewController.m; sourceTree = "<group>"; };
 		B8B2247D1FB7F0FF00BE2B36 /* soulsbookv4.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = soulsbookv4.ttf; sourceTree = "<group>"; };
+		B8BA90EF1FC523D700C4308E /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		B8BA90F01FC523D700C4308E /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		B8BA90F61FC5283800C4308E /* NotificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
+		B8BA90F71FC5283800C4308E /* NotificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
+		B8BA90F81FC5283800C4308E /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		B8BA90FF1FC5302F00C4308E /* Notify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notify.h; sourceTree = "<group>"; };
+		B8BA91001FC5302F00C4308E /* Notify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Notify.m; sourceTree = "<group>"; };
+		B8C492031FC6A9D100A9581F /* AllCategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCategoriesViewController.h; sourceTree = "<group>"; };
+		B8C492041FC6A9D100A9581F /* AllCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllCategoriesViewController.m; sourceTree = "<group>"; };
 		B8DA5CEA1FAC5EB200588E72 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DD863F1FC6C18300E2DD57 /* BookCategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCategoriesViewController.h; sourceTree = "<group>"; };
+		B8DD86401FC6C18300E2DD57 /* BookCategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCategoriesViewController.m; sourceTree = "<group>"; };
+		B8DD86431FC6D19500E2DD57 /* ListSellerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListSellerViewController.h; sourceTree = "<group>"; };
+		B8DD86441FC6D19500E2DD57 /* ListSellerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListSellerViewController.m; sourceTree = "<group>"; };
+		B8DD864D1FC6D90E00E2DD57 /* SellerListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerListCell.h; sourceTree = "<group>"; };
+		B8DD864E1FC6D90E00E2DD57 /* SellerListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerListCell.m; sourceTree = "<group>"; };
+		B8DD864F1FC6D90E00E2DD57 /* SellerListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerListCell.xib; sourceTree = "<group>"; };
+		B8DFEA351FCBB587006EA182 /* PushNotificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushNotificationView.h; sourceTree = "<group>"; };
+		B8DFEA361FCBB587006EA182 /* PushNotificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationView.m; sourceTree = "<group>"; };
+		B8DFEA381FCBB646006EA182 /* PushNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushNotificationView.xib; sourceTree = "<group>"; };
+		B8DFEA3B1FCBE954006EA182 /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		B8DFEA3C1FCBE954006EA182 /* OrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		B8DFEA431FCC0B1D006EA182 /* ContentOrderViewSellingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentOrderViewSellingController.h; sourceTree = "<group>"; };
+		B8DFEA441FCC0B1D006EA182 /* ContentOrderViewSellingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentOrderViewSellingController.m; sourceTree = "<group>"; };
+		B8DFEA471FCC246D006EA182 /* ContentOrderBuyingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentOrderBuyingViewController.h; sourceTree = "<group>"; };
+		B8DFEA481FCC246D006EA182 /* ContentOrderBuyingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentOrderBuyingViewController.m; sourceTree = "<group>"; };
 		B8E89DD41F985AFC009AF99B /* CommonEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonEnum.h; sourceTree = "<group>"; };
 		B8E89DD61F985B83009AF99B /* SlideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
 		B8E89DD71F985B83009AF99B /* SlideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
@@ -277,6 +364,10 @@
 		B8EA7A251FBA91AC00A80E78 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		B8EA7A271FBA94DE00A80E78 /* CreateBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBookViewController.h; sourceTree = "<group>"; };
 		B8EA7A281FBA94DE00A80E78 /* CreateBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateBookViewController.m; sourceTree = "<group>"; };
+		B8F0B5801FC5511000690884 /* SupportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupportViewController.h; sourceTree = "<group>"; };
+		B8F0B5811FC5511000690884 /* SupportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupportViewController.m; sourceTree = "<group>"; };
+		B8F0B5841FC5676B00690884 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		B8F0B5851FC5676B00690884 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		B8F40B631FC2B3DC00A45565 /* MyBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBookViewController.h; sourceTree = "<group>"; };
 		B8F40B641FC2B3DC00A45565 /* MyBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -430,6 +521,15 @@
 			path = SellerCell;
 			sourceTree = "<group>";
 		};
+		B8366FEC1FC58A5200FADB2F /* ForgetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8366FED1FC58A5F00FADB2F /* ForgetPasswordViewController.h */,
+				B8366FEE1FC58A5F00FADB2F /* ForgetPasswordViewController.m */,
+			);
+			path = ForgetPasswordViewController;
+			sourceTree = "<group>";
+		};
 		B83CFF591F99AAF300149E39 /* MenuLeft */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +551,47 @@
 			path = MenuCell;
 			sourceTree = "<group>";
 		};
+		B84047791FC7C30E00DFA1E4 /* InfoSellerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8DD86421FC6D18900E2DD57 /* ListSellerViewController */,
+				B84047881FC8031900DFA1E4 /* GroupTitleView */,
+				B840477D1FC7FB3B00DFA1E4 /* SellerInfoView */,
+				B840477A1FC7C32200DFA1E4 /* InfoSellerViewController.h */,
+				B840477B1FC7C32200DFA1E4 /* InfoSellerViewController.m */,
+			);
+			path = InfoSellerViewController;
+			sourceTree = "<group>";
+		};
+		B840477D1FC7FB3B00DFA1E4 /* SellerInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				B840477E1FC7FD3300DFA1E4 /* SellerInfoView.h */,
+				B840477F1FC7FD3300DFA1E4 /* SellerInfoView.m */,
+				B84047801FC7FD3300DFA1E4 /* SellerInfoView.xib */,
+			);
+			path = SellerInfoView;
+			sourceTree = "<group>";
+		};
+		B84047881FC8031900DFA1E4 /* GroupTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				B84047891FC8035000DFA1E4 /* GroupTititleView.h */,
+				B840478A1FC8035000DFA1E4 /* GroupTititleView.m */,
+				B840478B1FC8035000DFA1E4 /* GroupTititleView.xib */,
+			);
+			path = GroupTitleView;
+			sourceTree = "<group>";
+		};
+		B840478E1FC82E6E00DFA1E4 /* ChangePasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B840478F1FC82E8100DFA1E4 /* ChangePasswordViewController.h */,
+				B84047901FC82E8100DFA1E4 /* ChangePasswordViewController.m */,
+			);
+			path = ChangePasswordViewController;
+			sourceTree = "<group>";
+		};
 		B85423991FBAD0B10015A688 /* PreviewBarcodeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +599,73 @@
 				B854239B1FBAD0BD0015A688 /* PreviewBarcodeViewController.m */,
 			);
 			path = PreviewBarcodeViewController;
+			sourceTree = "<group>";
+		};
+		B87ED5561FCD3D2300A48D4B /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				B87ED5571FCD3D3300A48D4B /* Order.h */,
+				B87ED5581FCD3D3300A48D4B /* Order.m */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		B87ED55A1FCD596A00A48D4B /* SellingCell */ = {
+			isa = PBXGroup;
+			children = (
+				B87ED5601FCD62F900A48D4B /* SellingCell.h */,
+				B87ED5611FCD62F900A48D4B /* SellingCell.m */,
+				B87ED5621FCD62F900A48D4B /* SellingCell.xib */,
+			);
+			path = SellingCell;
+			sourceTree = "<group>";
+		};
+		B889EB061FCE638900ACF8BC /* SellerCancelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B889EB0A1FCE6A0A00ACF8BC /* CommentCell */,
+				B889EB071FCE639900ACF8BC /* SellerCancelViewController.h */,
+				B889EB081FCE639900ACF8BC /* SellerCancelViewController.m */,
+			);
+			path = SellerCancelViewController;
+			sourceTree = "<group>";
+		};
+		B889EB0A1FCE6A0A00ACF8BC /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				B889EB0B1FCE6A1B00ACF8BC /* CommentCell.h */,
+				B889EB0C1FCE6A1B00ACF8BC /* CommentCell.m */,
+				B889EB0D1FCE6A1B00ACF8BC /* CommentCell.xib */,
+			);
+			path = CommentCell;
+			sourceTree = "<group>";
+		};
+		B889EB101FCE6D1000ACF8BC /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				B889EB111FCE6D1E00ACF8BC /* Comment.h */,
+				B889EB121FCE6D1E00ACF8BC /* Comment.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		B889EB141FCE8A3A00ACF8BC /* CommentBuyerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B889EB191FCE8B2800ACF8BC /* CommentBuyerViewController.h */,
+				B889EB1A1FCE8B2800ACF8BC /* CommentBuyerViewController.m */,
+			);
+			path = CommentBuyerViewController;
+			sourceTree = "<group>";
+		};
+		B889EB1C1FCE989C00ACF8BC /* BuyingCell */ = {
+			isa = PBXGroup;
+			children = (
+				B889EB1D1FCE98BA00ACF8BC /* BuyingCell.h */,
+				B889EB1F1FCE98BA00ACF8BC /* BuyingCell.m */,
+				B889EB1E1FCE98BA00ACF8BC /* BuyingCell.xib */,
+			);
+			path = BuyingCell;
 			sourceTree = "<group>";
 		};
 		B88ECA731FAFFD450035525C /* Font */ = {
@@ -515,6 +723,7 @@
 		B88ECAC31FB042B70035525C /* Lirary */ = {
 			isa = PBXGroup;
 			children = (
+				B8F0B5831FC5676B00690884 /* UITextViewPlaceHolder */,
 				B8AAB8FD1FBC40A600E7FBB9 /* ImagePickerViewController */,
 				B8AAB8DB1FBBE70200E7FBB9 /* TBXML */,
 				B88ECAC41FB042C00035525C /* Reachability */,
@@ -735,6 +944,8 @@
 		B8AC6D1C1FB5461A0002B7AE /* DataMaster */ = {
 			isa = PBXGroup;
 			children = (
+				B889EB141FCE8A3A00ACF8BC /* CommentBuyerViewController */,
+				B889EB061FCE638900ACF8BC /* SellerCancelViewController */,
 				B8AAB8EF1FBC16DF00E7FBB9 /* StatusBookViewController */,
 				B8AAB8E51FBBED0700E7FBB9 /* BookSearchViewController */,
 				B8AC6D1D1FB5462C0002B7AE /* CategoriesViewController */,
@@ -816,9 +1027,118 @@
 			path = BookAllViewController;
 			sourceTree = "<group>";
 		};
+		B8BA90EE1FC523CB00C4308E /* NotificationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8BA90F21FC5280B00C4308E /* NotificationCell */,
+				B8BA90EF1FC523D700C4308E /* NotificationViewController.h */,
+				B8BA90F01FC523D700C4308E /* NotificationViewController.m */,
+			);
+			path = NotificationViewController;
+			sourceTree = "<group>";
+		};
+		B8BA90F21FC5280B00C4308E /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8BA90F61FC5283800C4308E /* NotificationCell.h */,
+				B8BA90F71FC5283800C4308E /* NotificationCell.m */,
+				B8BA90F81FC5283800C4308E /* NotificationCell.xib */,
+			);
+			path = NotificationCell;
+			sourceTree = "<group>";
+		};
+		B8BA90FB1FC52FEA00C4308E /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				B8BA90FF1FC5302F00C4308E /* Notify.h */,
+				B8BA91001FC5302F00C4308E /* Notify.m */,
+			);
+			path = Notify;
+			sourceTree = "<group>";
+		};
+		B8C492021FC6A9C400A9581F /* AllCategoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8C492031FC6A9D100A9581F /* AllCategoriesViewController.h */,
+				B8C492041FC6A9D100A9581F /* AllCategoriesViewController.m */,
+			);
+			path = AllCategoriesViewController;
+			sourceTree = "<group>";
+		};
+		B8DD863E1FC6C17400E2DD57 /* BookCategoriesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8DD863F1FC6C18300E2DD57 /* BookCategoriesViewController.h */,
+				B8DD86401FC6C18300E2DD57 /* BookCategoriesViewController.m */,
+			);
+			path = BookCategoriesViewController;
+			sourceTree = "<group>";
+		};
+		B8DD86421FC6D18900E2DD57 /* ListSellerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8DD864C1FC6D90E00E2DD57 /* SellerListCell */,
+				B8DD86431FC6D19500E2DD57 /* ListSellerViewController.h */,
+				B8DD86441FC6D19500E2DD57 /* ListSellerViewController.m */,
+			);
+			path = ListSellerViewController;
+			sourceTree = "<group>";
+		};
+		B8DD864C1FC6D90E00E2DD57 /* SellerListCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8DD864D1FC6D90E00E2DD57 /* SellerListCell.h */,
+				B8DD864E1FC6D90E00E2DD57 /* SellerListCell.m */,
+				B8DD864F1FC6D90E00E2DD57 /* SellerListCell.xib */,
+			);
+			path = SellerListCell;
+			sourceTree = "<group>";
+		};
+		B8DFEA341FCBB57A006EA182 /* PushNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				B8DFEA351FCBB587006EA182 /* PushNotificationView.h */,
+				B8DFEA361FCBB587006EA182 /* PushNotificationView.m */,
+				B8DFEA381FCBB646006EA182 /* PushNotificationView.xib */,
+			);
+			path = PushNotificationView;
+			sourceTree = "<group>";
+		};
+		B8DFEA3A1FCBE944006EA182 /* OrderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8DFEA3B1FCBE954006EA182 /* OrderViewController.h */,
+				B8DFEA3C1FCBE954006EA182 /* OrderViewController.m */,
+			);
+			path = OrderViewController;
+			sourceTree = "<group>";
+		};
+		B8DFEA421FCC0B12006EA182 /* ContentOrderViewSellingController */ = {
+			isa = PBXGroup;
+			children = (
+				B87ED55A1FCD596A00A48D4B /* SellingCell */,
+				B8DFEA431FCC0B1D006EA182 /* ContentOrderViewSellingController.h */,
+				B8DFEA441FCC0B1D006EA182 /* ContentOrderViewSellingController.m */,
+			);
+			path = ContentOrderViewSellingController;
+			sourceTree = "<group>";
+		};
+		B8DFEA461FCC2462006EA182 /* ContentOrderBuyingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B889EB1C1FCE989C00ACF8BC /* BuyingCell */,
+				B8DFEA471FCC246D006EA182 /* ContentOrderBuyingViewController.h */,
+				B8DFEA481FCC246D006EA182 /* ContentOrderBuyingViewController.m */,
+			);
+			path = ContentOrderBuyingViewController;
+			sourceTree = "<group>";
+		};
 		B8E89DCD1F985879009AF99B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B889EB101FCE6D1000ACF8BC /* Comment */,
+				B87ED5561FCD3D2300A48D4B /* Order */,
+				B8BA90FB1FC52FEA00C4308E /* Notify */,
 				B823ED8F1FB2D80F00F9A0F6 /* Categories */,
 				B8A752C81FB1AB780060EBDB /* Image */,
 				B8A752C41FB1A4DB0060EBDB /* Book */,
@@ -832,6 +1152,16 @@
 		B8E89DCE1F985879009AF99B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B8DFEA461FCC2462006EA182 /* ContentOrderBuyingViewController */,
+				B8DFEA421FCC0B12006EA182 /* ContentOrderViewSellingController */,
+				B8DFEA3A1FCBE944006EA182 /* OrderViewController */,
+				B840478E1FC82E6E00DFA1E4 /* ChangePasswordViewController */,
+				B84047791FC7C30E00DFA1E4 /* InfoSellerViewController */,
+				B8DD863E1FC6C17400E2DD57 /* BookCategoriesViewController */,
+				B8C492021FC6A9C400A9581F /* AllCategoriesViewController */,
+				B8366FEC1FC58A5200FADB2F /* ForgetPasswordViewController */,
+				B8F0B57F1FC5510200690884 /* SupportViewController */,
+				B8BA90EE1FC523CB00C4308E /* NotificationViewController */,
 				B8F40B621FC2B3CD00A45565 /* MyBookViewController */,
 				B8AE108A1FBEC1B200C87AA9 /* BookAllViewController */,
 				B89376751FBD682900C2AF24 /* EditUserInfoViewController */,
@@ -852,6 +1182,7 @@
 		B8E89DCF1F985879009AF99B /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B8DFEA341FCBB57A006EA182 /* PushNotificationView */,
 				B8EA7A1C1FBA903200A80E78 /* TextFieldView */,
 			);
 			path = CustomView;
@@ -927,6 +1258,24 @@
 			path = TextFieldView;
 			sourceTree = "<group>";
 		};
+		B8F0B57F1FC5510200690884 /* SupportViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8F0B5801FC5511000690884 /* SupportViewController.h */,
+				B8F0B5811FC5511000690884 /* SupportViewController.m */,
+			);
+			path = SupportViewController;
+			sourceTree = "<group>";
+		};
+		B8F0B5831FC5676B00690884 /* UITextViewPlaceHolder */ = {
+			isa = PBXGroup;
+			children = (
+				B8F0B5841FC5676B00690884 /* UITextView+Placeholder.h */,
+				B8F0B5851FC5676B00690884 /* UITextView+Placeholder.m */,
+			);
+			path = UITextViewPlaceHolder;
+			sourceTree = "<group>";
+		};
 		B8F40B621FC2B3CD00A45565 /* MyBookViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +1322,9 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1003,6 +1355,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B889EB211FCE98F500ACF8BC /* BuyingCell.xib in Resources */,
+				B87ED5651FCD658100A48D4B /* SellingCell.xib in Resources */,
+				B889EB0F1FCE6A1B00ACF8BC /* CommentCell.xib in Resources */,
+				B8DD86511FC6D98800E2DD57 /* SellerListCell.xib in Resources */,
 				B8AAB8EE1FBBF4DF00E7FBB9 /* BookSearchCell.xib in Resources */,
 				B8A1224D1FB45BCF007D6C27 /* SearchBookCell.xib in Resources */,
 				B823EDA01FB2F5CA00F9A0F6 /* SellerView.xib in Resources */,
@@ -1025,6 +1381,7 @@
 				B88ECAAB1FB021270035525C /* Roboto-Black.ttf in Resources */,
 				B88ECAAC1FB021270035525C /* Roboto-BlackItalic.ttf in Resources */,
 				B88ECAAD1FB021270035525C /* Roboto-Bold.ttf in Resources */,
+				B84047821FC7FD3300DFA1E4 /* SellerInfoView.xib in Resources */,
 				B88ECAAE1FB021270035525C /* Roboto-BoldItalic.ttf in Resources */,
 				B88ECAAF1FB021270035525C /* Roboto-Italic.ttf in Resources */,
 				B88ECAB01FB021270035525C /* Roboto-Light.ttf in Resources */,
@@ -1035,6 +1392,7 @@
 				B88ECAB21FB021270035525C /* Roboto-Medium.ttf in Resources */,
 				B88ECAB31FB021270035525C /* Roboto-MediumItalic.ttf in Resources */,
 				B8A752D21FB1ACFC0060EBDB /* BookNewView.xib in Resources */,
+				B8BA90FA1FC5283800C4308E /* NotificationCell.xib in Resources */,
 				B801E59E1FB9735800A49143 /* Muli-BoldItalic.ttf in Resources */,
 				B801E5AA1FB979AB00A49143 /* BookImageCell.xib in Resources */,
 				B801E5941FB9735800A49143 /* Muli-Regular.ttf in Resources */,
@@ -1051,6 +1409,8 @@
 				B801E59F1FB9735800A49143 /* Muli-Bold.ttf in Resources */,
 				B801E5931FB9735800A49143 /* Muli-BlackItalic.ttf in Resources */,
 				B83CFF621F99AAF300149E39 /* MenuCell.xib in Resources */,
+				B8DFEA391FCBB646006EA182 /* PushNotificationView.xib in Resources */,
+				B840478D1FC8035000DFA1E4 /* GroupTititleView.xib in Resources */,
 				B8AC6D261FB54D240002B7AE /* CategoriesTblCell.xib in Resources */,
 				B823AE941F94AE7300568820 /* Main.storyboard in Resources */,
 				B83CFF641F99AAF300149E39 /* MenuLeftView.xib in Resources */,
@@ -1134,13 +1494,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B889EB201FCE98EC00ACF8BC /* BuyingCell.m in Sources */,
+				B889EB1B1FCE8B7100ACF8BC /* CommentBuyerViewController.m in Sources */,
+				B8DD86501FC6D93C00E2DD57 /* SellerListCell.m in Sources */,
+				B8F0B5861FC5679300690884 /* UITextView+Placeholder.m in Sources */,
 				B8AAB9001FBC40B200E7FBB9 /* ImagePickerViewController.m in Sources */,
+				B8DFEA451FCC0B1D006EA182 /* ContentOrderViewSellingController.m in Sources */,
+				B8DFEA3D1FCBE954006EA182 /* OrderViewController.m in Sources */,
 				B8AAB8ED1FBBF4D200E7FBB9 /* BookSearchCell.m in Sources */,
 				B8AAB8E11FBBE71900E7FBB9 /* TBXML.m in Sources */,
 				B8A1224E1FB45BE9007D6C27 /* SearchBookCell.m in Sources */,
+				B8BA90F91FC5283800C4308E /* NotificationCell.m in Sources */,
+				B840477C1FC7C32200DFA1E4 /* InfoSellerViewController.m in Sources */,
 				B823ED991FB2ED6600F9A0F6 /* SellerView.m in Sources */,
 				B8F40B651FC2B3DC00A45565 /* MyBookViewController.m in Sources */,
 				B8AC6D251FB54D240002B7AE /* CategoriesTblCell.m in Sources */,
+				B889EB131FCE6D1E00ACF8BC /* Comment.m in Sources */,
 				B823ED941FB2DA2200F9A0F6 /* BookCategoriesView.m in Sources */,
 				B8AC6D3B1FB5BE4E0002B7AE /* BookSellerView.m in Sources */,
 				B801E5A41FB9786A00A49143 /* BookImageViewController.m in Sources */,
@@ -1149,7 +1518,11 @@
 				B8EA7A291FBA94DE00A80E78 /* CreateBookViewController.m in Sources */,
 				B8A752C21FB194E60060EBDB /* WellcomeView.m in Sources */,
 				B8AC6D201FB546370002B7AE /* CategoriesViewController.m in Sources */,
+				B84047911FC82E8100DFA1E4 /* ChangePasswordViewController.m in Sources */,
+				B87ED5631FCD62F900A48D4B /* SellingCell.m in Sources */,
 				B88ECACB1FB06C100035525C /* SessionUser.m in Sources */,
+				B8DD86451FC6D19500E2DD57 /* ListSellerViewController.m in Sources */,
+				B8C492051FC6A9D100A9581F /* AllCategoriesViewController.m in Sources */,
 				B823ED8D1FB2D69C00F9A0F6 /* CategoriesCell.m in Sources */,
 				B88ECAC71FB042D90035525C /* Reachability.m in Sources */,
 				B88ECAC21FB0424D0035525C /* Common.m in Sources */,
@@ -1158,33 +1531,45 @@
 				B8A752B71FB1899A0060EBDB /* MainViewController.m in Sources */,
 				B89E88261FB6AAB4004C5C13 /* BookContentView.m in Sources */,
 				B88ECABF1FB0419B0035525C /* APIRequestHandler.m in Sources */,
+				B840478C1FC8035000DFA1E4 /* GroupTititleView.m in Sources */,
 				B8A752D11FB1ACFC0060EBDB /* BookNewView.m in Sources */,
 				B8A122461FB4173D007D6C27 /* UIColor+HexString.m in Sources */,
 				B8E89DEB1F985E14009AF99B /* ItemMenu.m in Sources */,
 				B823ED921FB2D81D00F9A0F6 /* Categories.m in Sources */,
 				B8E89DF31F985E8B009AF99B /* LoginViewController.m in Sources */,
 				B8A752C71FB1A4F60060EBDB /* Book.m in Sources */,
+				B8366FEF1FC58A5F00FADB2F /* ForgetPasswordViewController.m in Sources */,
+				B8BA91011FC5302F00C4308E /* Notify.m in Sources */,
 				B8E89DDC1F985C27009AF99B /* SlideMenuViewController.m in Sources */,
 				B823ED9E1FB2ED9C00F9A0F6 /* SellerCell.m in Sources */,
 				B83CFF611F99AAF300149E39 /* MenuCell.m in Sources */,
 				B8A122431FB40343007D6C27 /* SearchBookViewController.m in Sources */,
 				B823AE9C1F94AE7300568820 /* main.m in Sources */,
 				B8AC6D351FB5AC100002B7AE /* BookDetailBannerCell.m in Sources */,
+				B8F0B5821FC5511000690884 /* SupportViewController.m in Sources */,
 				B8AAB8FB1FBC36B100E7FBB9 /* ImageBookCell.m in Sources */,
 				B83CFF631F99AAF300149E39 /* MenuLeftView.m in Sources */,
 				B8AAB8E81FBBED1200E7FBB9 /* BookSearchViewController.m in Sources */,
 				B88ECABB1FB0378F0035525C /* SignUpViewController.m in Sources */,
 				B88ECACF1FB06E1A0035525C /* UserInfo.m in Sources */,
+				B8DFEA371FCBB587006EA182 /* PushNotificationView.m in Sources */,
 				B8AE108D1FBEC51200C87AA9 /* BookAllViewController.m in Sources */,
 				B854239C1FBAD0BD0015A688 /* PreviewBarcodeViewController.m in Sources */,
+				B8BA90F11FC523D700C4308E /* NotificationViewController.m in Sources */,
 				B8AAB8E41FBBEB9E00E7FBB9 /* NSDataAdditions.m in Sources */,
 				B8AC6D2A1FB59B060002B7AE /* BookDetailViewController.m in Sources */,
+				B87ED5591FCD3D3300A48D4B /* Order.m in Sources */,
 				B8EA7A241FBA91A100A80E78 /* TextFieldView.m in Sources */,
+				B8DD86411FC6C18300E2DD57 /* BookCategoriesViewController.m in Sources */,
+				B84047811FC7FD3300DFA1E4 /* SellerInfoView.m in Sources */,
 				B823AE8E1F94AE7300568820 /* AppDelegate.m in Sources */,
 				B8AAB9041FBC443C00E7FBB9 /* PreviewImageViewController.m in Sources */,
 				B8AAB8F21FBC16E900E7FBB9 /* StatusBookViewController.m in Sources */,
 				B8AAB8F61FBC17E800E7FBB9 /* StatusCell.m in Sources */,
+				B889EB0E1FCE6A1B00ACF8BC /* CommentCell.m in Sources */,
+				B8DFEA491FCC246D006EA182 /* ContentOrderBuyingViewController.m in Sources */,
 				B801E5A91FB979AB00A49143 /* BookImageCell.m in Sources */,
+				B889EB091FCE639900ACF8BC /* SellerCancelViewController.m in Sources */,
 				B8A752D71FB1B1E10060EBDB /* BookNewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1240,7 +1625,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thin Tran (YN248DF397)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1262,6 +1647,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "31f6db08-f489-44cd-91ba-319faa90aeb6";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1295,7 +1681,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thin Tran (YN248DF397)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1310,6 +1696,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "31f6db08-f489-44cd-91ba-319faa90aeb6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1321,6 +1708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BookSouls/BookSouls.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thin Tran (YN248DF397)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YN248DF397;
@@ -1351,6 +1739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BookSouls/BookSouls.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thin Tran (YN248DF397)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YN248DF397;
@@ -1369,7 +1758,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cenvisco.booksouls.vn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e88db35f-2d42-4ee6-878f-f06b4b1e41a4";
+				PROVISIONING_PROFILE = "44411ed2-143a-457a-9e9b-61e095793e27";
 				PROVISIONING_PROFILE_SPECIFIER = dev_booksouls;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -36,6 +36,15 @@
     [self.cllCategories registerNib:[UINib nibWithNibName:@"CategoriesCell" bundle:nil] forCellWithReuseIdentifier:@"CategoriesCell"];
 }
 
+#pragma mark - Action
+
+- (IBAction)touchBtnReadMore:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(touchReadMore)]){
+        
+        [[self delegate] touchReadMore];
+    }
+}
 #pragma mark - UICollectionViewDataSource - UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -63,7 +72,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+     Categories *cat = [self.arrCategories objectAtIndex:indexPath.row];
     
+    if([[self delegate] respondsToSelector:@selector(selectedItemCategories:)]){
+        
+        [[self delegate] selectedItemCategories:cat];
+    }
 }
 
 @end

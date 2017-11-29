@@ -145,7 +145,7 @@
     self.lblFullName.text = Appdelegate_BookSouls.sesstionUser.profile.name;
     
     self.lblAddress.text = Appdelegate_BookSouls.sesstionUser.profile.homeAddress;
-   
+    
     [self.imgAvatar sd_setImageWithURL:[NSURL URLWithString:Appdelegate_BookSouls.sesstionUser.profile.avatar] placeholderImage:[UIImage imageNamed:@"ic_avatar"]];
 }
 
@@ -169,14 +169,19 @@
     [self.arrMenus addObject:item_3];
     
     ItemMenu *item_4 = [[ItemMenu alloc] init];
-    item_4.itemName = @"Hồ sơ";
-    item_4.itemIconName = @"";
+    item_4.itemName = @"Đơn hàng";
+    item_4.itemIconName = @"";
     [self.arrMenus addObject:item_4];
     
     ItemMenu *item_5 = [[ItemMenu alloc] init];
-    item_5.itemName = @"Hỗ trợ";
-    item_5.itemIconName = @"";
+    item_5.itemName = @"Hồ sơ";
+    item_5.itemIconName = @"";
     [self.arrMenus addObject:item_5];
+    
+    ItemMenu *item_6 = [[ItemMenu alloc] init];
+    item_6.itemName = @"Hỗ trợ";
+    item_6.itemIconName = @"";
+    [self.arrMenus addObject:item_6];
 }
 
 #pragma mark - Table view DataSource - Delegate

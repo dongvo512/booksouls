@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Categories;
 @interface BookCategoriesView : UICollectionReusableView
 
 - (void)setDataForView:(NSMutableArray *)arrSeller;
-
+@property (nonatomic, weak) id delegate;
+@end
+@protocol BookCategoriesViewDelegate <NSObject>
+- (void)touchReadMore;
+- (void)selectedItemCategories:(Categories *)cate;
 @end

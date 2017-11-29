@@ -13,6 +13,7 @@
 #import "SignUpViewController.h"
 #import "SlideMenuViewController.h"
 #import "SessionUser.h"
+#import "ForgetPasswordViewController.h"
 
 @interface LoginViewController ()<GIDSignInUIDelegate, GIDSignInDelegate, UITextFieldDelegate>
 
@@ -38,6 +39,16 @@
 
 
 #pragma mark - Action
+
+- (IBAction)touchBtnForgetPass:(id)sender {
+    
+    UIStoryboard *mystoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ForgetPasswordViewController *vcForgetPass = [mystoryboard instantiateViewControllerWithIdentifier:@"ForgetPasswordViewController"];
+    [self.navigationController pushViewController:vcForgetPass animated:YES];
+    
+}
+
+
 - (IBAction)touchBtnRegis:(id)sender {
     
     UIStoryboard *mystoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -144,7 +155,7 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    NSDictionary *dicBody = @{@"accessToken":accessToken};
+    NSDictionary *dicBody = @{@"accessToken":accessToken,@"deviceToken":(Appdelegate_BookSouls.deviceToken)?Appdelegate_BookSouls.deviceToken:@"", @"deviceType":@"ios"};
     
     [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,POST_LOGIN_GOOGLE] withHttpMethod:kHTTP_METHOD_POST withRequestBody:dicBody callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
         
@@ -190,7 +201,7 @@
         
         [self.lblError setHidden:YES];
         
-        NSDictionary *dicBody = @{@"email":self.tfEmail.text,@"password":self.tfPassword.text};
+        NSDictionary *dicBody = @{@"email":self.tfEmail.text,@"password":self.tfPassword.text,@"deviceToken":(Appdelegate_BookSouls.deviceToken)?Appdelegate_BookSouls.deviceToken:@"", @"deviceType":@"ios"};
         
         [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,POST_LOGIN] withHttpMethod:kHTTP_METHOD_POST withRequestBody:dicBody callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
             

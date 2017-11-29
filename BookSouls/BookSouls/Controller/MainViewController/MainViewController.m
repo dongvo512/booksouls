@@ -18,7 +18,10 @@
 #import "BookDetailViewController.h"
 #import "CreateBookViewController.h"
 #import "BookAllViewController.h"
-
+#import "AllCategoriesViewController.h"
+#import "BookCategoriesViewController.h"
+#import "ListSellerViewController.h"
+#import "InfoSellerViewController.h"
 
 #define NUM_GROUP 5
 #define MARGIN 24
@@ -102,7 +105,7 @@ typedef NS_ENUM(NSInteger, GroupBook) {
 
 - (void)getListBestSeller{
     
-    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,GET_BEST_SELLER] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@?limit=%@&page=1",URL_DEFAULT,GET_BEST_SELLER,@(LIMIT_ITEM)] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
@@ -210,7 +213,7 @@ typedef NS_ENUM(NSInteger, GroupBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                 book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrListBookHot addObject:book];
                 
             }
@@ -248,7 +251,7 @@ typedef NS_ENUM(NSInteger, GroupBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                 book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrListBookNew addObject:book];
                 
             }
@@ -279,6 +282,23 @@ typedef NS_ENUM(NSInteger, GroupBook) {
     [self.cllMain registerNib:[UINib nibWithNibName:@"SellerView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SellerView"];
     
      [self.cllMain registerNib:[UINib nibWithNibName:@"BookCategoriesView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"BookCategoriesView"];
+}
+
+#pragma mark - BookCategoriesViewDelegate
+- (void)selectedItemCategories:(Categories *)cate{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookCategoriesViewController *vcBookCate = [storyboard instantiateViewControllerWithIdentifier:@"BookCategoriesViewController"];
+    vcBookCate.categorieCurr = cate;
+    [self.navigationController pushViewController:vcBookCate animated:YES];
+}
+
+- (void)touchReadMore{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AllCategoriesViewController *vcAllCategories = [storyboard instantiateViewControllerWithIdentifier:@"AllCategoriesViewController"];
+    vcAllCategories.arrCategories = self.arrCategories;
+    [self.navigationController pushViewController:vcAllCategories animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource - UICollectionViewDelegate
@@ -428,7 +448,7 @@ typedef NS_ENUM(NSInteger, GroupBook) {
             case CategoriesBook:{
                 
                 BookCategoriesView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"BookCategoriesView" forIndexPath:indexPath];
-                
+                headerView.delegate = self;
                 if(self.arrCategories.count > 0){
                     
                     [headerView setDataForView:self.arrCategories];
@@ -441,7 +461,7 @@ typedef NS_ENUM(NSInteger, GroupBook) {
             case Seller:{
                 
                  SellerView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SellerView" forIndexPath:indexPath];
-                
+                headerView.delegate = self;
                 if(self.arrCategories.count > 0){
                     
                     [headerView setDataForView:self.arrSeller];
@@ -458,28 +478,7 @@ typedef NS_ENUM(NSInteger, GroupBook) {
     
     return reusableview;
 }
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if(indexPath.section == NewBook){
-        
-        Book *book = [self.arrListBookNew objectAtIndex:indexPath.row];
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        BookDetailViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
-        vcBookDetail.bookCurr = book;
-        [self.navigationController pushViewController:vcBookDetail animated:YES];
-    }
-    else if(indexPath.section == HotBook){
-        
-        Book *book = [self.arrListBookHot objectAtIndex:indexPath.row];
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        BookDetailViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
-        vcBookDetail.bookCurr = book;
-        [self.navigationController pushViewController:vcBookDetail animated:YES];
-    }
-   
-}
+
 #pragma mark - BookNewViewDelegate
 
 - (void)readMoreBookNew{
@@ -499,6 +498,21 @@ typedef NS_ENUM(NSInteger, GroupBook) {
     [self.navigationController pushViewController:vcBookDetail animated:YES];
 }
 
+#pragma mark - SellerViewDelegate
+- (void)selectedReadMore{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ListSellerViewController *vcListSeller = [storyboard instantiateViewControllerWithIdentifier:@"ListSellerViewController"];
+
+    [self.navigationController pushViewController:vcListSeller animated:YES];
+}
+- (void)selectedItemSeller:(UserInfo *)user{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    InfoSellerViewController *vcInfoSeller = [storyboard instantiateViewControllerWithIdentifier:@"InfoSellerViewController"];
+    vcInfoSeller.userCurr = user;
+    [self.navigationController pushViewController:vcInfoSeller animated:YES];
+}
 #pragma mark - BookViewDelegate
 
 - (void)readMoreBookHot{

@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class UserInfo;
 
 @interface SellerView : UICollectionReusableView
 
 - (void)setDataForView:(NSMutableArray *)arrCategories;
+@property (nonatomic, weak) id delegate;
+@end
+@protocol SellerViewDelegate <NSObject>
+
+- (void)selectedReadMore;
+- (void)selectedItemSeller:(UserInfo *)user;
 
 @end

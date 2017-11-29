@@ -21,4 +21,6 @@
 @end
 @protocol TextFieldViewDelegate <NSObject>
 - (void)touchIconButton:(TextFieldView *)textField;
+- (void)beginEditing:(TextFieldView *)textField;
+- (void)returnKeyboard:(TextFieldView *)textField;
 @end

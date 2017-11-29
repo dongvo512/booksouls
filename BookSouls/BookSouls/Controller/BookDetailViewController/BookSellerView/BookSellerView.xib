@@ -51,28 +51,6 @@
                     <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spk-Xh-8bU">
-                    <rect key="frame" x="271" y="4" width="48" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="48" id="H82-T6-2rS"/>
-                        <constraint firstAttribute="height" constant="48" id="J8T-Kl-rSS"/>
-                    </constraints>
-                    <state key="normal" image="ic_chat"/>
-                    <connections>
-                        <action selector="touchBtnSMS:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="RLn-j9-4n9"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFT-dV-66r">
-                    <rect key="frame" x="317" y="4" width="48" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="Nyf-sE-0pm"/>
-                        <constraint firstAttribute="width" constant="48" id="yO7-xx-aRG"/>
-                    </constraints>
-                    <state key="normal" image="ic_call"/>
-                    <connections>
-                        <action selector="touchBtnCall:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="nBi-Lk-r25"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_none_small" translatesAutoresizingMaskIntoConstraints="NO" id="UXU-lR-FCc">
                     <rect key="frame" x="80" y="42" width="71" height="11"/>
                     <constraints>
@@ -107,6 +85,34 @@
                     <color key="textColor" red="0.1450980392" green="0.17254901959999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwn-W0-Rp7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                    <connections>
+                        <action selector="touchBtnInfoSeller:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="myb-29-IKO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spk-Xh-8bU">
+                    <rect key="frame" x="271" y="4" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="H82-T6-2rS"/>
+                        <constraint firstAttribute="height" constant="48" id="J8T-Kl-rSS"/>
+                    </constraints>
+                    <state key="normal" image="ic_chat"/>
+                    <connections>
+                        <action selector="touchBtnSMS:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="RLn-j9-4n9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFT-dV-66r">
+                    <rect key="frame" x="317" y="4" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Nyf-sE-0pm"/>
+                        <constraint firstAttribute="width" constant="48" id="yO7-xx-aRG"/>
+                    </constraints>
+                    <state key="normal" image="ic_call"/>
+                    <connections>
+                        <action selector="touchBtnCall:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="nBi-Lk-r25"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="Spk-Xh-8bU" firstAttribute="leading" secondItem="5rJ-9I-cG2" secondAttribute="trailing" constant="1" id="1OX-Vf-G3b"/>
@@ -114,21 +120,25 @@
                 <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="SFT-dV-66r" secondAttribute="trailing" constant="10" id="4W7-st-u8U"/>
                 <constraint firstItem="out-6p-H42" firstAttribute="leading" secondItem="GKg-ty-nRF" secondAttribute="trailing" constant="4" id="6N9-br-ABZ"/>
                 <constraint firstItem="UXU-lR-FCc" firstAttribute="leading" secondItem="qaL-Tk-CXM" secondAttribute="trailing" constant="8" id="7Ih-19-uP8"/>
+                <constraint firstItem="nwn-W0-Rp7" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" id="9L8-2I-EF1"/>
                 <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="Spk-Xh-8bU" secondAttribute="trailing" constant="56" id="Epe-PI-cbV"/>
                 <constraint firstItem="lUl-75-ohr" firstAttribute="leading" secondItem="qaL-Tk-CXM" secondAttribute="trailing" constant="8" id="I5H-T3-TA0"/>
                 <constraint firstItem="UXU-lR-FCc" firstAttribute="top" secondItem="5rJ-9I-cG2" secondAttribute="bottom" constant="4" id="J7H-i9-bsQ"/>
                 <constraint firstItem="m9j-Ct-p44" firstAttribute="leading" secondItem="qaL-Tk-CXM" secondAttribute="trailing" constant="8" id="NZh-WC-D3S"/>
+                <constraint firstItem="nwn-W0-Rp7" firstAttribute="bottom" secondItem="9Gg-ye-v9C" secondAttribute="bottom" id="U4U-lU-GUr"/>
                 <constraint firstItem="qaL-Tk-CXM" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="16" id="VI5-u5-uqr"/>
                 <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="lUl-75-ohr" secondAttribute="trailing" constant="16" id="Yyp-WL-4ui"/>
                 <constraint firstItem="SFT-dV-66r" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="4" id="ZQb-kp-y4h"/>
                 <constraint firstItem="5rJ-9I-cG2" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="17" id="ZW3-8t-yzZ"/>
                 <constraint firstItem="GKg-ty-nRF" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="80" id="a69-si-IOc"/>
                 <constraint firstItem="m9j-Ct-p44" firstAttribute="top" secondItem="5rJ-9I-cG2" secondAttribute="bottom" constant="4" id="gUC-Om-MDi"/>
+                <constraint firstItem="nwn-W0-Rp7" firstAttribute="trailing" secondItem="9Gg-ye-v9C" secondAttribute="trailing" id="np8-Ke-aVE"/>
                 <constraint firstItem="5rJ-9I-cG2" firstAttribute="leading" secondItem="qaL-Tk-CXM" secondAttribute="trailing" constant="8" id="p0j-wz-Ew6"/>
                 <constraint firstItem="lUl-75-ohr" firstAttribute="top" secondItem="Spk-Xh-8bU" secondAttribute="bottom" constant="5" id="tST-29-RSt"/>
                 <constraint firstItem="qaL-Tk-CXM" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="24" id="tis-s2-o6H"/>
                 <constraint firstItem="GKg-ty-nRF" firstAttribute="top" secondItem="lUl-75-ohr" secondAttribute="bottom" constant="1" id="txO-0l-dbS"/>
                 <constraint firstItem="Spk-Xh-8bU" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="4" id="vNM-T6-nI5"/>
+                <constraint firstItem="nwn-W0-Rp7" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" id="yeK-UI-KGZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
             <connections>

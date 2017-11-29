@@ -74,12 +74,24 @@
                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k62-Kk-gKD">
+                    <rect key="frame" x="221" y="0.0" width="99" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="99" id="IjK-ao-as4"/>
+                        <constraint firstAttribute="height" constant="41" id="tQ4-4I-TyJ"/>
+                    </constraints>
+                    <connections>
+                        <action selector="touchBtnReadMore:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="4p3-47-6sb"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="xtb-5M-bCE" firstAttribute="top" secondItem="Plj-Ez-Cjb" secondAttribute="bottom" constant="9" id="3I9-b8-WcL"/>
                 <constraint firstItem="BsE-hg-0A4" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="9" id="9o2-qu-ww3"/>
                 <constraint firstItem="xtb-5M-bCE" firstAttribute="trailing" secondItem="9Gg-ye-v9C" secondAttribute="trailing" id="D6Y-Ky-VEg"/>
+                <constraint firstItem="k62-Kk-gKD" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" id="LE7-em-fKt"/>
+                <constraint firstItem="k62-Kk-gKD" firstAttribute="trailing" secondItem="9Gg-ye-v9C" secondAttribute="trailing" id="Njf-B5-Tma"/>
                 <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="gAX-Vg-02h" secondAttribute="trailing" constant="16" id="OjO-cE-P6H"/>
                 <constraint firstItem="xtb-5M-bCE" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" id="PVb-c0-bvB"/>
                 <constraint firstItem="Plj-Ez-Cjb" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="24" id="Z6V-ts-Yb6"/>

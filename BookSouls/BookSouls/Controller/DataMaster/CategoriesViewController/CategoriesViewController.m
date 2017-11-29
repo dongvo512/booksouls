@@ -216,6 +216,5 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.view endEditing:YES];
     
 }
-- (IBAction)btnPrice:(id)sender {
-}
+
 @end

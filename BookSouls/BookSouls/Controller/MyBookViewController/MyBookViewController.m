@@ -211,6 +211,61 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
 }
 
 #pragma mark - Call API
+
+- (void)refreshBookSelling{
+    
+    NSString *url = @"";
+    
+    if(indexSelected == Selling){
+        
+        url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLING,@(LIMIT_ITEM),@(indexPage)];
+    }
+    else{
+        
+        url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@&qty=0",URL_DEFAULT,GET_LIST_SELLING,@(LIMIT_ITEM),@(indexPage)];
+    }
+    
+  
+    
+    isLoadingData = YES;
+    
+    [APIRequestHandler initWithURLString:url withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+        
+        isLoadingData = NO;
+        
+        if(isError){
+            
+            [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
+        }
+        else{
+            
+            NSArray *arrData = [responseDataObject objectForKey:@"data"];
+            self.arrSearchBook = [NSMutableArray array];
+            for(NSDictionary *dic in arrData){
+                
+                NSError *error;
+                
+                Book *book = [[Book alloc] initWithDictionary:dic error:&error];
+                book.descriptionStr = [dic objectForKey:@"description"];
+                [self.arrSearchBook addObject:book];
+                
+            }
+            
+            if(arrData.count < LIMIT_ITEM){
+                
+                isFullData = YES;
+            }
+            
+            self.arrSearchResult = [NSMutableArray arrayWithArray:self.arrSearchBook];
+            [self.cllBook reloadData];
+            
+        }
+        
+        [refreshControl endRefreshing];
+    }];
+    
+}
+
 - (void)getListBookSelling:(NSNumber *)numShowHUD{
     
     NSString *url = @"";
@@ -221,7 +276,7 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
     }
     else{
         
-         url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@&qty=0",URL_DEFAULT,GET_LIST_SELLING,@(LIMIT_ITEM),@(indexPage)];
+         url = [NSString stringWithFormat:@"%@posts/me?qty=0&limit=%@&page=%@",URL_DEFAULT,@(LIMIT_ITEM),@(indexPage)];
     }
     
     if([numShowHUD boolValue]){
@@ -290,7 +345,7 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
     indexPage = 1;
     [self setDafaultOptionFilter];
     [self.arrSearchBook removeAllObjects];
-    [self performSelector:@selector(getListBookSelling:) withObject:@(0) afterDelay:1.0f];
+    [self performSelector:@selector(refreshBookSelling) withObject:nil afterDelay:1.0f];
     
     
 }
@@ -406,11 +461,36 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
     
     NSInteger index = [self.arrSearchResult indexOfObject:bookEdit];
     NSInteger index2 = [self.arrSearchBook indexOfObject:bookEdit];
-    [self.arrSearchResult replaceObjectAtIndex:index withObject:bookNew];
     
-    [self.arrSearchBook replaceObjectAtIndex:index2 withObject:bookNew];
-    
-    [self.cllBook reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]];
+    if(indexSelected == Selling){
+        
+        if(bookNew.qty.integerValue == 0){
+            
+            [self.arrSearchResult removeObject:bookEdit];
+            [self.arrSearchBook removeObject:bookEdit];
+            
+            [self.cllBook deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]];
+        }
+        else{
+            
+            [self.arrSearchResult replaceObjectAtIndex:index withObject:bookNew];
+            
+            [self.arrSearchBook replaceObjectAtIndex:index2 withObject:bookNew];
+            
+            [self.cllBook reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]];
+        }
+    }
+    else{
+        
+        if(bookNew.qty.integerValue > 0){
+            
+            [self.arrSearchResult removeObject:bookEdit];
+            [self.arrSearchBook removeObject:bookEdit];
+            
+            [self.cllBook deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]];
+        }
+    }
+   
 }
 #pragma mark - CategoriesViewControllerDelegate
 - (void)selectedCategories:(Categories *)cat{
@@ -444,11 +524,11 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     SearchBookCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SearchBookCell" forIndexPath:indexPath];
-    cell.delegate = self;
+   
     Book *book = [self.arrSearchResult objectAtIndex:indexPath.row];
-    
+    [cell.viewQuality setHidden:NO];
     [cell setDataForCell:book];
-    
+   
     if(indexPath.row == self.arrSearchResult.count - 1 && !isLoadingData &&!isFullData){
         
         indexPage ++;
@@ -483,15 +563,6 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
     Book *book = [self.arrSearchResult objectAtIndex:indexPath.row];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    BookDetailViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
-    vcBookDetail.bookCurr = book;
-    [self.navigationController pushViewController:vcBookDetail animated:YES];
-}
-
-#pragma mark - SearchBookCellDelegate
-- (void)selectButtonEdit:(Book *)book{
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CreateBookViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"CreateBookViewController"];
     vcBookDetail.bookEdit = book;
     vcBookDetail.delegate = self;
@@ -500,16 +571,4 @@ typedef NS_ENUM(NSInteger, SelectedButton) {
     vcBookDetail.isEdit = YES;
     [self.navigationController pushViewController:vcBookDetail animated:YES];
 }
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    Book *book = [self.arrSearchResult objectAtIndex:indexPath.row];
-//
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    CreateBookViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"CreateBookViewController"];
-//    vcBookDetail.bookEdit = book;
-//    vcBookDetail.strTitle = book.name;
-//    vcBookDetail.btnTitle = @"Lưu";
-//    vcBookDetail.isEdit = YES;
-//    [self.navigationController pushViewController:vcBookDetail animated:YES];
-//}
 @end

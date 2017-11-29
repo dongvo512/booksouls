@@ -77,12 +77,24 @@
                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88d-2D-hQA">
+                            <rect key="frame" x="52" y="0.0" width="99" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="99" id="3Cy-kR-id1"/>
+                                <constraint firstAttribute="height" constant="35" id="BQT-Oa-y4G"/>
+                            </constraints>
+                            <connections>
+                                <action selector="touchReadMoreSeller:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="esx-7x-6d8"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Nhv-cz-iTn" firstAttribute="centerY" secondItem="vwv-pR-dIt" secondAttribute="centerY" id="2dU-aX-Lxg"/>
+                        <constraint firstAttribute="trailing" secondItem="88d-2D-hQA" secondAttribute="trailing" id="TbD-Nu-np7"/>
                         <constraint firstAttribute="trailing" secondItem="yyq-RP-f6k" secondAttribute="trailing" constant="14" id="WYr-wM-cLW"/>
                         <constraint firstItem="yyq-RP-f6k" firstAttribute="centerY" secondItem="vwv-pR-dIt" secondAttribute="centerY" id="Wdm-yg-huI"/>
+                        <constraint firstItem="88d-2D-hQA" firstAttribute="top" secondItem="vwv-pR-dIt" secondAttribute="top" id="XgG-vj-KBv"/>
                         <constraint firstAttribute="height" constant="35" id="YEO-uX-crG"/>
                         <constraint firstItem="yyq-RP-f6k" firstAttribute="leading" secondItem="Nhv-cz-iTn" secondAttribute="trailing" constant="6" id="dEK-P3-ksK"/>
                         <constraint firstAttribute="width" constant="151" id="j83-Hc-8gk"/>

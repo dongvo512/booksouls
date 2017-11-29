@@ -17,6 +17,7 @@
 #import <MessageUI/MFMessageComposeViewController.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
+#import "InfoSellerViewController.h"
 
 #define NUM_GROUP 4
 
@@ -144,7 +145,7 @@ typedef NS_ENUM(NSInteger, BookDetail) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrRelated addObject:book];
                 
             }
@@ -372,6 +373,15 @@ typedef NS_ENUM(NSInteger, BookDetail) {
 }
 
 #pragma mark - BookSellerViewDelegate
+
+- (void)selectedSellerInfo:(UserInfo *)seller{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    InfoSellerViewController *vcInfoSeller = [storyboard instantiateViewControllerWithIdentifier:@"InfoSellerViewController"];
+    vcInfoSeller.userCurr = seller;
+    [self.navigationController pushViewController:vcInfoSeller animated:YES];
+}
+
 - (void)touchCall{
     
     NSString *phoneNumber = [@"tel://" stringByAppendingString:self.bookCurr.user.phone];
@@ -385,7 +395,7 @@ typedef NS_ENUM(NSInteger, BookDetail) {
       
         if (([mnc length] == 0)) {
             
-            [Common showAlert:self title:@"Thông báo" message:@"Máy bận vui lòng gọi lại sau" buttonClick:nil];
+            [Common showAlert:self title:@"Thông báo" message:@"Thiết bị của bạn không hỗ trợ chức năng này" buttonClick:nil];
             
         } else {
             

@@ -22,7 +22,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
-
+@property (nonatomic, strong) UserInfo *userCurr;
 @end
 
 @implementation BookSellerView
@@ -33,6 +33,8 @@
 }
 
 - (void)setDataForView:(UserInfo *)user{
+    
+    self.userCurr = user;
     
     [self.imgViewAvatar sd_setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"ic_avatar"]];
     
@@ -55,6 +57,15 @@
 }
 
 #pragma mark - Action
+
+- (IBAction)touchBtnInfoSeller:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(selectedSellerInfo:)]){
+        
+        [[self delegate] selectedSellerInfo:self.userCurr];
+    }
+}
+
 
 - (IBAction)touchBtnCall:(id)sender {
     

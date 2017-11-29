@@ -13,8 +13,15 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import "IQKeyboardManager.h"
+#import "PushNotificationView.h"
+#import "Notify.h"
 
-@interface AppDelegate ()<UIApplicationDelegate, GIDSignInDelegate>
+#define DEFAULT_HEIGHT_PUSHNOTIFY 64
+
+@interface AppDelegate ()<UIApplicationDelegate, GIDSignInDelegate>{
+    
+    PushNotificationView *pushNotificationView;
+}
 
 @end
 
@@ -34,6 +41,9 @@
 //        NSLog(@"~~~~~~~~");
 //    }
 //
+    
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     // IQKeyboard
     [[IQKeyboardManager sharedManager] setEnable:YES];
@@ -169,9 +179,21 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
     
     if (userInfo != nil) {
         
-        //NSArray *array = [userInfo objectForKey:@"extraPayLoad"];
+        [self showMessageBoxNotification:nil];
         
-        
+//        NSArray *array = [userInfo objectForKey:@"extraPayLoad"];
+//
+//        if(array.count > 0){
+//
+//            NSDictionary *dic = [array firstObject];
+//
+//            Notify *notification = [[Notify alloc] init];
+//            notification.title = [dic objectForKey:@"name"];
+//            notification.content = [dic objectForKey:@"content"];
+//
+//            [self showMessageBoxNotification:notification];
+//
+//        }
     }
 }
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -190,4 +212,21 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
     //  NSString *str = [NSString stringWithFormat: @"Error: %@", err];
     NSLog(@"Error %@",err.localizedDescription);
 }
+
+#pragma mark - Method
+- (void)showMessageBoxNotification:(Notify *)notify{
+        
+        if(pushNotificationView){
+            
+            [pushNotificationView removeFromSuperview];
+            pushNotificationView = nil;
+        }
+        
+        pushNotificationView = [[PushNotificationView alloc] initWithFrame:CGRectMake(0, - DEFAULT_HEIGHT_PUSHNOTIFY, SW, DEFAULT_HEIGHT_PUSHNOTIFY)];
+        
+        [self.window addSubview:pushNotificationView];
+
+}
+
+
 @end

@@ -12,6 +12,9 @@
 #import "MainViewController.h"
 #import "EditUserInfoViewController.h"
 #import "MyBookViewController.h"
+#import "NotificationViewController.h"
+#import "SupportViewController.h"
+#import "OrderViewController.h"
 
 @interface SlideMenuViewController ()
 {
@@ -140,7 +143,6 @@ static SlideMenuViewController *sharedInstance = nil;
             MyBookViewController *vcMyBook = [storyboard instantiateViewControllerWithIdentifier:@"MyBookViewController"];
             [vcNavigation setViewControllers:@[vcMyBook] animated:YES];
         }
-            
             break;
         case Item_UserInfo:{
             
@@ -148,9 +150,28 @@ static SlideMenuViewController *sharedInstance = nil;
             EditUserInfoViewController *vcEditUserInfo = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfoViewController"];
             [vcNavigation setViewControllers:@[vcEditUserInfo] animated:YES];
         }
-            
             break;
+        case Item_Notification:{
             
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            NotificationViewController *vcNotification = [storyboard instantiateViewControllerWithIdentifier:@"NotificationViewController"];
+            [vcNavigation setViewControllers:@[vcNotification] animated:YES];
+        }
+            break;
+        case Item_Support:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            SupportViewController *vcSupport = [storyboard instantiateViewControllerWithIdentifier:@"SupportViewController"];
+            [vcNavigation setViewControllers:@[vcSupport] animated:YES];
+        }
+            break;
+        case Item_Order:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            OrderViewController *vcOrder = [storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+            [vcNavigation setViewControllers:@[vcOrder] animated:YES];
+        }
+            break;
         default:
             break;
     }

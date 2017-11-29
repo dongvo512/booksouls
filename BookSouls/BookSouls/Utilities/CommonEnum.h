@@ -7,6 +7,7 @@ typedef NS_ENUM(NSInteger, ItemMenuType) {
     Item_Home,
     Item_Notification,
     Item_MyBook,
+    Item_Order,
     Item_UserInfo,
     Item_Support
 };

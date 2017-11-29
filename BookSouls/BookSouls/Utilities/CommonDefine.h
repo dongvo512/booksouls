@@ -47,9 +47,13 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 
 /////////// PUT
 #define PUT_USER_UPDATE @"users/me"
+#define PUT_RES_PASSWORD @"resetPassword"
+#define PUT_VERIFYTOKEN @"verfiyTokenPassword"
 
 /////////// GET
 #define GET_BOOK_NEW @"books"
+
+#define GET_NOTIFICATION @"notifications"
 
 #define GET_BOOK_NEARLY @"books/nearly"
 
@@ -63,6 +67,18 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 
 #define GET_LIST_SELLING @"posts/me?selling"
 
+#define GET_LIST_SELLER_PENDING @"orders/me/seller?status=pending"
+#define GET_LIST_SELLER_SENDING @"orders/me/seller?status=sending"
+#define GET_LIST_SELLER_SUCESS @"orders/me/seller?status=success"
+#define GET_LIST_SELLER_CANCEL @"orders/me/seller?status=cancel"
+#define GET_LIST_SELLER_SELLED @"books/selled"
+
+#define GET_LIST_BUYER_PENDING @"orders/me/buyer?status=pending"
+#define GET_LIST_BUYER_CANCEL @"orders/me/buyer?status=cancel"
+#define GET_LIST_BUYER_SENDING @"orders/me/buyer?status=sending"
+#define GET_LIST_BUYER_BUYED @"books/buyed"
+
+//sending
 ////////// POST
 
 #define ORDER_BOOK @"booking"
@@ -76,6 +92,8 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 #define POST_LOGIN_FB @"loginFb"
 
 #define POST_LOGIN_GOOGLE @"loginGL"
+
+#define POST_SUPPORT @"contact"
 
 #define POST_CREATE_BOOK @"posts/create"
 

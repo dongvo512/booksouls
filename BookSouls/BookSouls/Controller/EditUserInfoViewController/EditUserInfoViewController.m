@@ -175,9 +175,7 @@
             
             dic = @{@"name":self.tfName.tfContent.text, @"phone":self.tfPhone.tfContent.text, @"homeAddress":(self.tfAddress.tfContent.text.length > 0)?self.tfAddress.tfContent.text:@""};
         }
-        
-       
-        
+    
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
         [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,PUT_USER_UPDATE] withHttpMethod:kHTTP_METHOD_PUT withRequestBody:dic callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
@@ -251,6 +249,11 @@
 
 - (void)configUI{
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHideHandler:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
     self.viewUserInfo.layer.cornerRadius = 6;
     self.viewUserInfo.layer.borderWidth = 0.5;
     self.viewUserInfo.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -261,25 +264,25 @@
     self.viewUserInfo.layer.shadowOpacity = 0.0;
     
     self.tfName.strSubTile = @"Tên đại diện";
-    self.tfName.strIcon = @"";
+    //self.tfName.strIcon = @"";
     [self.tfName.tfContent setReturnKeyType:UIReturnKeyNext];
     [self.tfName setDataForTextView];
     self.tfName.delegate = self;
-    self.tfName.tfContent.delegate = self;
     
     self.tfPhone.strSubTile = @"Số điện thoại";
-    self.tfPhone.strIcon = @"";
+   // self.tfPhone.strIcon = @"";
     [self.tfPhone setDataForTextView];
     [self.tfPhone.tfContent setReturnKeyType:UIReturnKeyNext];
     self.tfPhone.delegate = self;
-    self.tfPhone.tfContent.delegate = self;
+
     
     self.tfAddress.strSubTile = @"Địa chỉ";
-    self.tfAddress.strIcon = @"";
+   // self.tfAddress.strIcon = @"";
     [self.tfAddress.tfContent setReturnKeyType:UIReturnKeyDone];
+    [self.tfAddress.tfContent setAutocapitalizationType:UITextAutocapitalizationTypeSentences];
     [self.tfAddress setDataForTextView];
     self.tfAddress.delegate = self;
-    self.tfAddress.tfContent.delegate = self;
+
     
     if(Appdelegate_BookSouls.sesstionUser.profile){
         
@@ -314,6 +317,13 @@
     }
     
 }
+
+- (void) keyboardWillHideHandler:(NSNotification *)notification {
+    
+    [self hideShadowWithAnimation];
+    
+}
+
 - (void)addShadowWithAnimation{
     
     self.viewUserInfo.layer.borderWidth = 0.0;
@@ -336,6 +346,13 @@
     [self.viewUserInfo.layer addAnimation:anim forKey:@"shadowOpacity"];
     self.viewUserInfo.layer.shadowOpacity = 0.0;
 }
+
+#pragma mark - TextFieldViewDelegate
+- (void)beginEditing:(TextFieldView *)textField{
+    
+     [self addShadowWithAnimation];
+}
+
 #pragma mark - ImagePickerViewControllerDelegate
 - (void)finishGetImage:(NSString *)fileName
                  image:(UIImage *)image{
@@ -378,13 +395,13 @@
     
     return YES;
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+- (void)returnKeyboard:(TextFieldView *)textField{
     
     [self hideShadowWithAnimation];
-  
-    if([textField isEqual:self.tfName.tfContent]){
+    
+    if([textField isEqual:self.tfName]){
         
-        if(textField.text.length > 0){
+        if(textField.tfContent.text.length > 0){
             
             [self.lblError setHidden:YES];
             [self.tfPhone.tfContent becomeFirstResponder];
@@ -396,12 +413,12 @@
             
         }
     }
-    else if([textField isEqual:self.tfPhone.tfContent]){
+    else if([textField isEqual:self.tfPhone]){
         
         if(self.tfPhone.tfContent.text.length >= 8 && self.tfPhone.tfContent.text.length <= 11){
             
             [self.lblError setHidden:YES];
-             [self.tfAddress.tfContent becomeFirstResponder];
+            [self.tfAddress.tfContent becomeFirstResponder];
             
         }
         else{
@@ -410,12 +427,10 @@
             [self showError];
             
         }
-    }else if([textField isEqual:self.tfAddress.tfContent]){
+    }else if([textField isEqual:self.tfAddress]){
         
         [self updateUserInfo];
     }
-    
-    
-    return YES;
 }
+
 @end

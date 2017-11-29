@@ -180,7 +180,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrSearchBook addObject:book];
                 
             }
@@ -222,7 +222,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrSearchBook addObject:book];
                 
             }
@@ -272,7 +272,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrSearchBook addObject:book];
                 
             }
@@ -316,7 +316,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
                 NSError *error;
                 
                 Book *book = [[Book alloc] initWithDictionary:dic error:&error];
-                
+                book.descriptionStr = [dic objectForKey:@"description"];
                 [self.arrSearchBook addObject:book];
                 
             }

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SellerInfoView" id="U6b-Vx-4bR" customClass="SellerInfoView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="FEl-93-Wmk">
+                    <rect key="frame" x="24" y="24" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="ZAY-ys-iSp"/>
+                        <constraint firstAttribute="width" constant="48" id="uqk-L8-Ifk"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Mỹ Linh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X82-hK-tbj">
+                    <rect key="frame" x="84" y="24" width="220" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="teK-w7-EMq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
+                    <color key="textColor" red="0.1450980392" green="0.17254901959999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0932188608" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFz-Ts-XSg">
+                    <rect key="frame" x="84" y="47" width="220" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="Buy-Ky-dDa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                    <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Nguyễn Thị Minh Khai, P Hiệp Thanh, Quận Thủ Đức" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6d-iA-KRr">
+                    <rect key="frame" x="84" y="68" width="220" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="5Ma-qo-oXq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                    <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_none_userinfo_better" translatesAutoresizingMaskIntoConstraints="NO" id="fEV-lc-JpV">
+                    <rect key="frame" x="22" y="78" width="52" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="GUR-vb-n2O"/>
+                        <constraint firstAttribute="height" constant="8" id="u2v-3c-yPA"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_userinfo_betterM" translatesAutoresizingMaskIntoConstraints="NO" id="npY-zz-gXi">
+                    <rect key="frame" x="22" y="78" width="52" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="DXR-0y-I9D"/>
+                        <constraint firstAttribute="height" constant="8" id="RVF-uK-lI9"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fEV-lc-JpV" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="22" id="LX2-Lu-XMb"/>
+                <constraint firstItem="FEl-93-Wmk" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="24" id="OiK-pX-u5Z"/>
+                <constraint firstItem="X82-hK-tbj" firstAttribute="leading" secondItem="FEl-93-Wmk" secondAttribute="trailing" constant="12" id="PR0-9U-Dww"/>
+                <constraint firstItem="R6d-iA-KRr" firstAttribute="leading" secondItem="FEl-93-Wmk" secondAttribute="trailing" constant="12" id="Pr6-nU-6SH"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="X82-hK-tbj" secondAttribute="trailing" constant="16" id="Qn3-SD-yzy"/>
+                <constraint firstItem="FEl-93-Wmk" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="24" id="Z3G-UH-Wbo"/>
+                <constraint firstItem="eFz-Ts-XSg" firstAttribute="top" secondItem="X82-hK-tbj" secondAttribute="bottom" constant="5" id="a0e-I0-RBr"/>
+                <constraint firstItem="npY-zz-gXi" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="22" id="aa3-Xy-php"/>
+                <constraint firstItem="npY-zz-gXi" firstAttribute="top" secondItem="FEl-93-Wmk" secondAttribute="bottom" constant="6" id="eeA-2h-Osj"/>
+                <constraint firstItem="X82-hK-tbj" firstAttribute="top" secondItem="9Gg-ye-v9C" secondAttribute="top" constant="24" id="f1l-Ok-sxt"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="R6d-iA-KRr" secondAttribute="trailing" constant="16" id="gIh-Rz-VoZ"/>
+                <constraint firstItem="9Gg-ye-v9C" firstAttribute="trailing" secondItem="eFz-Ts-XSg" secondAttribute="trailing" constant="16" id="m4T-eu-x2i"/>
+                <constraint firstItem="R6d-iA-KRr" firstAttribute="top" secondItem="eFz-Ts-XSg" secondAttribute="bottom" constant="5" id="scS-E8-E1M"/>
+                <constraint firstItem="eFz-Ts-XSg" firstAttribute="leading" secondItem="FEl-93-Wmk" secondAttribute="trailing" constant="12" id="t9u-Jy-JkN"/>
+                <constraint firstItem="fEV-lc-JpV" firstAttribute="top" secondItem="FEl-93-Wmk" secondAttribute="bottom" constant="6" id="tHF-hc-tnA"/>
+                <constraint firstItem="eFz-Ts-XSg" firstAttribute="top" secondItem="X82-hK-tbj" secondAttribute="bottom" constant="5" id="wBs-sU-Hqu"/>
+                <constraint firstItem="R6d-iA-KRr" firstAttribute="top" secondItem="eFz-Ts-XSg" secondAttribute="bottom" constant="5" id="zmZ-N9-Rbh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
+            <connections>
+                <outlet property="imgViewAvatar" destination="FEl-93-Wmk" id="Po9-86-8Vp"/>
+                <outlet property="lblAddress" destination="R6d-iA-KRr" id="pbq-Ve-TxJ"/>
+                <outlet property="lblName" destination="X82-hK-tbj" id="CEA-0T-YUh"/>
+                <outlet property="lblPhone" destination="eFz-Ts-XSg" id="VK3-ai-hHr"/>
+                <outlet property="widthContraintStar" destination="DXR-0y-I9D" id="aKK-5R-Ryt"/>
+            </connections>
+            <point key="canvasLocation" x="-121" y="-155.5"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="ic_avatar" width="120" height="120"/>
+        <image name="rating_none_userinfo_better" width="51" height="8"/>
+        <image name="rating_userinfo_betterM" width="51" height="8"/>
+    </resources>
+</document>

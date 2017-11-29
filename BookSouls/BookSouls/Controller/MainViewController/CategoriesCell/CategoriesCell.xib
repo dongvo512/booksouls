@@ -26,12 +26,9 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-Jz-IvH">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="72"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="72" id="xSo-GY-Nvg"/>
-                        </constraints>
                     </imageView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truyện ngắn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMx-fD-TCb">
-                        <rect key="frame" x="8" y="46.5" width="104" height="15.5"/>
+                        <rect key="frame" x="8" y="48" width="104" height="14"/>
                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -42,6 +39,7 @@
                 <constraint firstItem="jQe-Jz-IvH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0JX-hb-A82"/>
                 <constraint firstItem="jQe-Jz-IvH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4GJ-Tl-bZi"/>
                 <constraint firstAttribute="bottom" secondItem="SMx-fD-TCb" secondAttribute="bottom" constant="10" id="7Ax-9p-0qy"/>
+                <constraint firstAttribute="bottom" secondItem="jQe-Jz-IvH" secondAttribute="bottom" id="Bg3-fj-Njw"/>
                 <constraint firstItem="SMx-fD-TCb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Yed-4E-Rmu"/>
                 <constraint firstAttribute="trailing" secondItem="SMx-fD-TCb" secondAttribute="trailing" constant="8" id="cw1-xB-Kj7"/>
                 <constraint firstAttribute="trailing" secondItem="jQe-Jz-IvH" secondAttribute="trailing" id="l4q-nw-yi8"/>

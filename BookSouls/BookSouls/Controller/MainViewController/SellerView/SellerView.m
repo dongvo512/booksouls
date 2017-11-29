@@ -36,6 +36,16 @@
     [self.cllSeller registerNib:[UINib nibWithNibName:@"SellerCell" bundle:nil] forCellWithReuseIdentifier:@"SellerCell"];
 }
 
+#pragma mark - Action
+
+- (IBAction)touchReadMoreSeller:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(selectedReadMore
+                                                     )]){
+        
+        [[self delegate] selectedReadMore];
+    }
+}
 #pragma mark - UICollectionViewDataSource - UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -64,7 +74,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    UserInfo *user = [self.arrSeller objectAtIndex:indexPath.row];
     
+    if([[self delegate] respondsToSelector:@selector(selectedItemSeller:)]){
+        
+        [[self delegate] selectedItemSeller:user];
+    }
 }
 
 @end
