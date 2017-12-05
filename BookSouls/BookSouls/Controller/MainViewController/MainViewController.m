@@ -72,6 +72,23 @@ typedef NS_ENUM(NSInteger, GroupBook) {
     [self getListBestSeller];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    if(self.isReloadData){
+        
+        [self getListNewBook];
+        
+        [self getlistHotBook];
+        
+        [self getListCategories];
+        
+        [self getListBestSeller];
+    }
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

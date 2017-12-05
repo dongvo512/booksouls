@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSString *deviceToken;
 @property (nonatomic, strong) UINavigationController *navigation;
 @property (nonatomic, strong) NSMutableArray *arrCategories;
-
+@property (nonatomic, strong) NSString *notiType;
 @end
 

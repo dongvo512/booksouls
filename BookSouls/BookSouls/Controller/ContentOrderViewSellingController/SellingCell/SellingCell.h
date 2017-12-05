@@ -22,5 +22,7 @@
 - (void)selectedButtonAcept:(Order *)order;
 - (void)selectedButtonCancel:(Order *)order;
 - (void)selectedButtonComment:(Order *)order;
+- (void)selectedBook:(Order *)order;
+- (void)selectedBuyer:(Order *)order;
 
 @end

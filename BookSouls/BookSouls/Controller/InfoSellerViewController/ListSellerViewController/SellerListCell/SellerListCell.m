@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthContraintStar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightContraintSelled;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContraintSelled;
+@property (weak, nonatomic) IBOutlet UILabel *lblViews;
 
 @end
 
@@ -42,14 +43,24 @@
     
     [self.imgAvatar sd_setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"ic_avatar"]];
     
+    if(user.totalRate.integerValue > 0){
+        
+         self.lblViews.text = [NSString stringWithFormat:@"%@ đánh giá",user.totalRate];
+    }
+    else{
+        
+        self.lblViews.text = @"";
+    }
+   
+    
     self.widthContraintStar.constant = WIDTH_1_STAR * user.avgRating.integerValue;
     
     self.lblName.text = user.name;
     
     if(user.totalSell.integerValue == 0){
         
-        self.topContraintSelled.constant = 0;
-        self.heightContraintSelled.constant = 0;
+       // self.topContraintSelled.constant = 0;
+      //  self.heightContraintSelled.constant = 0;
         
     }
     else{
@@ -59,10 +70,12 @@
         NSString *strSelled = [NSString stringWithFormat:@"%@ sách đã bán",user.totalSell.stringValue];
         self.lblSelled.text = strSelled;
         
-        [Common hightLightLabel:self.lblSelled withSubstring:user.totalSell.stringValue withColor:[UIColor colorWithHexString:@"#252C3A"] font:[UIFont fontWithName:@"Muli-Regular" size:12]];
+        [Common hightLightLabel:self.lblSelled withSubstring:user.totalSell.stringValue withColor:[UIColor colorWithHexString:@"#252C3A"] font:[UIFont fontWithName:@"Muli-Regular" size:13]];
     }
     
     self.lblAddress.text = user.homeAddress;
+    
+    
 }
 
 @end

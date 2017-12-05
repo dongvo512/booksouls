@@ -23,6 +23,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Categories.h"
 #import "BookImageViewController.h"
+#import "MainViewController.h"
 
 #define WIDTH_ITEM_IMAGE 90
 #define HEIGHT_ITEM_IMAGE 62
@@ -104,7 +105,6 @@
 
 #pragma mark - Action
 
-
 - (IBAction)touchBtnCreateBook:(id)sender {
     
     [self.view endEditing:YES];
@@ -117,7 +117,6 @@
         
         [self createBook];
     }
-    
 }
 
 - (IBAction)touchBtnBack:(id)sender {
@@ -219,9 +218,14 @@
             }
             else{
                 
-                 [Common showAlert:self title:@"Thông báo" message:@"Đăng sách thành công" buttonClick:nil];
+                [Common showAlert:self title:@"Thông báo" message:@"Đăng sách thành công" buttonClick:^(UIAlertAction *alertAction) {
+                    
+                    MainViewController *vcMain = [self.navigationController.viewControllers firstObject];
+                    vcMain.isReloadData = YES;
+                    [vcMain.navigationController popViewControllerAnimated:YES];
+                }];
                 
-                [self clearAllDataInput];
+               // [self clearAllDataInput];
                
             }
         }];
@@ -508,9 +512,12 @@
 
 - (NSString *)getValueFromPrice{
     
-    NSString *value = [self.tfPrice.tfContent.text stringByReplacingOccurrencesOfString:@"," withString:@""];
+    NSString *valueTemp = self.tfPrice.tfContent.text;
     
-    return value;
+    NSCharacterSet *notAllowedChars = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+    NSString *resultString = [[valueTemp componentsSeparatedByCharactersInSet:notAllowedChars] componentsJoinedByString:@""];
+    
+    return resultString;
 }
 - (NSString *)checkValidate{
     
@@ -726,10 +733,7 @@
     
     [self uploadImage:data];
 }
-- (void)touchBtnCancel{
-    
-    
-}
+
 
 #pragma mark - PreviewBarcodeViewControllerDelegate
 - (void)finishGetBarcode:(NSString *)barcode{

@@ -130,9 +130,15 @@
             
             [[self delegate] aceptComment:descriptionSelected numStar:numStar];
         }
+        
+        [self dismissFromParentViewController];
+    }
+    else{
+        
+        [Common showAlert:self title:@"Thông báo" message:@"Bạn chưa chọn đánh giá" buttonClick:nil];
     }
     
-    [self dismissFromParentViewController];
+    
 }
 #pragma mark - Method
 

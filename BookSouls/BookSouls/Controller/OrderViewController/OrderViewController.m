@@ -32,8 +32,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
 @property (weak, nonatomic) IBOutlet UIButton *btnSelling;
 @property (weak, nonatomic) IBOutlet UIButton *btnBookEnd;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMaster;
-@property (nonatomic, strong) ContentOrderViewSellingController *vcSelling;
-@property (nonatomic, strong) ContentOrderBuyingViewController *vcBuying;
+
 
 @property (nonatomic, strong) NSMutableArray *arrData;
 @end
@@ -50,8 +49,55 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     
     [super viewDidAppear:animated];
     
-   
+    [self performSelector:@selector(moveWithNotiType) withObject:nil afterDelay:0.3];
 }
+
+- (void)moveWithNotiType{
+    
+    if(Appdelegate_BookSouls.notiType){
+        
+        NSLog(@"%@",Appdelegate_BookSouls.notiType);
+        
+        if([Appdelegate_BookSouls.notiType isEqualToString:@"BUYER_RECIVED_ORDER"]){
+            
+            [self touchBookSelling:nil];
+            [self.vcSelling touchComment:nil];
+        }
+        else if([Appdelegate_BookSouls.notiType isEqualToString:@"BUYER_CANCEL_ORDER"]){
+            
+            [self touchBookSelling:nil];
+            [self.vcSelling touchBtnCancel:nil];
+        }
+        else if ([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_CANCEL_ORDER"]){
+            
+            [self touchBtnBookEnd:nil];
+            [self.vcBuying touchBtnCancel:nil];
+        }
+        else if([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_SUCCESS_ORER"]){
+            
+            [self touchBtnBookEnd:nil];
+            [self.vcBuying touchBtnSelled:nil];
+        }
+        else if ([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_ACCEPT_ORDER"]){
+            
+            [self touchBtnBookEnd:nil];
+            [self.vcBuying touchBtnShping:nil];
+        }
+        else if([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_RATING_BUYER"]){
+            
+            [self touchBtnBookEnd:nil];
+            [self.vcBuying touchBtnSelled:nil];
+        }
+        else if([Appdelegate_BookSouls.notiType isEqualToString:@"USER_ORDER_BOOK"]){
+            
+            [self touchBookSelling:nil];
+            [self.vcSelling touchBtnWaitingSell:nil];
+        }
+        
+        Appdelegate_BookSouls.notiType = nil;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

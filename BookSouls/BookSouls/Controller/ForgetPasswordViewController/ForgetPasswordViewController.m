@@ -7,6 +7,7 @@
 //
 
 #import "ForgetPasswordViewController.h"
+#import "ChangePasswordViewController.h"
 
 #define HEIGHT_LOGIN_DEFAULT 60
 #define HEIGHT_LOGIN_ENTER_CODE 111
@@ -160,7 +161,15 @@
             }
             else{
                 
-              
+                NSString *token = [responseDataObject objectForKey:@"token"];
+                
+                Appdelegate_BookSouls.sesstionUser = [[SessionUser alloc] init];
+                Appdelegate_BookSouls.sesstionUser.token = token;
+                
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                ChangePasswordViewController *vcBookAll = [storyboard instantiateViewControllerWithIdentifier:@"ChangePasswordViewController"];
+               
+                [self.navigationController pushViewController:vcBookAll animated:YES];
                 
             }
         }];
@@ -193,6 +202,7 @@
                 isEnterCode = YES;
                 
                 [self.tfCode becomeFirstResponder];
+                [self.tfEmail setEnabled:NO];
             }];
             
         }

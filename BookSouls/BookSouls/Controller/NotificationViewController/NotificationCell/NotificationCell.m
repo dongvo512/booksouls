@@ -34,6 +34,16 @@
     
     self.lblTitle.text = notify.title;
     
+    if([notify.isRead boolValue]){
+        
+        [self.contentView setBackgroundColor:[UIColor colorWithHexString:@"#F6F6F6"]];
+    }
+    else{
+        
+        [self.contentView setBackgroundColor:[UIColor whiteColor]];
+    }
+    
+    
     if([notify.title containsString:@"Hủy"]){
         
         [self.lblTitle setTextColor:[UIColor colorWithHexString:@"#F44E4E"]];

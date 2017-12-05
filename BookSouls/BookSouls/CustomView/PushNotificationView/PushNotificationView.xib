@@ -61,17 +61,27 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-4n-xyX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <connections>
+                        <action selector="touchNoti:" destination="-1" eventType="touchUpInside" id="Y7l-Zj-orf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.31372549019607843" green="0.68627450980392157" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="YST-F6-8kk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="0XV-HB-1JC"/>
                 <constraint firstItem="X04-1e-bbQ" firstAttribute="top" secondItem="YST-F6-8kk" secondAttribute="bottom" constant="3" id="6md-6w-u7P"/>
                 <constraint firstItem="YST-F6-8kk" firstAttribute="leading" secondItem="Zcy-fx-2eu" secondAttribute="trailing" constant="12" id="8xc-GX-Nbq"/>
+                <constraint firstItem="och-4n-xyX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dq1-kd-MXB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="X04-1e-bbQ" secondAttribute="trailing" constant="16" id="NBF-pe-qkd"/>
                 <constraint firstItem="Zcy-fx-2eu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Sl3-RJ-nlG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YST-F6-8kk" secondAttribute="trailing" constant="16" id="Ucu-gW-Cvd"/>
+                <constraint firstItem="och-4n-xyX" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ug1-GC-Dv0"/>
                 <constraint firstItem="X04-1e-bbQ" firstAttribute="leading" secondItem="Zcy-fx-2eu" secondAttribute="trailing" constant="12" id="XCb-ee-fLW"/>
                 <constraint firstItem="Zcy-fx-2eu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="8" id="Yoc-FH-sOH"/>
+                <constraint firstItem="och-4n-xyX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fUB-d7-sKp"/>
+                <constraint firstItem="och-4n-xyX" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ti3-rn-bzv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

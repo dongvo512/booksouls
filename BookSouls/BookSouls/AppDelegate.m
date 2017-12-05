@@ -15,6 +15,9 @@
 #import "IQKeyboardManager.h"
 #import "PushNotificationView.h"
 #import "Notify.h"
+#import "OrderViewController.h"
+#import "ContentOrderBuyingViewController.h"
+#import "ContentOrderViewSellingController.h"
 
 #define DEFAULT_HEIGHT_PUSHNOTIFY 64
 
@@ -42,7 +45,7 @@
 //    }
 //
     
-    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     // IQKeyboard
@@ -179,23 +182,73 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
     
     if (userInfo != nil) {
         
-        [self showMessageBoxNotification:nil];
-        
-//        NSArray *array = [userInfo objectForKey:@"extraPayLoad"];
-//
-//        if(array.count > 0){
-//
-//            NSDictionary *dic = [array firstObject];
-//
-//            Notify *notification = [[Notify alloc] init];
-//            notification.title = [dic objectForKey:@"name"];
-//            notification.content = [dic objectForKey:@"content"];
-//
-//            [self showMessageBoxNotification:notification];
-//
-//        }
+        if(userInfo){
+            
+            NSDictionary *dicAps = [userInfo objectForKey:@"aps"];
+            
+            if(dicAps){
+                
+                NSDictionary *dicAlert = [dicAps objectForKey:@"alert"];
+                
+                if(dicAlert){
+                    
+                    Notify *notify = [[Notify alloc] init];
+                    notify.content = [dicAlert objectForKey:@"body"];
+                    notify.title = [dicAlert objectForKey:@"title"];
+                    notify.type = [dicAlert objectForKey:@"collapsekey"];
+                    
+                    if(application.applicationState == UIApplicationStateActive){
+                        
+                         [self showMessageBoxNotification:notify];
+                    }
+                    else if([UIApplication sharedApplication].applicationState == UIApplicationStateInactive){
+                        
+                        Appdelegate_BookSouls.notiType = notify.type;
+                        
+                        if([[SlideMenuViewController sharedInstance] indexSelectedCurr] != Item_Order){
+                            
+                             [[SlideMenuViewController sharedInstance] selecItemCurr:Item_Order];
+                        }
+                        else{
+                            
+                            OrderViewController *vcOrder = [[[[SlideMenuViewController sharedInstance] vcNavigation] viewControllers] firstObject];
+                            
+                            [self redirectOrderWithNotification:vcOrder];
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+- (void)redirectOrderWithNotification:(OrderViewController *)orderVC{
+    
+    if(Appdelegate_BookSouls.notiType){
+        
+        if([Appdelegate_BookSouls.notiType isEqualToString:@"BUYER_RECIVED_ORDER"]){
+            
+            [orderVC.vcSelling touchComment:nil];
+        }
+        else if([Appdelegate_BookSouls.notiType isEqualToString:@"BUYER_CANCEL_ORDER"]){
+            
+            [orderVC.vcSelling touchBtnCancel:nil];
+        }
+        else if ([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_CANCEL_ORDER"]){
+            
+            [orderVC.vcBuying touchBtnCancel:nil];
+        }
+        else if([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_SUCCESS_ORER"]){
+            
+            [orderVC.vcBuying touchBtnShping:nil];
+        }
+        
+        Appdelegate_BookSouls.notiType = nil;
+    }
+    
+}
+
+
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     //NSString *str = [NSString stringWithFormat:@"Device Token=%@",deviceToken];
@@ -216,15 +269,14 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
 #pragma mark - Method
 - (void)showMessageBoxNotification:(Notify *)notify{
         
-        if(pushNotificationView){
-            
-            [pushNotificationView removeFromSuperview];
-            pushNotificationView = nil;
-        }
+    if(pushNotificationView){
         
-        pushNotificationView = [[PushNotificationView alloc] initWithFrame:CGRectMake(0, - DEFAULT_HEIGHT_PUSHNOTIFY, SW, DEFAULT_HEIGHT_PUSHNOTIFY)];
-        
-        [self.window addSubview:pushNotificationView];
+        [pushNotificationView removeFromSuperview];
+        pushNotificationView = nil;
+    }
+    
+    pushNotificationView = [[PushNotificationView alloc] initWithFrame:CGRectMake(0, - DEFAULT_HEIGHT_PUSHNOTIFY, SW, DEFAULT_HEIGHT_PUSHNOTIFY) notify:notify];
+    [self.window addSubview:pushNotificationView];
 
 }
 

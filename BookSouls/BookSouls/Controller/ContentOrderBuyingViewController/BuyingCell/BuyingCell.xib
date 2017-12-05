@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -208,6 +209,26 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk9-07-lrI">
+                        <rect key="frame" x="14" y="8" width="150" height="196"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="V1g-ts-jiW"/>
+                            <constraint firstAttribute="height" constant="196" id="Zbf-5q-Z2X"/>
+                        </constraints>
+                        <connections>
+                            <action selector="touchBook:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2Y3-Jq-lvp"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h2-Ld-ptx">
+                        <rect key="frame" x="319" y="50" width="40" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="oSO-BZ-geI"/>
+                            <constraint firstAttribute="height" constant="43" id="ybh-pZ-ecx"/>
+                        </constraints>
+                        <connections>
+                            <action selector="touchSeller:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lK6-E9-HSW"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dUT-y0-G6Y" firstAttribute="leading" secondItem="jiC-F1-xP9" secondAttribute="trailing" constant="8" id="0Yr-7s-NWx"/>
@@ -224,6 +245,7 @@
                     <constraint firstItem="xPu-me-XdC" firstAttribute="height" secondItem="6Wv-PX-oJW" secondAttribute="height" id="8gC-wk-9Vb"/>
                     <constraint firstItem="dUT-y0-G6Y" firstAttribute="leading" secondItem="xiz-6I-Bh9" secondAttribute="trailing" constant="8" id="9SO-IY-Ttw"/>
                     <constraint firstItem="xPu-me-XdC" firstAttribute="width" secondItem="6Wv-PX-oJW" secondAttribute="width" id="CNb-xa-lUC"/>
+                    <constraint firstItem="Wk9-07-lrI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CTB-90-fW7"/>
                     <constraint firstItem="otg-x4-6Q5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G6E-R1-V6f"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Mrb-WU-2dy" secondAttribute="trailing" constant="14" id="H6u-NJ-Gsw"/>
                     <constraint firstAttribute="trailing" secondItem="BRR-Zm-DC3" secondAttribute="trailing" constant="14" id="Hkc-P8-nuV"/>
@@ -247,7 +269,10 @@
                     <constraint firstAttribute="trailingMargin" secondItem="xPu-me-XdC" secondAttribute="trailing" constant="8" id="jV7-wc-tHs"/>
                     <constraint firstItem="Mrb-WU-2dy" firstAttribute="top" secondItem="FFU-ny-z5g" secondAttribute="bottom" constant="8" id="jub-wO-xff"/>
                     <constraint firstItem="kPU-Bo-sQV" firstAttribute="leading" secondItem="otg-x4-6Q5" secondAttribute="trailing" constant="14" id="kwt-8d-FDa"/>
+                    <constraint firstItem="Wk9-07-lrI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="lag-rH-HSK"/>
                     <constraint firstItem="xiz-6I-Bh9" firstAttribute="top" secondItem="jiC-F1-xP9" secondAttribute="bottom" constant="5" id="rEv-rr-6Aa"/>
+                    <constraint firstItem="5h2-Ld-ptx" firstAttribute="top" secondItem="BRR-Zm-DC3" secondAttribute="bottom" constant="32" id="vx7-u0-mbQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5h2-Ld-ptx" secondAttribute="trailing" constant="8" id="xsn-QD-BUg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

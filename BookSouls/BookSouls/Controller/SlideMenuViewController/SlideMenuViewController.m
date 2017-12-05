@@ -18,11 +18,9 @@
 
 @interface SlideMenuViewController ()
 {
-     UINavigationController *vcNavigation;
+    
     
     CGFloat ratioWidthMenuLeft;
-    
-    NSInteger indexSelectedCurr;
     
     UIView *viewBackground;
     
@@ -62,7 +60,7 @@ static SlideMenuViewController *sharedInstance = nil;
     
     ratioWidthMenuLeft = 0.75;
     
-    indexSelectedCurr = Item_Home;
+    self.indexSelectedCurr = Item_Home;
     
     [self createNavigationContent];
     [self createBackgroundView];
@@ -84,11 +82,11 @@ static SlideMenuViewController *sharedInstance = nil;
     
     MainViewController *vcMain = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     
-    vcNavigation = [[UINavigationController alloc] initWithRootViewController:vcMain];
-    vcNavigation.navigationBarHidden = YES;
-    vcNavigation.view.frame = self.view.bounds;
+    self.vcNavigation = [[UINavigationController alloc] initWithRootViewController:vcMain];
+    self.vcNavigation.navigationBarHidden = YES;
+    self.vcNavigation.view.frame = self.view.bounds;
     
-    [self.view addSubview:vcNavigation.view];
+    [self.view addSubview:self.vcNavigation.view];
     
 }
 - (void)createBackgroundView{
@@ -121,11 +119,9 @@ static SlideMenuViewController *sharedInstance = nil;
     
 }
 
-- (void)selectedItemInMenu:(NSInteger )index{
+- (void)selecItemCurr:(NSInteger)index{
     
-    if(index == indexSelectedCurr){
-        
-        [self toggle];
+    if(index == self.indexSelectedCurr){
         return;
     }
     
@@ -134,49 +130,112 @@ static SlideMenuViewController *sharedInstance = nil;
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             MainViewController *vcMain = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-            [vcNavigation setViewControllers:@[vcMain] animated:YES];
+            [self.vcNavigation setViewControllers:@[vcMain] animated:YES];
         }
             break;
         case Item_MyBook:{
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             MyBookViewController *vcMyBook = [storyboard instantiateViewControllerWithIdentifier:@"MyBookViewController"];
-            [vcNavigation setViewControllers:@[vcMyBook] animated:YES];
+            [self.vcNavigation setViewControllers:@[vcMyBook] animated:YES];
         }
             break;
         case Item_UserInfo:{
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             EditUserInfoViewController *vcEditUserInfo = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfoViewController"];
-            [vcNavigation setViewControllers:@[vcEditUserInfo] animated:YES];
+            [self.vcNavigation setViewControllers:@[vcEditUserInfo] animated:YES];
         }
             break;
         case Item_Notification:{
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             NotificationViewController *vcNotification = [storyboard instantiateViewControllerWithIdentifier:@"NotificationViewController"];
-            [vcNavigation setViewControllers:@[vcNotification] animated:YES];
+            [self.vcNavigation setViewControllers:@[vcNotification] animated:YES];
         }
             break;
         case Item_Support:{
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             SupportViewController *vcSupport = [storyboard instantiateViewControllerWithIdentifier:@"SupportViewController"];
-            [vcNavigation setViewControllers:@[vcSupport] animated:YES];
+            [self.vcNavigation setViewControllers:@[vcSupport] animated:YES];
         }
             break;
         case Item_Order:{
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             OrderViewController *vcOrder = [storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
-            [vcNavigation setViewControllers:@[vcOrder] animated:YES];
+            [self.vcNavigation setViewControllers:@[vcOrder] animated:YES];
         }
             break;
         default:
             break;
     }
     
-    indexSelectedCurr = index;
+    self.indexSelectedCurr = index;
+    
+}
+
+- (void)selectedItemInMenu:(NSInteger )index{
+    
+    if(index != Item_Home){
+        
+        if(index == self.indexSelectedCurr){
+            
+            [self toggle];
+            return;
+        }
+    }
+    
+    
+    switch (index) {
+        case Item_Home:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MainViewController *vcMain = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+            [self.vcNavigation setViewControllers:@[vcMain] animated:YES];
+        }
+            break;
+        case Item_MyBook:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MyBookViewController *vcMyBook = [storyboard instantiateViewControllerWithIdentifier:@"MyBookViewController"];
+            [self.vcNavigation setViewControllers:@[vcMyBook] animated:YES];
+        }
+            break;
+        case Item_UserInfo:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            EditUserInfoViewController *vcEditUserInfo = [storyboard instantiateViewControllerWithIdentifier:@"EditUserInfoViewController"];
+            [self.vcNavigation setViewControllers:@[vcEditUserInfo] animated:YES];
+        }
+            break;
+        case Item_Notification:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            NotificationViewController *vcNotification = [storyboard instantiateViewControllerWithIdentifier:@"NotificationViewController"];
+            [self.vcNavigation setViewControllers:@[vcNotification] animated:YES];
+        }
+            break;
+        case Item_Support:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            SupportViewController *vcSupport = [storyboard instantiateViewControllerWithIdentifier:@"SupportViewController"];
+            [self.vcNavigation setViewControllers:@[vcSupport] animated:YES];
+        }
+            break;
+        case Item_Order:{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            OrderViewController *vcOrder = [storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+            [self.vcNavigation setViewControllers:@[vcOrder] animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    self.indexSelectedCurr = index;
     
     [self toggle];
 }

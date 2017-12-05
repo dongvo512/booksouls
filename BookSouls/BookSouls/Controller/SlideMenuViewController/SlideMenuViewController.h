@@ -15,9 +15,10 @@
 + (id)sharedInstance;
 + (void)resetSharedInstance;
 @property (nonatomic, strong) MenuLeftView *viewMenuLeft;
+@property (nonatomic, strong)  UINavigationController *vcNavigation;
 @property (nonatomic) BOOL isUserManager;
 @property (nonatomic) BOOL isAdmin;
-
+@property (nonatomic) NSInteger indexSelectedCurr;
 // nhấn nút menu.
 -(void)toggle;
 
@@ -26,5 +27,5 @@
 
 // thay root Viewcontroller cho navigationcontroller với danh sách items trên Menu.
 - (void)selectedItemInMenu:(NSInteger )index;
-
+- (void)selecItemCurr:(NSInteger)index;
 @end

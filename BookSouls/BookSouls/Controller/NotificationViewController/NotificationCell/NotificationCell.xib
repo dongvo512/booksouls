@@ -27,18 +27,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mua Sách" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPN-2d-WRW">
-                        <rect key="frame" x="16" y="12.5" width="92" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mua Sách" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPN-2d-WRW">
+                        <rect key="frame" x="16" y="13" width="176" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Tru-ly-yE5"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="zOp-sC-B4c"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Tru-ly-yE5"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                         <color key="textColor" red="0.10980392156862745" green="0.72156862745098038" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Huyền Mi đã đồng ý giao dích “xxxxxx” hãy chờ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbJ-8e-NtY">
-                        <rect key="frame" x="16" y="41.5" width="288" height="34.5"/>
+                        <rect key="frame" x="16" y="41" width="288" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Y2n-Hk-6el"/>
                         </constraints>
@@ -46,10 +45,10 @@
                         <color key="textColor" red="0.56470588235294117" green="0.59607843137254901" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:46 SA" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5P-oo-ctm">
-                        <rect key="frame" x="246" y="12" width="58" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05/12/2017 08:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5P-oo-ctm">
+                        <rect key="frame" x="200" y="12" width="104" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="VZ3-dP-r9p"/>
+                            <constraint firstAttribute="width" constant="104" id="VZ3-dP-r9p"/>
                             <constraint firstAttribute="height" constant="21" id="bFm-1g-DBt"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
@@ -65,13 +64,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DPN-2d-WRW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="2M8-ki-EOy"/>
+                    <constraint firstItem="DPN-2d-WRW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="2M8-ki-EOy"/>
                     <constraint firstAttribute="trailing" secondItem="bwi-kF-f0k" secondAttribute="trailing" constant="16" id="9AY-ko-n4m"/>
                     <constraint firstItem="DPN-2d-WRW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EbC-Cw-lTg"/>
+                    <constraint firstItem="g5P-oo-ctm" firstAttribute="leading" secondItem="DPN-2d-WRW" secondAttribute="trailing" constant="8" id="NTF-89-JYS"/>
                     <constraint firstItem="WbJ-8e-NtY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Rab-x9-QAR"/>
                     <constraint firstAttribute="trailing" secondItem="g5P-oo-ctm" secondAttribute="trailing" constant="16" id="bbN-M1-RJL"/>
                     <constraint firstAttribute="bottom" secondItem="bwi-kF-f0k" secondAttribute="bottom" id="dJS-I8-yx7"/>
-                    <constraint firstItem="WbJ-8e-NtY" firstAttribute="top" secondItem="DPN-2d-WRW" secondAttribute="bottom" constant="8" id="ek4-6w-wuv"/>
+                    <constraint firstItem="WbJ-8e-NtY" firstAttribute="top" secondItem="DPN-2d-WRW" secondAttribute="bottom" constant="7" id="ek4-6w-wuv"/>
                     <constraint firstAttribute="trailing" secondItem="WbJ-8e-NtY" secondAttribute="trailing" constant="16" id="hw6-3c-E9c"/>
                     <constraint firstItem="g5P-oo-ctm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="jV3-bn-z8s"/>
                     <constraint firstItem="bwi-kF-f0k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xUJ-Ur-0f9"/>

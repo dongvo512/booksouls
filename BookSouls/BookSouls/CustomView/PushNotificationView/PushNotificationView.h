@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Notify;
 @interface PushNotificationView : UIView
-
+- (id)initWithFrame:(CGRect)frame notify:(Notify *)notify;
 @end

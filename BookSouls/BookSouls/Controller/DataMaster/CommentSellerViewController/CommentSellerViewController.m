@@ -1,46 +1,63 @@
 //
-//  SellerCancelViewController.m
+//  CommentSellerViewController.m
 //  BookSouls
 //
 //  Created by Dong Vo on 11/29/17.
 //  Copyright © 2017 Dong Vo. All rights reserved.
 //
 
-#import "SellerCancelViewController.h"
+#import "CommentSellerViewController.h"
 #import "CommentCell.h"
 #import "UIColor+HexString.h"
 #import "Comment.h"
 
-@interface SellerCancelViewController ()<UITextViewDelegate>{
+#define WIDTH_STAR 42.5
+
+@interface CommentSellerViewController ()<UITextViewDelegate>{
     
     NSString *descriptionSelected;
+    
+    NSInteger numStar;
 }
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthContraintStar;
 @property (nonatomic, strong) NSMutableArray *arrDescription;
 @end
 
-@implementation SellerCancelViewController
+@implementation CommentSellerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.arrDescription = [NSMutableArray array];
+   
+    numStar = 0;
     
     Comment *comment_1 = [[Comment alloc] init];
-    comment_1.title = @"Chưa liên hệ được người mua";
+    comment_1.title = @"Sách chất lượng, người bán nhiệt tình";
     
     [self.arrDescription addObject:comment_1];
     
     Comment *comment_2 = [[Comment alloc] init];
-    comment_2.title = @"Sách đã bán";
+    comment_2.title = @"Sách chất lượng, người bán không tốt";
     
     [self.arrDescription addObject:comment_2];
     
     Comment *comment_3 = [[Comment alloc] init];
-    comment_3.title = @"Không còn nhu cầu bán sách";
+    comment_3.title = @"Sách không chất lượng, người bán nhiệt tình";
     
     [self.arrDescription addObject:comment_3];
+    
+    Comment *comment_4 = [[Comment alloc] init];
+    comment_4.title = @"Sách không chất lượng, người bán không nhiệt tình";
+    
+    [self.arrDescription addObject:comment_4];
+    
+    Comment *comment_5 = [[Comment alloc] init];
+    comment_5.title = @"Không gặp được người bán sách";
+    
+    [self.arrDescription addObject:comment_5];
     
     self.textView.layer.borderColor = [UIColor colorWithHexString:@"#95989A"].CGColor;
     self.textView.layer.borderWidth = 0.5;
@@ -57,6 +74,65 @@
 
 #pragma mark - Action
 
+- (IBAction)touchBtnStar1:(id)sender {
+    
+    numStar = 1;
+    
+    self.widthContraintStar.constant = WIDTH_STAR;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
+}
+
+- (IBAction)touchBtnStar2:(id)sender {
+    
+    numStar = 2;
+    
+    self.widthContraintStar.constant = WIDTH_STAR *2;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
+}
+
+- (IBAction)touchBtnStar3:(id)sender {
+    
+    numStar = 3;
+    
+    self.widthContraintStar.constant = WIDTH_STAR *3;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
+}
+
+- (IBAction)touchBtnStar4:(id)sender {
+    
+    numStar = 4;
+    
+    self.widthContraintStar.constant = WIDTH_STAR *4;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
+}
+- (IBAction)touchBtnStar5:(id)sender {
+    
+    numStar = 5;
+    
+    self.widthContraintStar.constant = WIDTH_STAR *5;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
+}
+
 - (IBAction)touchBtnClose:(id)sender {
     
     [self dismissFromParentViewController];
@@ -65,17 +141,19 @@
     
     if(descriptionSelected.length > 0 ){
         
-        if([[self delegate] respondsToSelector:@selector(aceptCancelFromSeller:)]){
+        if([[self delegate] respondsToSelector:@selector(aceptCommentForSeller:numStar:)]){
             
-            [[self delegate] aceptCancelFromSeller:descriptionSelected];
+            [[self delegate] aceptCommentForSeller:descriptionSelected numStar:numStar];
         }
         
-        [self dismissFromParentViewController];
+         [self dismissFromParentViewController];
     }
     else{
         
-        [Common showAlert:self title:@"Thông báo" message:@"Bạn chưa chọn lý do huỷ" buttonClick:nil];
+         [Common showAlert:self title:@"Thông báo" message:@"Bạn chưa chọn đánh giá" buttonClick:nil];
     }
+    
+    
 }
 #pragma mark - Method
 

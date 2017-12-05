@@ -203,11 +203,12 @@
     
     if(self.isPrice){
         
-        NSString *strTemp = [textField.text stringByReplacingOccurrencesOfString:@"," withString:@""];
+        NSCharacterSet *notAllowedChars = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+        NSString *resultString = [[textField.text componentsSeparatedByCharactersInSet:notAllowedChars] componentsJoinedByString:@""];
        
-        if(strTemp.length > 0 ){
+        if(resultString.length > 0 ){
             
-            textField.text = [Common getString3DigitsDot:strTemp.integerValue];
+            textField.text = [Common getString3DigitsDot:resultString.integerValue];
         }
         
     }

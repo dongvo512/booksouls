@@ -50,6 +50,29 @@
 }
 #pragma mark - Call API
 
+- (void)updateReadedNotification:(Notify *)noti{
+    
+    NSString *url = [NSString stringWithFormat:@"%@notifications/%@",URL_DEFAULT,noti.id.stringValue];
+    isLoadingData = YES;
+    
+    NSDictionary *dic = @{@"isRead":@(1)};
+    
+    [APIRequestHandler initWithURLString:url withHttpMethod:kHTTP_METHOD_PUT withRequestBody:dic callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+        
+        isLoadingData = NO;
+        
+        if(isError){
+            
+           // [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:nil];
+        }
+        else{
+           
+        }
+        
+    }];
+    
+}
+
 - (void)refreshNotificaiton{
     
     indexpage = 1;
@@ -131,7 +154,6 @@
         }
        
     }];
-    
 }
 
 #pragma mark - Method
@@ -187,6 +209,13 @@
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    Notify *noti = [self.arrNotification objectAtIndex:indexPath.row];
+    
+    [self updateReadedNotification:noti];
+    
+    Appdelegate_BookSouls.notiType = noti.contentKey;
+    
+    [[SlideMenuViewController sharedInstance] selecItemCurr:Item_Order];
     
 }
 

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ContentOrderViewSellingController,ContentOrderBuyingViewController;
+
 
 @interface OrderViewController : UIViewController
+@property (nonatomic, strong) ContentOrderViewSellingController *vcSelling;
+@property (nonatomic, strong) ContentOrderBuyingViewController *vcBuying;
+- (IBAction)touchBookSelling:(id)sender;
+- (IBAction)touchBtnBookEnd:(id)sender;
 
 @end

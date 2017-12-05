@@ -14,6 +14,9 @@
         <array key="Muli-Regular.ttf">
             <string>Muli-Regular</string>
         </array>
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -38,7 +41,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Mỹ Linh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcy-Pt-nID">
-                        <rect key="frame" x="80" y="24" width="223" height="18"/>
+                        <rect key="frame" x="80" y="24" width="144" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="QvL-oW-1ad"/>
                         </constraints>
@@ -65,36 +68,43 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_none_small" translatesAutoresizingMaskIntoConstraints="NO" id="bOG-bQ-eOm">
-                        <rect key="frame" x="232" y="49" width="71" height="11"/>
+                        <rect key="frame" x="232" y="28" width="71" height="11"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="Un4-4q-uHI"/>
                             <constraint firstAttribute="height" constant="11" id="djh-ix-wVL"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_small" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-lG-YvO">
-                        <rect key="frame" x="232" y="49" width="71" height="11"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="11" id="45H-yc-uEB"/>
-                            <constraint firstAttribute="width" constant="71" id="gCp-SN-4jM"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rating_small" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-lG-YvO">
+                        <rect key="frame" x="232" y="28" width="71" height="11"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 đánh giá" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnz-0T-ZLR">
+                        <rect key="frame" x="226" y="46" width="77" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="VTx-PF-awz"/>
+                            <constraint firstAttribute="width" constant="77" id="p1X-5e-qws"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
+                        <color key="textColor" red="0.1450980392" green="0.17254901959999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="uIg-jO-2cA" firstAttribute="top" secondItem="oJa-Bj-wDS" secondAttribute="bottom" constant="5" id="Aec-0O-iqw"/>
                     <constraint firstItem="h9y-a4-GmR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="Bhy-ZX-B9m"/>
-                    <constraint firstItem="1FS-lG-YvO" firstAttribute="top" secondItem="Hcy-Pt-nID" secondAttribute="bottom" constant="7" id="Deu-cC-Km4"/>
-                    <constraint firstItem="1FS-lG-YvO" firstAttribute="leading" secondItem="bOG-bQ-eOm" secondAttribute="leading" id="HUm-pN-tgd"/>
-                    <constraint firstItem="bOG-bQ-eOm" firstAttribute="top" secondItem="Hcy-Pt-nID" secondAttribute="bottom" constant="7" id="Kom-9a-O0g"/>
+                    <constraint firstItem="Dnz-0T-ZLR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="38" id="HcV-JV-1T2"/>
+                    <constraint firstItem="bOG-bQ-eOm" firstAttribute="leading" secondItem="Hcy-Pt-nID" secondAttribute="trailing" constant="8" id="Jaw-BJ-kcN"/>
+                    <constraint firstItem="bOG-bQ-eOm" firstAttribute="top" secondItem="Hcy-Pt-nID" secondAttribute="bottom" constant="-14" id="Kom-9a-O0g"/>
+                    <constraint firstItem="Hcy-Pt-nID" firstAttribute="leading" secondItem="h9y-a4-GmR" secondAttribute="trailing" constant="8" id="Rb8-tI-3dx"/>
                     <constraint firstAttribute="trailing" secondItem="uIg-jO-2cA" secondAttribute="trailing" constant="17" id="Rgc-xN-PVv"/>
                     <constraint firstItem="oJa-Bj-wDS" firstAttribute="top" secondItem="Hcy-Pt-nID" secondAttribute="bottom" constant="5" id="VnM-Tq-hFM"/>
                     <constraint firstAttribute="bottom" secondItem="uIg-jO-2cA" secondAttribute="bottom" priority="750" constant="4" id="WhW-eW-yyb"/>
                     <constraint firstItem="h9y-a4-GmR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="aSu-xg-fAv"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Hcy-Pt-nID" secondAttribute="trailing" constant="9" id="aqw-e1-Ctu"/>
                     <constraint firstItem="bOG-bQ-eOm" firstAttribute="leading" secondItem="oJa-Bj-wDS" secondAttribute="trailing" constant="14" id="eZ2-Nu-GmC"/>
                     <constraint firstItem="Hcy-Pt-nID" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="eZc-EP-nmh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="bOG-bQ-eOm" secondAttribute="trailing" constant="9" id="fOE-nj-srl"/>
-                    <constraint firstItem="Hcy-Pt-nID" firstAttribute="leading" secondItem="h9y-a4-GmR" secondAttribute="trailing" constant="8" id="gpE-8J-Fq2"/>
                     <constraint firstItem="uIg-jO-2cA" firstAttribute="leading" secondItem="h9y-a4-GmR" secondAttribute="trailing" constant="8" id="s4P-BQ-9HV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Dnz-0T-ZLR" secondAttribute="trailing" constant="9" id="wAt-bf-R6E"/>
                     <constraint firstItem="oJa-Bj-wDS" firstAttribute="leading" secondItem="h9y-a4-GmR" secondAttribute="trailing" constant="8" id="yp6-Pn-mQi"/>
                 </constraints>
             </tableViewCellContentView>
@@ -105,8 +115,8 @@
                 <outlet property="lblAddress" destination="uIg-jO-2cA" id="Mz8-L3-lAN"/>
                 <outlet property="lblName" destination="Hcy-Pt-nID" id="2vR-0L-L5O"/>
                 <outlet property="lblSelled" destination="oJa-Bj-wDS" id="5GT-zk-DMa"/>
+                <outlet property="lblViews" destination="Dnz-0T-ZLR" id="JSr-H7-kxE"/>
                 <outlet property="topContraintSelled" destination="VnM-Tq-hFM" id="piG-82-Qfy"/>
-                <outlet property="widthContraintStar" destination="gCp-SN-4jM" id="biD-mX-3uF"/>
             </connections>
             <point key="canvasLocation" x="-133" y="-165.5"/>
         </tableViewCell>

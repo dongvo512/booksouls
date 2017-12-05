@@ -34,11 +34,11 @@
 
 - (IBAction)touchBtnBack:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)touchBtnConfirm:(id)sender {
     
-    
+    [self changePassword];
 }
 - (IBAction)touchBtnShowPassword:(id)sender {
     
@@ -52,10 +52,39 @@
 #pragma mark - Call API
 - (void)changePassword{
     
+    NSString *error = [self getStringError];
     
+    if(error.length == 0 ){
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        NSDictionary *dic = @{@"password":self.tfPassword.text,@"password_confirmation":self.tfRepassword.text};
+        
+        [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,PUT_CHANGEPASSWORD] withHttpMethod:kHTTP_METHOD_PUT withRequestBody:dic callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            if(isError){
+                
+                [Common showAlert:self title:@"Thông báo" message:stringError buttonClick:^(UIAlertAction *alertAction) {
+                    
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }];
+            }
+            else{
+                
+                [Common showAlert:self title:@"Thông báo" message:@"Đổi mật khẩu thành công" buttonClick:^(UIAlertAction *alertAction) {
+                    
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }];
+            }
+        }];
+    }
+   
 }
 
 #pragma mark - Method
+
 - (void)configUI{
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -96,10 +125,31 @@
     else{
         
         [self.lblError setHidden:NO];
+        
+        [self showError:error];
     }
     
     return error;
 }
+
+- (void)showError:(NSString *)error{
+    
+    [self.lblError setHidden:NO];
+    self.lblError.text = error;
+    //for zoom in
+    [UIView animateWithDuration:0.5f animations:^{
+        
+        self.lblError.transform = CGAffineTransformMakeScale(2.0, 2.0);
+    } completion:^(BOOL finished){
+        
+    }];
+    // for zoom out
+    [UIView animateWithDuration:0.5f animations:^{
+        
+        self.lblError.transform = CGAffineTransformMakeScale(1, 1);
+    }completion:^(BOOL finished){}];
+}
+
 - (void) keyboardWillHideHandler:(NSNotification *)notification {
     
     [self hideShadowWithAnimation];

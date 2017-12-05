@@ -88,6 +88,8 @@
 		B8A122461FB4173D007D6C27 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A122451FB4173D007D6C27 /* UIColor+HexString.m */; };
 		B8A1224D1FB45BCF007D6C27 /* SearchBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A1224C1FB45B9F007D6C27 /* SearchBookCell.xib */; };
 		B8A1224E1FB45BE9007D6C27 /* SearchBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A1224B1FB45B9E007D6C27 /* SearchBookCell.m */; };
+		B8A47A051FCFE6CD007EB18E /* CommentSellerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A47A041FCFE67A007EB18E /* CommentSellerViewController.m */; };
+		B8A47A091FCFFB99007EB18E /* BuyerCancelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A47A081FCFFB77007EB18E /* BuyerCancelViewController.m */; };
 		B8A752B31FB157AE0060EBDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8A752B21FB153F10060EBDB /* GoogleService-Info.plist */; };
 		B8A752B71FB1899A0060EBDB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752B61FB1899A0060EBDB /* MainViewController.m */; };
 		B8A752C21FB194E60060EBDB /* WellcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A752C01FB194E60060EBDB /* WellcomeView.m */; };
@@ -268,6 +270,10 @@
 		B8A1224A1FB45B9E007D6C27 /* SearchBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBookCell.h; sourceTree = "<group>"; };
 		B8A1224B1FB45B9E007D6C27 /* SearchBookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBookCell.m; sourceTree = "<group>"; };
 		B8A1224C1FB45B9F007D6C27 /* SearchBookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBookCell.xib; sourceTree = "<group>"; };
+		B8A47A031FCFE67A007EB18E /* CommentSellerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentSellerViewController.h; sourceTree = "<group>"; };
+		B8A47A041FCFE67A007EB18E /* CommentSellerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentSellerViewController.m; sourceTree = "<group>"; };
+		B8A47A071FCFFB77007EB18E /* BuyerCancelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyerCancelViewController.h; sourceTree = "<group>"; };
+		B8A47A081FCFFB77007EB18E /* BuyerCancelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyerCancelViewController.m; sourceTree = "<group>"; };
 		B8A752B21FB153F10060EBDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8A752B51FB1899A0060EBDB /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B8A752B61FB1899A0060EBDB /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -797,6 +803,24 @@
 			path = SearchBookCell;
 			sourceTree = "<group>";
 		};
+		B8A47A001FCFE65B007EB18E /* CommentSellerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8A47A031FCFE67A007EB18E /* CommentSellerViewController.h */,
+				B8A47A041FCFE67A007EB18E /* CommentSellerViewController.m */,
+			);
+			path = CommentSellerViewController;
+			sourceTree = "<group>";
+		};
+		B8A47A061FCFFB77007EB18E /* BuyerCancelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B8A47A071FCFFB77007EB18E /* BuyerCancelViewController.h */,
+				B8A47A081FCFFB77007EB18E /* BuyerCancelViewController.m */,
+			);
+			path = BuyerCancelViewController;
+			sourceTree = "<group>";
+		};
 		B8A752B41FB189870060EBDB /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,6 +968,8 @@
 		B8AC6D1C1FB5461A0002B7AE /* DataMaster */ = {
 			isa = PBXGroup;
 			children = (
+				B8A47A061FCFFB77007EB18E /* BuyerCancelViewController */,
+				B8A47A001FCFE65B007EB18E /* CommentSellerViewController */,
 				B889EB141FCE8A3A00ACF8BC /* CommentBuyerViewController */,
 				B889EB061FCE638900ACF8BC /* SellerCancelViewController */,
 				B8AAB8EF1FBC16DF00E7FBB9 /* StatusBookViewController */,
@@ -1494,6 +1520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A47A091FCFFB99007EB18E /* BuyerCancelViewController.m in Sources */,
+				B8A47A051FCFE6CD007EB18E /* CommentSellerViewController.m in Sources */,
 				B889EB201FCE98EC00ACF8BC /* BuyingCell.m in Sources */,
 				B889EB1B1FCE8B7100ACF8BC /* CommentBuyerViewController.m in Sources */,
 				B8DD86501FC6D93C00E2DD57 /* SellerListCell.m in Sources */,

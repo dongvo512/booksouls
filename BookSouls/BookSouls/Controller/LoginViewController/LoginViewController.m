@@ -70,6 +70,8 @@
 
 - (IBAction)touchBtnGoogleLogin:(id)sender {
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].delegate = self;
     [[GIDSignIn sharedInstance] hasAuthInKeychain];
@@ -145,6 +147,9 @@
             
             [self.navigationController pushViewController:[SlideMenuViewController sharedInstance] animated:YES];
             
+            self.tfEmail.text = @"";
+            self.tfPassword.text = @"";
+            
         }
         
     }];
@@ -178,6 +183,8 @@
             
             [self.navigationController pushViewController:[SlideMenuViewController sharedInstance] animated:YES];
             
+            self.tfEmail.text = @"";
+            self.tfPassword.text = @"";
         }
         
     }];
@@ -223,7 +230,9 @@
                 [defaults synchronize];
                 
                 [self.navigationController pushViewController:[SlideMenuViewController sharedInstance] animated:YES];
-                
+               
+                self.tfEmail.text = @"";
+                self.tfPassword.text = @"";
             }
             
         }];
@@ -380,6 +389,8 @@
 - (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
     //  [myActivityIndicator stopAnimating];
     //loginView.btnGoogle.enabled = NO;
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     if(!error && [GIDSignIn sharedInstance].hasAuthInKeychain){
         
     }else{

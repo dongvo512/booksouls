@@ -11,4 +11,11 @@
 
 @interface ContentOrderViewSellingController : UIViewController
 @property (nonatomic, weak) OrderViewController *vcParent;
+
+- (IBAction)touchBtnWaitingSell:(id)sender;
+- (IBAction)touchBtnShping:(id)sender;
+- (IBAction)touchComment:(id)sender;
+- (IBAction)touchBtnSelled:(id)sender;
+- (IBAction)touchBtnCancel:(id)sender;
+
 @end

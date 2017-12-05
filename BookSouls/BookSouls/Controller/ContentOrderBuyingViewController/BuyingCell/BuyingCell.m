@@ -54,6 +54,21 @@ typedef NS_ENUM(NSInteger, SelectedBuyer) {
 
 #pragma mark - Action
 
+- (IBAction)touchSeller:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(selectedSeller:)]){
+        
+        [[self delegate] selectedSeller:self.orderCurr];
+    }
+}
+- (IBAction)touchBook:(id)sender {
+    
+    if([[self delegate] respondsToSelector:@selector(selectedBook:)]){
+        
+        [[self delegate] selectedBook:self.orderCurr];
+    }
+}
+
 - (IBAction)touchBtnAcept:(id)sender {
     
     if([[self delegate] respondsToSelector:@selector(selectedButtonAcept:)]){

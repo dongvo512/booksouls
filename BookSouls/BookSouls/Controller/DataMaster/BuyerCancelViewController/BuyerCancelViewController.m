@@ -1,17 +1,17 @@
 //
-//  SellerCancelViewController.m
+//  BuyerCancelViewController.m
 //  BookSouls
 //
 //  Created by Dong Vo on 11/29/17.
 //  Copyright © 2017 Dong Vo. All rights reserved.
 //
 
-#import "SellerCancelViewController.h"
+#import "BuyerCancelViewController.h"
 #import "CommentCell.h"
 #import "UIColor+HexString.h"
 #import "Comment.h"
 
-@interface SellerCancelViewController ()<UITextViewDelegate>{
+@interface BuyerCancelViewController ()<UITextViewDelegate>{
     
     NSString *descriptionSelected;
 }
@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *arrDescription;
 @end
 
-@implementation SellerCancelViewController
+@implementation BuyerCancelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,19 +28,24 @@
     self.arrDescription = [NSMutableArray array];
     
     Comment *comment_1 = [[Comment alloc] init];
-    comment_1.title = @"Chưa liên hệ được người mua";
-    
+    comment_1.title = @"Người bán sách chưa liên hệ";
     [self.arrDescription addObject:comment_1];
     
     Comment *comment_2 = [[Comment alloc] init];
-    comment_2.title = @"Sách đã bán";
-    
+    comment_2.title = @"Giá sách tăng cao";
     [self.arrDescription addObject:comment_2];
     
     Comment *comment_3 = [[Comment alloc] init];
-    comment_3.title = @"Không còn nhu cầu bán sách";
-    
+    comment_3.title = @"Sách đã bán";
     [self.arrDescription addObject:comment_3];
+    
+    Comment *comment_4 = [[Comment alloc] init];
+    comment_4.title = @"Người bán không muốn bán";
+    [self.arrDescription addObject:comment_4];
+    
+    Comment *comment_5 = [[Comment alloc] init];
+    comment_5.title = @"Không còn nhu cầu mua sách";
+    [self.arrDescription addObject:comment_5];
     
     self.textView.layer.borderColor = [UIColor colorWithHexString:@"#95989A"].CGColor;
     self.textView.layer.borderWidth = 0.5;
@@ -65,17 +70,19 @@
     
     if(descriptionSelected.length > 0 ){
         
-        if([[self delegate] respondsToSelector:@selector(aceptCancelFromSeller:)]){
+        if([[self delegate] respondsToSelector:@selector(aceptCancelFromBuyer:)]){
             
-            [[self delegate] aceptCancelFromSeller:descriptionSelected];
+            [[self delegate] aceptCancelFromBuyer:descriptionSelected];
         }
         
-        [self dismissFromParentViewController];
+         [self dismissFromParentViewController];
     }
     else{
         
         [Common showAlert:self title:@"Thông báo" message:@"Bạn chưa chọn lý do huỷ" buttonClick:nil];
     }
+    
+   
 }
 #pragma mark - Method
 

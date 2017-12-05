@@ -20,4 +20,8 @@
 @property (nonatomic, strong) NSString <Optional> *shortContent;
 @property (nonatomic, strong) NSString <Optional> *createdAt;
 @property (nonatomic, strong) NSString <Optional> *title;
+@property (nonatomic, strong) NSString <Optional> *status;
+@property (nonatomic, strong) NSString <Optional> *contentType;
+@property (nonatomic, strong) NSString <Optional> *contentKey;
+@property (nonatomic, strong) NSString <Optional> *contentId;
 @end

@@ -49,6 +49,8 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 #define PUT_USER_UPDATE @"users/me"
 #define PUT_RES_PASSWORD @"resetPassword"
 #define PUT_VERIFYTOKEN @"verfiyTokenPassword"
+#define PUT_CHANGEPASSWORD @"users/me/changePassword"
+
 
 /////////// GET
 #define GET_BOOK_NEW @"books"
@@ -71,7 +73,7 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 #define GET_LIST_SELLER_SENDING @"orders/me/seller?status=sending"
 #define GET_LIST_SELLER_SUCESS @"orders/me/seller?status=success"
 #define GET_LIST_SELLER_CANCEL @"orders/me/seller?status=cancel"
-#define GET_LIST_SELLER_SELLED @"books/selled"
+#define GET_LIST_SELLER_SELLED @"orders/me/seller?status=sended"
 
 #define GET_LIST_BUYER_PENDING @"orders/me/buyer?status=pending"
 #define GET_LIST_BUYER_CANCEL @"orders/me/buyer?status=cancel"

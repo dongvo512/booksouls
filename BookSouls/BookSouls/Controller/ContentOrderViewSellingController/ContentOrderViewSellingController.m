@@ -13,6 +13,9 @@
 #import "SellerCancelViewController.h"
 #import "CommentBuyerViewController.h"
 #import "UserInfo.h"
+#import "BookDetailViewController.h"
+#import "InfoSellerViewController.h"
+#import "OrderViewController.h"
 
 #define HEIGHT_CELL_MENU 238
 
@@ -77,6 +80,12 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+
+}
+
 #pragma mark - Action
 
 - (IBAction)touchBtnWaitingSell:(id)sender {
@@ -123,7 +132,7 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
         
         indexSelected = SellerSucess;
         [self defaulData];
-        [self getListSucess];
+        [self getListCommentWaiting];
     }
 }
 - (IBAction)touchBtnSelled:(id)sender {
@@ -249,7 +258,7 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
 
 - (void)loadMoreSelled{
     
-    NSString *url = [NSString stringWithFormat:@"%@%@?limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SELLED,@(LIMIT_ITEM),@(pageIndex)];
+    NSString *url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SUCESS,@(LIMIT_ITEM),@(pageIndex)];
     
     isLoading = YES;
     
@@ -284,9 +293,9 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
         }
     }];
 }
-- (void)loadMoreSuccess{
+- (void)loadMoreCommentWaiting{
     
-    NSString *url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SUCESS,@(LIMIT_ITEM),@(pageIndex)];
+    NSString *url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SELLED,@(LIMIT_ITEM),@(pageIndex)];
     
     isLoading = YES;
     
@@ -509,7 +518,7 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
 
 - (void)getListSelled{
     
-    NSString *url = [NSString stringWithFormat:@"%@%@?limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SELLED,@(LIMIT_ITEM),@(pageIndex)];
+    NSString *url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SUCESS,@(LIMIT_ITEM),@(pageIndex)];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
@@ -594,9 +603,9 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
     }];
 }
 
-- (void)getListSucess{
+- (void)getListCommentWaiting{
     
-    NSString *url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SUCESS,@(LIMIT_ITEM),@(pageIndex)];
+    NSString *url = [NSString stringWithFormat:@"%@%@&limit=%@&page=%@",URL_DEFAULT,GET_LIST_SELLER_SELLED,@(LIMIT_ITEM),@(pageIndex)];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     isLoading = YES;
@@ -754,7 +763,7 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
         }
         else if(indexSelected == SellerSucess){
             
-            [self loadMoreSuccess];
+            [self loadMoreCommentWaiting];
         }
         else if(indexSelected == SellerSelled){
             
@@ -777,14 +786,25 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
 
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    
-}
 
 #pragma mark - SellingCellDelegate
+
+- (void)selectedBuyer:(Order *)order{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    InfoSellerViewController *vcInfoSeller = [storyboard instantiateViewControllerWithIdentifier:@"InfoSellerViewController"];
+    vcInfoSeller.userCurr = order.buyer;
+    [self.vcParent.navigationController pushViewController:vcInfoSeller animated:YES];
+}
+
+- (void)selectedBook:(Order *)order{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookDetailViewController *vcBookDetail = [storyboard instantiateViewControllerWithIdentifier:@"BookDetailViewController"];
+    vcBookDetail.bookCurr = order.book;
+    [self.vcParent.navigationController pushViewController:vcBookDetail animated:YES];
+    
+}
 
 - (void)selectedButtonAcept:(Order *)order{
     
