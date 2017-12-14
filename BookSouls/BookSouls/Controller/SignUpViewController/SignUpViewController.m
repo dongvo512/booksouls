@@ -63,9 +63,19 @@
             }
             else{
                 
+                NSError *error;
+                
+                Appdelegate_BookSouls.sesstionUser = [[SessionUser alloc] initWithDictionary:responseDataObject error:&error];
+                
+                NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:Appdelegate_BookSouls.sesstionUser];
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:encodedObject forKey:@"FirstRun"];
+                [defaults synchronize];
+                
                 [Common showAlert:self title:@"Thông báo" message:@"Đăng ký tài khoản thành công" buttonClick:^(UIAlertAction *alertAction) {
                     
-                    [self.navigationController popViewControllerAnimated:YES];
+                    SlideMenuViewController *vcSlideMenu = [SlideMenuViewController sharedInstance];
+                    [Appdelegate_BookSouls.navigation setViewControllers:@[vcSlideMenu] animated:YES];
                 }];
             }
             

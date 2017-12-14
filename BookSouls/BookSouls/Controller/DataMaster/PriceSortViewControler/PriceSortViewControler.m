@@ -1,21 +1,21 @@
 //
-//  StatusBookViewController.m
+//  PriceSortViewControler.m
 //  BookSouls
 //
 //  Created by Dong Vo on 11/15/17.
 //  Copyright © 2017 Dong Vo. All rights reserved.
 //
 
-#import "StatusBookViewController.h"
+#import "PriceSortViewControler.h"
 #import "StatusCell.h"
 #import "UIColor+HexString.h"
 
-@interface StatusBookViewController ()
+@interface PriceSortViewControler ()
 @property (weak, nonatomic) IBOutlet UITableView *tblStatus;
 
 @end
 
-@implementation StatusBookViewController
+@implementation PriceSortViewControler
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,9 +23,9 @@
     self.tblStatus.estimatedRowHeight = 44;
     self.tblStatus.rowHeight = UITableViewAutomaticDimension;
     
-    if(!self.arrStatus){
+    if(!self.arrPrice){
         
-        self.arrStatus = @[@"Sách mới", @"Sách cũ 90%", @"Sách cũ 70%", @"Sách cũ 50%"];
+        self.arrPrice = @[@"Mặc định",@"Thấp đến cao", @"Cao đến thấp"];
     }
     
 }
@@ -80,19 +80,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return self.arrStatus.count;
+    return self.arrPrice.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     StatusCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StatusCell"];
     
-   NSString *strStatus = [self.arrStatus objectAtIndex:indexPath.row];
+    NSString *strStatus = [self.arrPrice objectAtIndex:indexPath.row];
     
     if(indexPath.row % 2){
         
         [cell.contentView setBackgroundColor:[UIColor whiteColor]];
-        
     }
     else{
         
@@ -110,11 +109,11 @@
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-     NSString *strStatus = [self.arrStatus objectAtIndex:indexPath.row];
+     NSString *strStatus = [self.arrPrice objectAtIndex:indexPath.row];
     
-    if([[self delegate] respondsToSelector:@selector(selectedStatusBook:)]){
+    if([[self delegate] respondsToSelector:@selector(selectedPriceBook:)]){
         
-        [[self delegate] selectedStatusBook:strStatus];
+        [[self delegate] selectedPriceBook:strStatus];
     }
     
     [self dismissFromParentViewController];

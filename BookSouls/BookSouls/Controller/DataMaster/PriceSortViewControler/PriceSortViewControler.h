@@ -1,5 +1,5 @@
 //
-//  StatusBookViewController.h
+//  PriceSortViewControler.h
 //  BookSouls
 //
 //  Created by Dong Vo on 11/15/17.
@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StatusBookViewController : UIViewController
+@interface PriceSortViewControler : UIViewController
 @property (nonatomic, weak) id delegate;
 - (void)presentInParentViewController:(UIViewController *)parentViewController;
-@property (nonatomic, strong) NSArray *arrStatus;
+@property (nonatomic, strong) NSArray *arrPrice;
 @end
 
-@protocol StatusBookViewControllerDelegate <NSObject>
+@protocol PriceSortViewControlerDelegate <NSObject>
 
-- (void)selectedStatusBook:(NSString *)status;
+- (void)selectedPriceBook:(NSString *)price;
 
 @end
+

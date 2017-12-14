@@ -53,6 +53,9 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 
 
 /////////// GET
+
+#define GET_NOTIFICATION_NON_READ @"users/me/notifications-notread"
+
 #define GET_BOOK_NEW @"books"
 
 #define GET_NOTIFICATION @"notifications"

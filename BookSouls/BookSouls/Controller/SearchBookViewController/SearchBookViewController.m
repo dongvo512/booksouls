@@ -14,7 +14,8 @@
 #import "Categories.h"
 #import <CoreLocation/CoreLocation.h>
 #import "BookDetailViewController.h"
-
+#import "StatusBookViewController.h"
+#import "PriceSortViewControler.h"
 
 #define HEIGHT_EXPAND 240
 #define HEIGHT_DEFAULT 50
@@ -44,13 +45,12 @@ typedef NS_ENUM(NSInteger, SearchWith) {
     BOOL isLoadingData;
     BOOL isFullData;
     
-     CLLocationManager *localManager;
-    
-    NSInteger indexBookStatus;
-    
-    NSInteger indexSortPrice;
+    CLLocationManager *localManager;
     
     UIRefreshControl *refreshControl;
+    
+    NSString *strStatus;
+    NSString *strPrice;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *btnSeller;
@@ -70,8 +70,6 @@ typedef NS_ENUM(NSInteger, SearchWith) {
 @property (nonatomic, strong) NSMutableArray *arrSearchBook;
 @property (nonatomic, strong) NSMutableArray *arrSearchResult;
 @property (weak, nonatomic) IBOutlet UITextField *tfSeach;
-@property (nonatomic, strong) NSArray *arrStatusBook;
-@property (nonatomic, strong) NSArray *arrPriceBook;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnBookStatus;
 @property (weak, nonatomic) IBOutlet UIButton *btnSortPrice;
@@ -140,34 +138,21 @@ typedef NS_ENUM(NSInteger, SearchWith) {
 }
 - (IBAction)touchBtnPrice:(id)sender {
     
-    if(indexSortPrice == self.arrPriceBook.count - 1){
-        
-        indexSortPrice = 0;
-    }
-    else{
-        
-        indexSortPrice ++;
-    }
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PriceSortViewControler *vcPrice = [storyboard instantiateViewControllerWithIdentifier:@"PriceSortViewControler"];
     
-    [self.btnSortPrice setTitle:[self.arrPriceBook objectAtIndex:indexSortPrice] forState:UIControlStateNormal];
-    
-    [self performSelector:@selector(filterWithStatusBook) withObject:nil afterDelay:0.0];
+    vcPrice.delegate = self;
+    [vcPrice presentInParentViewController:self];
 }
 
 - (IBAction)touchBtnBook:(id)sender {
     
-    if(indexBookStatus == self.arrStatusBook.count - 1){
-        
-        indexBookStatus = 0;
-    }
-    else{
-        
-        indexBookStatus ++;
-    }
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    StatusBookViewController *vcStatus = [storyboard instantiateViewControllerWithIdentifier:@"StatusBookViewController"];
+    vcStatus.arrStatus = @[@"Tất cả", @"Sách mới", @"Sách cũ 90%", @"Sách cũ 70%", @"Sách cũ 50%"];
+    vcStatus.delegate = self;
+    [vcStatus presentInParentViewController:self];
     
-    [self.btnBookStatus setTitle:[self.arrStatusBook objectAtIndex:indexBookStatus] forState:UIControlStateNormal];
-    
-    [self performSelector:@selector(filterWithStatusBook) withObject:nil afterDelay:0.0];
 }
 
 - (IBAction)touchBtnWithName:(id)sender {
@@ -370,11 +355,11 @@ typedef NS_ENUM(NSInteger, SearchWith) {
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        indexBookStatus = 0;
-        indexSortPrice = 0;
+        strStatus = @"Tất cả";
+        strPrice = @"Mặc định";
         
-        [self.btnBookStatus setTitle:[self.arrStatusBook objectAtIndex:indexBookStatus] forState:UIControlStateNormal];
-        [self.btnSortPrice setTitle:[self.arrPriceBook objectAtIndex:indexSortPrice] forState:UIControlStateNormal];
+        [self.btnBookStatus setTitle:strStatus forState:UIControlStateNormal];
+        [self.btnSortPrice setTitle:strPrice forState:UIControlStateNormal];
         
         if(isError){
             
@@ -422,26 +407,26 @@ typedef NS_ENUM(NSInteger, SearchWith) {
     
     NSMutableArray *arrResult;
     
-    if(indexBookStatus == 0){
+    if([strStatus isEqualToString:@"Tất cả"]){
         
         arrResult = [NSMutableArray arrayWithArray:self.arrSearchBook];
     }
     else{
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"subStatus contains[cd] %@", [self.arrStatusBook objectAtIndex:indexBookStatus]];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"subStatus contains[cd] %@", strStatus];
         // NSLog(@"%@",textField.text);
         
        // self.arrSearchResult = nil;
         arrResult = [NSMutableArray arrayWithArray: [self.arrSearchBook filteredArrayUsingPredicate:predicate]];
     }
   
-    if(indexSortPrice == 0){
+    if([strPrice isEqualToString:@"Mặc định"]){
         
         self.arrSearchResult = arrResult;
     }
     else{
         
-        if(indexSortPrice == 1){
+        if([strPrice isEqualToString:@"Thấp đến cao"]){
             
             NSSortDescriptor *sortDescriptor;
             sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"price"
@@ -528,9 +513,9 @@ typedef NS_ENUM(NSInteger, SearchWith) {
     seller = @"";
     categoryID = @"";
     
-    self.arrStatusBook = @[@"Tất cả", @"Sách mới", @"Sách cũ 90%", @"Sách cũ 70%", @"Sách cũ 50%"];
+   // self.arrStatusBook = @[@"Tất cả", @"Sách mới", @"Sách cũ 90%", @"Sách cũ 70%", @"Sách cũ 50%"];
     
-    self.arrPriceBook = @[@"Mặc định",@"Thấp đến cao", @"Cao đến thấp"];
+   // self.arrPriceBook = @[@"Mặc định",@"Thấp đến cao", @"Cao đến thấp"];
 }
 
 - (void)configUI{
@@ -541,9 +526,14 @@ typedef NS_ENUM(NSInteger, SearchWith) {
     
     self.viewBackground.alpha = 0.0f;
     
-    [self.btnBookStatus setTitle:@"Mặc định" forState:UIControlStateNormal];
+
+    strStatus = @"Tất cả";
+    strPrice = @"Mặc định";
     
-    indexBookStatus = 0;
+    [self.btnBookStatus setTitle:strStatus forState:UIControlStateNormal];
+    
+    
+    [self.btnSortPrice setTitle:strPrice forState:UIControlStateNormal];
     
     indexPage = 1;
     
@@ -674,4 +664,25 @@ typedef NS_ENUM(NSInteger, SearchWith) {
         }
     }
 }
+
+#pragma mark - StatusBookViewControllerDelegate
+- (void)selectedStatusBook:(NSString *)status{
+    
+    strStatus = status;
+    
+    [self.btnBookStatus setTitle:status forState:UIControlStateNormal];
+    
+    [self performSelector:@selector(filterWithStatusBook) withObject:nil afterDelay:0.0];
+}
+
+#pragma mark - PriceSortViewControlerDelegate
+- (void)selectedPriceBook:(NSString *)price{
+    
+    strPrice = price;
+    
+    [self.btnSortPrice setTitle:price forState:UIControlStateNormal];
+    
+    [self performSelector:@selector(filterWithStatusBook) withObject:nil afterDelay:0.0];
+}
+
 @end

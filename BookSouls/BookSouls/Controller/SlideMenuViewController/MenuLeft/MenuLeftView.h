@@ -13,4 +13,6 @@
 - (void)loadUserInfo;
 
 @property (strong, nonatomic) IBOutlet UIView *view;
+
+- (void)updateNumNoti:(NSNumber *)numNoti;
 @end

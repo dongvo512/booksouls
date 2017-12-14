@@ -26,6 +26,7 @@
     
      NSLayoutConstraint *leftContraint;
 }
+@property (nonatomic, strong) NSMutableArray *arrNotiNonRead;
 @end
 
 @implementation SlideMenuViewController
@@ -62,12 +63,31 @@ static SlideMenuViewController *sharedInstance = nil;
     
     self.indexSelectedCurr = Item_Home;
     
-    [self createNavigationContent];
+    if(!Appdelegate_BookSouls.notiType){
+        
+         [self createNavigationContent];
+    }
+    else{
+        
+        [self createOrderNavigationContent];
+        
+    }
+   
     [self createBackgroundView];
     [self createMenuLeft];
     [self addSwipeGestureForViewContent];
     
+    self.arrNotiNonRead = [NSMutableArray array];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:YES];
+    
+    [self getNumNotiNoRead];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,6 +96,22 @@ static SlideMenuViewController *sharedInstance = nil;
 }
 
 #pragma mark - Method
+
+- (void)getNumNotiNoRead{
+    
+    [APIRequestHandler initWithURLString:[NSString stringWithFormat:@"%@%@",URL_DEFAULT,GET_NOTIFICATION_NON_READ] withHttpMethod:kHTTP_METHOD_GET withRequestBody:nil callApiResult:^(BOOL isError, NSString *stringError, id responseDataObject) {
+       
+        if(!isError){
+            
+            NSNumber *numNotiNonRead = [responseDataObject objectForKey:@"total"];
+            
+            [self.viewMenuLeft updateNumNoti:numNotiNonRead];
+        }
+        
+    }];
+    
+}
+
 - (void)createNavigationContent{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -89,6 +125,22 @@ static SlideMenuViewController *sharedInstance = nil;
     [self.view addSubview:self.vcNavigation.view];
     
 }
+
+- (void)createOrderNavigationContent{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    OrderViewController *vcOrder = [storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
+    
+    self.vcNavigation = [[UINavigationController alloc] initWithRootViewController:vcOrder];
+    self.vcNavigation.navigationBarHidden = YES;
+    self.vcNavigation.view.frame = self.view.bounds;
+    
+    [self.view addSubview:self.vcNavigation.view];
+    
+    
+}
+
 - (void)createBackgroundView{
     
     viewBackground = [[UIView alloc] init];

@@ -24,7 +24,6 @@
 
     [self.imgViewPreView setImage:self.imagePreview];
     
-    self.btnAcept.layer.cornerRadius = 10;
     self.btnAcept.layer.borderWidth = 0.5;
     self.btnAcept.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.btnAcept.layer.masksToBounds = NO;
@@ -32,7 +31,6 @@
     self.btnAcept.layer.shadowRadius = 8;
     self.btnAcept.layer.shadowOpacity = 0.2;
     
-    self.btnCancel.layer.cornerRadius = 10;
     self.btnCancel.layer.borderWidth = 0.5;
     self.btnCancel.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.btnCancel.layer.masksToBounds = NO;

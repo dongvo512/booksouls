@@ -42,7 +42,7 @@
     self.lblName.text = book.name;
     self.lblAuthor.text = [NSString stringWithFormat:@"bởi %@ NXB %@",book.author,book.nxb];
     
-    [Common hightLightLabel:self.lblAuthor withSubstring:book.author withColor:[UIColor colorWithHexString:@"#7CAAFC"] font:[UIFont fontWithName:@"Muli-SemiBoldItalic" size:14.0]];
+    [Common hightLightLabel:self.lblAuthor withSubstring:book.author withColor:[UIColor colorWithHexString:@"#2B2B2B"] font:[UIFont fontWithName:@"Muli-Italic" size:14.0]];
     
     self.lblSubStatus.text = book.subStatus;
     [self.pageControl setNumberOfPages:self.arrBanner.count];

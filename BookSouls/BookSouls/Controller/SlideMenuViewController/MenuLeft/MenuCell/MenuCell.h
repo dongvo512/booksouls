@@ -13,5 +13,6 @@
 @interface MenuCell : UITableViewCell
 
 - (void)setDataForCell:(ItemMenu *)itemMenu;
-
+@property (weak, nonatomic) IBOutlet UILabel *lblNumNoti;
+@property (weak, nonatomic) IBOutlet UIView *viewNoti;
 @end

@@ -43,7 +43,6 @@
         [self.contentView setBackgroundColor:[UIColor whiteColor]];
     }
     
-    
     if([notify.title containsString:@"Hủy"]){
         
         [self.lblTitle setTextColor:[UIColor colorWithHexString:@"#F44E4E"]];
@@ -57,7 +56,7 @@
         [self.lblTitle setTextColor:[UIColor colorWithHexString:@"#1CB8FF"]];
     }
     
-    self.lblCreateNotify.text = [Common formattedDateTimeWithDateString:notify.createdAt inputFormat:@"yyyy-MM-dd HH:mm:ss" outputFormat:@"dd/MM/yyyy HH:mm"];
+    self.lblCreateNotify.text = [Common formattedDateTimeWithDateString7:notify.createdAt inputFormat:@"yyyy-MM-dd HH:mm:ss" outputFormat:@"dd/MM/yyyy HH:mm"];
     self.lblContent.text = notify.content;
 }
 @end

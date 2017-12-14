@@ -38,10 +38,11 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UIView *viewBottom;
+
 @property (weak, nonatomic) IBOutlet UIView *viewBuyBook;
 @property (weak, nonatomic) IBOutlet UICollectionView *cllBookDetail;
 @property (weak, nonatomic) IBOutlet UILabel *lblPriceBuy;
+@property (weak, nonatomic) IBOutlet UIButton *btnOrderBook;
 
 
 @property (nonatomic, strong) NSMutableArray *arrRelated;
@@ -164,9 +165,9 @@ typedef NS_ENUM(NSInteger, BookDetail) {
 #pragma mark - Method
 - (void)configUI{
     
-    self.viewBottom.layer.shadowOffset = CGSizeMake(0, -3);
-    self.viewBottom.layer.shadowRadius = 2;
-    self.viewBottom.layer.shadowOpacity = 0.1;
+    self.btnOrderBook.layer.shadowOffset = CGSizeMake(0, 0);
+    self.btnOrderBook.layer.shadowRadius = 3;
+    self.btnOrderBook.layer.shadowOpacity = 0.1;
     
     self.viewBuyBook.layer.shadowOffset = CGSizeMake(0, 3);
     self.viewBuyBook.layer.shadowRadius = 2;

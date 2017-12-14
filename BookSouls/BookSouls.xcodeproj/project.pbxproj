@@ -53,6 +53,7 @@
 		B840478D1FC8035000DFA1E4 /* GroupTititleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B840478B1FC8035000DFA1E4 /* GroupTititleView.xib */; };
 		B84047911FC82E8100DFA1E4 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84047901FC82E8100DFA1E4 /* ChangePasswordViewController.m */; };
 		B854239C1FBAD0BD0015A688 /* PreviewBarcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B854239B1FBAD0BD0015A688 /* PreviewBarcodeViewController.m */; };
+		B862640E1FD9164E00FF141C /* PriceSortViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = B862640C1FD9164E00FF141C /* PriceSortViewControler.m */; };
 		B87ED5591FCD3D3300A48D4B /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = B87ED5581FCD3D3300A48D4B /* Order.m */; };
 		B87ED5631FCD62F900A48D4B /* SellingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B87ED5611FCD62F900A48D4B /* SellingCell.m */; };
 		B87ED5651FCD658100A48D4B /* SellingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B87ED5621FCD62F900A48D4B /* SellingCell.xib */; };
@@ -217,6 +218,8 @@
 		B84047901FC82E8100DFA1E4 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		B854239A1FBAD0BD0015A688 /* PreviewBarcodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewBarcodeViewController.h; sourceTree = "<group>"; };
 		B854239B1FBAD0BD0015A688 /* PreviewBarcodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewBarcodeViewController.m; sourceTree = "<group>"; };
+		B862640C1FD9164E00FF141C /* PriceSortViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceSortViewControler.m; sourceTree = "<group>"; };
+		B862640D1FD9164E00FF141C /* PriceSortViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceSortViewControler.h; sourceTree = "<group>"; };
 		B87ED5571FCD3D3300A48D4B /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		B87ED5581FCD3D3300A48D4B /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		B87ED5601FCD62F900A48D4B /* SellingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellingCell.h; sourceTree = "<group>"; };
@@ -607,6 +610,15 @@
 			path = PreviewBarcodeViewController;
 			sourceTree = "<group>";
 		};
+		B862640B1FD9164E00FF141C /* PriceSortViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				B862640D1FD9164E00FF141C /* PriceSortViewControler.h */,
+				B862640C1FD9164E00FF141C /* PriceSortViewControler.m */,
+			);
+			path = PriceSortViewControler;
+			sourceTree = "<group>";
+		};
 		B87ED5561FCD3D2300A48D4B /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +980,7 @@
 		B8AC6D1C1FB5461A0002B7AE /* DataMaster */ = {
 			isa = PBXGroup;
 			children = (
+				B862640B1FD9164E00FF141C /* PriceSortViewControler */,
 				B8A47A061FCFFB77007EB18E /* BuyerCancelViewController */,
 				B8A47A001FCFE65B007EB18E /* CommentSellerViewController */,
 				B889EB141FCE8A3A00ACF8BC /* CommentBuyerViewController */,
@@ -1521,6 +1534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8A47A091FCFFB99007EB18E /* BuyerCancelViewController.m in Sources */,
+				B862640E1FD9164E00FF141C /* PriceSortViewControler.m in Sources */,
 				B8A47A051FCFE6CD007EB18E /* CommentSellerViewController.m in Sources */,
 				B889EB201FCE98EC00ACF8BC /* BuyingCell.m in Sources */,
 				B889EB1B1FCE8B7100ACF8BC /* CommentBuyerViewController.m in Sources */,

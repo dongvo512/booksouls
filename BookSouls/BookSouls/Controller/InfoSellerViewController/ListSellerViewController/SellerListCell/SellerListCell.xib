@@ -74,9 +74,12 @@
                             <constraint firstAttribute="height" constant="11" id="djh-ix-wVL"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rating_small" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-lG-YvO">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_small" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-lG-YvO">
                         <rect key="frame" x="232" y="28" width="71" height="11"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="16B-t8-667"/>
+                            <constraint firstAttribute="width" constant="71" id="Bhh-Py-sBF"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 đánh giá" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnz-0T-ZLR">
                         <rect key="frame" x="226" y="46" width="77" height="18"/>
@@ -90,6 +93,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="1FS-lG-YvO" firstAttribute="leading" secondItem="bOG-bQ-eOm" secondAttribute="trailing" constant="-71" id="43t-rt-gBb"/>
                     <constraint firstItem="uIg-jO-2cA" firstAttribute="top" secondItem="oJa-Bj-wDS" secondAttribute="bottom" constant="5" id="Aec-0O-iqw"/>
                     <constraint firstItem="h9y-a4-GmR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="Bhy-ZX-B9m"/>
                     <constraint firstItem="Dnz-0T-ZLR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="38" id="HcV-JV-1T2"/>
@@ -106,6 +110,7 @@
                     <constraint firstItem="uIg-jO-2cA" firstAttribute="leading" secondItem="h9y-a4-GmR" secondAttribute="trailing" constant="8" id="s4P-BQ-9HV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Dnz-0T-ZLR" secondAttribute="trailing" constant="9" id="wAt-bf-R6E"/>
                     <constraint firstItem="oJa-Bj-wDS" firstAttribute="leading" secondItem="h9y-a4-GmR" secondAttribute="trailing" constant="8" id="yp6-Pn-mQi"/>
+                    <constraint firstItem="1FS-lG-YvO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="zvU-XT-mrR"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -117,6 +122,7 @@
                 <outlet property="lblSelled" destination="oJa-Bj-wDS" id="5GT-zk-DMa"/>
                 <outlet property="lblViews" destination="Dnz-0T-ZLR" id="JSr-H7-kxE"/>
                 <outlet property="topContraintSelled" destination="VnM-Tq-hFM" id="piG-82-Qfy"/>
+                <outlet property="widthContraintStar" destination="Bhh-Py-sBF" id="ikC-EJ-mao"/>
             </connections>
             <point key="canvasLocation" x="-133" y="-165.5"/>
         </tableViewCell>

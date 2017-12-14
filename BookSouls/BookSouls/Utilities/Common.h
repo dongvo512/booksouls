@@ -57,4 +57,5 @@ typedef void (^UploadResult)(BOOL isError, NSString *stringError, id responseDat
 +(BOOL)validateEmailAddress:(NSString *)address;
 +(void)showAlertCancel:(UIViewController *)controller title:(NSString *)title message:(NSString *)message buttonClick:(ButtonClick)buttonClickOk buttonClickCancel:(ButtonClick)buttonClickCancel;
 +(void)hightLightLabel:(UILabel *)label withSubstring:(NSString*)substring withColor:(UIColor *)color font:(UIFont *)font;
++ (NSString*)formattedDateTimeWithDateString7:(NSString *)inputDateString inputFormat:(NSString *)inputFormat outputFormat:(NSString *)outputFormat;
 @end

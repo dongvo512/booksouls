@@ -84,8 +84,8 @@
             }
             else if([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_SUCCESS_ORER"]){
                 
-                [vcOrder touchBookSelling:nil];
-                [vcOrder.vcSelling touchBtnSelled:nil];
+                [vcOrder touchBtnBookEnd:nil];
+                [vcOrder.vcBuying touchBtnSelled:nil];
             }
             else if ([Appdelegate_BookSouls.notiType isEqualToString:@"SELLER_ACCEPT_ORDER"]){
                 
@@ -132,7 +132,7 @@
         }
         else if ([self.notify.type isEqualToString:@"SELLER_SUCCESS_ORER"]){
             
-            [self.view setBackgroundColor:[UIColor colorWithHexString:@"#F0C86D"]];
+            [self.view setBackgroundColor:[UIColor colorWithHexString:@"#50AFF3"]];
         }
         else if ([self.notify.type isEqualToString:@"BUYER_RECIVED_ORDER"]){
             

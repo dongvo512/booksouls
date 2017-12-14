@@ -45,8 +45,7 @@
 //    }
 //
     
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+   
     
     // IQKeyboard
     [[IQKeyboardManager sharedManager] setEnable:YES];
@@ -72,13 +71,15 @@
     {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
+       
+      
     }
     else
     {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     }
-    
     
     NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
     
@@ -130,6 +131,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
 }
 
 
@@ -180,8 +183,9 @@
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
     
+    
     if (userInfo != nil) {
-        
+
         if(userInfo){
             
             NSDictionary *dicAps = [userInfo objectForKey:@"aps"];
@@ -215,7 +219,17 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
                             
                             [self redirectOrderWithNotification:vcOrder];
                         }
+                        
                     }
+                   
+                    
+                    SlideMenuViewController *vcSlide = [SlideMenuViewController sharedInstance];
+                    
+                    if(vcSlide){
+                        
+                        [vcSlide getNumNotiNoRead];
+                    }
+                    
                 }
             }
         }
@@ -223,6 +237,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
 }
 
 - (void)redirectOrderWithNotification:(OrderViewController *)orderVC{
+    
     
     if(Appdelegate_BookSouls.notiType){
         

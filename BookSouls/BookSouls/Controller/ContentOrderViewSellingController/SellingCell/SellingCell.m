@@ -48,6 +48,10 @@ typedef NS_ENUM(NSInteger, SelectedSeller) {
     [super awakeFromNib];
     // Initialization code
     
+//    self.imgViewBook.layer.shadowOffset = CGSizeMake(-2, 4);
+//    self.imgViewBook.layer.shadowRadius = 2;
+//    self.imgViewBook.layer.shadowOpacity = 0.2;
+    
     self.viewPrice.layer.shadowOffset = CGSizeMake(-2, 0);
     self.viewPrice.layer.shadowRadius = 2;
     self.viewPrice.layer.shadowOpacity = 0.15;

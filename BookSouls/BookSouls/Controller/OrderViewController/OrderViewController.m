@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, TypeBook) {
     
     [super viewDidAppear:animated];
     
-    [self performSelector:@selector(moveWithNotiType) withObject:nil afterDelay:0.3];
+    [self performSelector:@selector(moveWithNotiType) withObject:nil afterDelay:0];
 }
 
 - (void)moveWithNotiType{

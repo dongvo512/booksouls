@@ -67,6 +67,9 @@
         }
         else{
            
+            SlideMenuViewController *vcSlide = [SlideMenuViewController sharedInstance];
+            [vcSlide getNumNotiNoRead];
+            
         }
         
     }];
@@ -203,7 +206,6 @@
     }
     
     return cell;
-    
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -215,7 +217,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     Appdelegate_BookSouls.notiType = noti.contentKey;
     
-    [[SlideMenuViewController sharedInstance] selecItemCurr:Item_Order];
+    SlideMenuViewController *vcSlide = [SlideMenuViewController sharedInstance];
+    
+    [vcSlide selecItemCurr:Item_Order];
     
 }
 

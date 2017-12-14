@@ -32,10 +32,18 @@
 }
 
 - (void)setDataForCell:(ItemMenu *)itemMenu{
-
+    
     self.lblIcon.text = itemMenu.itemIconName;
     
     self.lblName.text = itemMenu.itemName;
+    
+    [self.viewNoti setHidden:YES];
+    
+    if([itemMenu.itemName isEqualToString:@"Thông báo"]){
+        
+        [self.viewNoti setHidden:NO];
+    }
+    
 }
 
 @end

@@ -28,4 +28,5 @@
 // thay root Viewcontroller cho navigationcontroller với danh sách items trên Menu.
 - (void)selectedItemInMenu:(NSInteger )index;
 - (void)selecItemCurr:(NSInteger)index;
+- (void)getNumNotiNoRead;
 @end

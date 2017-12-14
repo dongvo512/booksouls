@@ -133,6 +133,26 @@
 
 #pragma mark - Method
 
+- (void)updateNumNoti:(NSNumber *)numNoti{
+    
+    MenuCell *cell = [self.tblViewMenu cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    
+    if(cell){
+        
+        if(numNoti.integerValue > 0 ){
+            
+            [cell.viewNoti setHidden:NO];
+             cell.lblNumNoti.text = numNoti.stringValue;
+        }
+        else{
+            
+            [cell.viewNoti setHidden:YES];
+            
+        }
+    }
+    
+}
+
 - (IBAction)touchAvatar:(id)sender {
     
      [[SlideMenuViewController sharedInstance] selectedItemInMenu:4];
